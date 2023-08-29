@@ -1,0 +1,80 @@
+CRITICAL - 2023-07-25 19:29:14 --> Call to undefined method App\Models\BebidaModelo::listarBebidas
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\BebidasControlador.php(13): CodeIgniter\Model->__call('listarBebidas', [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BebidasControlador->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BebidasControlador))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-25 19:31:09 --> Call to undefined method App\Models\BebidaModelo::listarBebidas
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\BebidasControlador.php(13): CodeIgniter\Model->__call('listarBebidas', [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BebidasControlador->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BebidasControlador))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-25 23:04:22 --> Undefined property: CodeIgniter\View\View::$session
+in APPPATH\Views\barVista.php on line 56.
+ 1 APPPATH\Views\barVista.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$session', 'C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php', 56)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\BarControlador.php(12): view('barVista')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-25 23:04:48 --> Undefined property: CodeIgniter\View\View::$session
+in APPPATH\Views\barVista.php on line 56.
+ 1 APPPATH\Views\barVista.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$session', 'C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php', 56)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\BarControlador.php(12): view('barVista')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-25 23:20:27 --> Undefined property: CodeIgniter\View\View::$session
+in APPPATH\Views\barVista.php on line 56.
+ 1 APPPATH\Views\barVista.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$session', 'C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php', 56)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\BarControlador.php(12): view('barVista')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-25 23:20:28 --> Undefined property: CodeIgniter\View\View::$session
+in APPPATH\Views\barVista.php on line 56.
+ 1 APPPATH\Views\barVista.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$session', 'C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php', 56)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\BarControlador.php(12): view('barVista')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-25 23:33:46 --> Undefined property: CodeIgniter\View\View::$session
+in APPPATH\Views\barVista.php on line 56.
+ 1 APPPATH\Views\barVista.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$session', 'C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php', 56)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\BarControlador.php(12): view('barVista')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-25 23:34:48 --> Undefined property: CodeIgniter\View\View::$session
+in APPPATH\Views\barVista.php on line 56.
+ 1 APPPATH\Views\barVista.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$session', 'C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php', 56)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\BarControlador.php(12): view('barVista')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

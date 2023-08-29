@@ -1,0 +1,328 @@
+ERROR - 2023-07-18 00:13:11 --> mysqli_sql_exception: Unknown column 'ordenes.id_ordenes' in 'on clause' in C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\restobar\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\restobar\app\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\restobar\app\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+#6 C:\xampp\htdocs\restobar\system\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+#7 C:\xampp\htdocs\restobar\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+#8 C:\xampp\htdocs\restobar\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\restobar\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2023-07-18 00:13:11 --> mysqli_sql_exception: Unknown column 'ordenes.id_ordenes' in 'on clause' in C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\restobar\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\restobar\app\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\restobar\app\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+#6 C:\xampp\htdocs\restobar\system\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+#7 C:\xampp\htdocs\restobar\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+#8 C:\xampp\htdocs\restobar\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\restobar\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-18 00:13:11 --> Unknown column 'ordenes.id_ordenes' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', [], false)
+ 5 APPPATH\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-18 00:13:11 --> Unknown column 'ordenes.id_ordenes' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', [], false)
+ 5 APPPATH\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-18 00:14:06 --> mysqli_sql_exception: Unknown column 'ordenes.id_ordenes' in 'on clause' in C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\restobar\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\restobar\app\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\restobar\app\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+#6 C:\xampp\htdocs\restobar\system\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+#7 C:\xampp\htdocs\restobar\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+#8 C:\xampp\htdocs\restobar\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\restobar\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-18 00:14:06 --> Unknown column 'ordenes.id_ordenes' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', [], false)
+ 5 APPPATH\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-18 00:17:07 --> mysqli_sql_exception: Unknown column 'ordenes.id_ordenes' in 'on clause' in C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\restobar\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\restobar\app\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\restobar\app\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+#6 C:\xampp\htdocs\restobar\system\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+#7 C:\xampp\htdocs\restobar\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+#8 C:\xampp\htdocs\restobar\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\restobar\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-18 00:17:07 --> Unknown column 'ordenes.id_ordenes' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', [], false)
+ 5 APPPATH\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-18 00:18:13 --> mysqli_sql_exception: Unknown column 'ordenes.id_ordenes' in 'on clause' in C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\restobar\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\restobar\app\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\restobar\app\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+#6 C:\xampp\htdocs\restobar\system\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+#7 C:\xampp\htdocs\restobar\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+#8 C:\xampp\htdocs\restobar\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\restobar\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-18 00:18:13 --> Unknown column 'ordenes.id_ordenes' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', [], false)
+ 5 APPPATH\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-18 00:22:19 --> mysqli_sql_exception: Unknown column 'ordenes.id_ordenes' in 'on clause' in C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\restobar\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\restobar\app\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\restobar\app\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+#6 C:\xampp\htdocs\restobar\system\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+#7 C:\xampp\htdocs\restobar\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+#8 C:\xampp\htdocs\restobar\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\restobar\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-18 00:22:19 --> Unknown column 'ordenes.id_ordenes' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', [], false)
+ 5 APPPATH\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-18 00:24:31 --> mysqli_sql_exception: Unknown column 'ordenes.id_ordenes' in 'on clause' in C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\restobar\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\restobar\app\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\restobar\app\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+#6 C:\xampp\htdocs\restobar\system\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+#7 C:\xampp\htdocs\restobar\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+#8 C:\xampp\htdocs\restobar\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\restobar\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-18 00:24:31 --> Unknown column 'ordenes.id_ordenes' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', [], false)
+ 5 APPPATH\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-07-18 00:24:44 --> mysqli_sql_exception: Unknown column 'ordenes.id_ordenes' in 'on clause' in C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\restobar\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\restobar\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\restobar\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\restobar\app\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\restobar\app\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+#6 C:\xampp\htdocs\restobar\system\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+#7 C:\xampp\htdocs\restobar\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+#8 C:\xampp\htdocs\restobar\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\restobar\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-18 00:24:44 --> Unknown column 'ordenes.id_ordenes' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ordenes`
+JOIN `detalleorden` ON `ordenes`.`id_ordenes` = `detalleorden`.`id_ordenes`', [], false)
+ 5 APPPATH\Models\barModelo.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\barControlador.php(14): App\Models\BarModelo->obtenerOrdenes()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-18 00:25:44 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(832): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\barControlador.php(14): CodeIgniter\Model->__call('obtenerOrdenes', [])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-18 00:56:20 --> Undefined array key "descripción"
+in APPPATH\Views\barVista.php on line 14.
+ 1 APPPATH\Views\barVista.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "descripción"', 'C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php', 14)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\barControlador.php(19): view('barVista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-18 15:15:44 --> Undefined array key "nombre"
+in APPPATH\Views\barVista.php on line 38.
+ 1 APPPATH\Views\barVista.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php', 38)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\barControlador.php(26): view('barVista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->buscarBebida()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-18 15:18:03 --> Undefined array key "nombre"
+in APPPATH\Views\barVista.php on line 38.
+ 1 APPPATH\Views\barVista.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php', 38)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\barControlador.php(26): view('barVista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->buscarBebida()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-18 15:18:12 --> Undefined array key "nombre"
+in APPPATH\Views\barVista.php on line 38.
+ 1 APPPATH\Views\barVista.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php', 38)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\barControlador.php(26): view('barVista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->buscarBebida()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-18 15:19:39 --> Undefined array key "nombre"
+in APPPATH\Views\barVista.php on line 38.
+ 1 APPPATH\Views\barVista.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', 'C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php', 38)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\barControlador.php(26): view('barVista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->buscarBebida()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

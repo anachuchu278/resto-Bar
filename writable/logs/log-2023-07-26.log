@@ -1,0 +1,11 @@
+CRITICAL - 2023-07-26 19:21:29 --> Undefined variable $bebidas
+in APPPATH\Views\barVista.php on line 55.
+ 1 APPPATH\Views\barVista.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bebidas', 'C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php', 55)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\restobar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\barControlador.php(31): view('barVista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\barControlador->buscarBebida()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\barControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

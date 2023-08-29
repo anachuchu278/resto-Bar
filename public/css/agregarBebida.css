@@ -1,0 +1,103 @@
+/* Estilo general */
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #222b41;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+  
+/* Estilo del encabezado */
+header {
+    background-color: #543d23;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+  
+header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+}
+  
+/* Estilo del menú de navegación */
+nav {
+    background-color: #8c6246;
+}
+  
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+  
+nav li {
+    margin-right: 20px;
+}
+  
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+  
+nav a:hover {
+    background-color: #6b4932;
+}
+  
+/* Estilo del formulario de agregar bebida */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+  
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+  
+form input[type="text"],
+form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+  
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+  
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+

@@ -1,0 +1,12 @@
+CRITICAL - 2023-08-22 20:13:09 --> Class "App\Controllers\userModelo" not found
+in APPPATH\Controllers\loginControlador.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\loginControlador->loguearse()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\loginControlador))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-22 20:41:14 --> Class "App\Controllers\userModelo" not found
+in APPPATH\Controllers\loginControlador.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\loginControlador->loguearse()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\loginControlador))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

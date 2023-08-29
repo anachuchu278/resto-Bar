@@ -1,0 +1,206 @@
+/* Estilo general */
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-image: url('../assets/images/fondoBar.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+   color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: #543d23;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+}
+
+/* Estilo del menú de navegación */
+nav {
+    background-color: #8c6246;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    background-color: #6b4932;
+}
+
+/* Estilo de las secciones */
+section {
+    padding: 20px 0;
+}
+
+/* Estilo de las listas de bebidas y órdenes */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+}
+
+/* Estilo de los detalles de las bebidas */
+ul li strong {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+}
+
+/* Estilo de los detalles de las órdenes */
+ul li a {
+    color: #543d23;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo del formulario de búsqueda */
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+form input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo de las bebidas */
+.list-group {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.list-group-item {
+    border: none;
+    padding: 10px;
+}
+
+/* Estilo de los botones de acción */
+.btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Estilo de las bebidas */
+.list-group {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.list-group-item {
+    border: none;
+    padding: 10px;
+}
+
+/* Estilo de los botones de acción */
+.btn {
+    padding: 2px 20px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Estilo para ajustar los botones de editar y eliminar */
+.list-group-item .actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2px;
+}
+h2{
+    color: #fff;
+}

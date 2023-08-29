@@ -1,0 +1,90 @@
+CRITICAL - 2023-06-13 16:37:15 --> Class "App\Controllers\AlumnoModel" not found
+in APPPATH\Controllers\AlumnoController.php on line 9.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AlumnoController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlumnoController))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-13 16:37:59 --> Undefined variable $model
+in APPPATH\Controllers\AlumnoController.php on line 10.
+ 1 APPPATH\Controllers\AlumnoController.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $model', 'C:\\xampp\\htdocs\\crud\\app\\Controllers\\AlumnoController.php', 10)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AlumnoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlumnoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-13 16:38:29 --> Undefined variable $datos
+in APPPATH\Views\listar.php on line 30.
+ 1 APPPATH\Views\listar.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datos', 'C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php', 30)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('listar', [], true)
+ 5 APPPATH\Controllers\AlumnoController.php(11): view('listar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AlumnoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlumnoController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-13 16:39:22 --> Undefined variable $datos
+in APPPATH\Views\listar.php on line 30.
+ 1 APPPATH\Views\listar.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datos', 'C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php', 30)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('listar', [], true)
+ 5 APPPATH\Controllers\AlumnoController.php(11): view('listar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AlumnoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlumnoController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-13 16:39:48 --> Undefined variable $datos
+in APPPATH\Views\listar.php on line 31.
+ 1 APPPATH\Views\listar.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datos', 'C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php', 31)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('listar', [], true)
+ 5 APPPATH\Controllers\AlumnoController.php(11): view('listar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AlumnoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlumnoController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-13 16:41:57 --> Undefined variable $datos
+in APPPATH\Views\listar.php on line 32.
+ 1 APPPATH\Views\listar.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datos', 'C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php', 32)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('listar', [], true)
+ 5 APPPATH\Controllers\AlumnoController.php(11): view('listar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AlumnoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlumnoController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-13 16:42:30 --> Undefined variable $datos
+in APPPATH\Views\listar.php on line 32.
+ 1 APPPATH\Views\listar.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datos', 'C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php', 32)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('listar', [], true)
+ 5 APPPATH\Controllers\AlumnoController.php(11): view('listar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AlumnoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlumnoController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-13 16:43:46 --> Undefined variable $datos
+in APPPATH\Views\listar.php on line 32.
+ 1 APPPATH\Views\listar.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datos', 'C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php', 32)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('listar', [], true)
+ 5 APPPATH\Controllers\AlumnoController.php(11): view('listar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AlumnoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlumnoController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-13 16:44:45 --> Undefined variable $datos
+in APPPATH\Views\listar.php on line 32.
+ 1 APPPATH\Views\listar.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datos', 'C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php', 32)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\crud\\app\\Views\\listar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('listar', [], true)
+ 5 APPPATH\Controllers\AlumnoController.php(11): view('listar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AlumnoController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AlumnoController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
