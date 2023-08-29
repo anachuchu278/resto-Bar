@@ -32,6 +32,7 @@ $routes->set404Override();
 $routes->get('/inicio', 'barControlador::index');
 $routes->get('/login' , 'loginControlador::Index');
 $routes->get('/register','registerControlador::Index');
+$routes->get('/crud','logued::crud');
 
 $routes->post('/login' , 'loginControlador::loguearse');
 $routes->post('/register','registerControlador::registrarse');

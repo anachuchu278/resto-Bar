@@ -4,9 +4,9 @@ namespace App\Controllers;
 
 class Loguearse extends BaseController
 {
-    public function index()
+    public function crud()
     {
-        return view('barVista');
+        return view('crud');
         echo view ('comunes/header');
     }
 }
