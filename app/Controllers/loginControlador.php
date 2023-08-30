@@ -23,7 +23,7 @@ class loginControlador extends BaseController
             if (password_verify($password, $result['password'])) {
                 //$this->session->set("user",$result); 
 
-                return view('barVista');
+                return view('crud');
             } else {
                 echo 'Invalid password.';
             }
