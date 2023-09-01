@@ -14,7 +14,7 @@ class RegisterModelo extends Model
     protected $returnType = 'object';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['name', 'email', 'password', 'created_at'];
+    protected $allowedFields = ['nombre', 'email', 'contrasena', 'created_at'];
 
     protected $useTimeStamps = false;
     protected $createdFields = 'created_at';

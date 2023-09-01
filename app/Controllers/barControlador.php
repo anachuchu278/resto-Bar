@@ -72,11 +72,6 @@ class BarControlador extends Controller
     }
     public function paginaRegistroExitoso()
 {
-    return view('registro_exitoso'); // Cambia 'registro_exitoso' por el nombre de tu vista
+    return view('registro_exitoso');
 }
-public function pruebadropdown()
-{
-    return view('pruebadropdown'); // Borrar despues de terminar pruebas.
-}
-    // Otros métodos del controlador, si es necesario
 }
