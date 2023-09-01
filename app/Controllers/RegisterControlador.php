@@ -17,17 +17,17 @@ class registerControlador extends Controller
     {
         $RegisterModelo = new RegisterModelo();
 
-        $name = $this->request->getPost('name');
+        $name = $this->request->getPost('nombre');
         $email = $this->request->getPost('email');
-        $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+        $password = password_hash($this->request->getPost('contrasena'), PASSWORD_DEFAULT);
 
-        $data = ['name' => $name, 'email' => $email, 'password' => $password];
+        $data = ['nombre' => $name, 'email' => $email, 'contrasena' => $password];
 
 
         $r = $RegisterModelo->insert($data);
 
         if ($r) {
-            echo "usuario registrado correctamente";
+            echo ('/register');
         } else {
             echo "error";
         }

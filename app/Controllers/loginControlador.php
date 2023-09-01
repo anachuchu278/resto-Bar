@@ -16,14 +16,14 @@ class loginControlador extends BaseController
         $LoginModelo = new LoginModelo(); 
         
         $email = $this->request->getPost('email');
-        $password = $this->request->getPost('password');
+        $password = $this->request->getPost('contrasena');
 
         $result = $LoginModelo->where('email',$email)->first(); 
         if ($result['id']> 0){
-            if (password_verify($password, $result['password'])) {
+            if (password_verify($password, $result['contrasena'])) {
                 //$this->session->set("user",$result); 
 
-                return view('crud');
+                 view('barVista');
             } else {
                 echo 'Invalid password.';
             }
