@@ -19,7 +19,7 @@
                         <form method='post' action="<?php base_url('register')?>">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nombre</label>
-                                <input name="name" type="text" required class="form-control" id="name">
+                                <input name="nombre" type="text" required class="form-control" id="name">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Correo Electrónico</label>
