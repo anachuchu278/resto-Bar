@@ -8,7 +8,9 @@ use CodeIgniter\Controller;
 class BarControlador extends Controller
 {
     public function index()
-    {
+    {   
+        
+     
         $bebidaModelo = new BebidaModelo();
         $data['bebidas'] = $bebidaModelo->findAll();
 
@@ -17,8 +19,9 @@ class BarControlador extends Controller
         //$tiposBebida = $bebidaModelo->distinct('tipo_id')->findColumn('tipo_id');
         $tipoBebidaModelo = new TipoBebidaModelo();
         $data['tiposBebida'] = $tipoBebidaModelo->findAll();
-
-        return view('barVista', $data);
+        echo view('comunes/header');
+        echo view('barVista', $data);
+        echo view('comunes/footer');
     }
 
     public function bebidasPorTipo($tipoId)

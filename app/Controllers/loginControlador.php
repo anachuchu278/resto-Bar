@@ -23,8 +23,9 @@ class loginControlador extends BaseController
             if (password_verify($password, $result['contrasena'])) {
                 //$this->session->set("user",$result); 
 
-                 view('barVista');
-            } else {
+                echo view('crud');
+            } 
+            else {
                 echo 'Invalid password.';
             }
         }

@@ -34,9 +34,15 @@
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <form action="<?php echo base_url('barControlador/buscarBebida'); ?>" method="post" class="form-inline">
-                <input type="text" name="busqueda" placeholder="Buscá tu bebida favorita" class="form-control mr-2">
-                <input type="submit" value="Buscar" class="btn btn-primary">
+      <form action="<?php echo base_url('barControlador/buscarBebida'); ?>" method="post"
+            class="form-inline formulario">
+            <div class="container">
+                <div class="input-group">
+                    <input type="text" name="busqueda" placeholder="Buscar bebida favorita" class="form-control">
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </form>
                 </section>
         </div>
     </nav>
