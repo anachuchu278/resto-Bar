@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html><head>
+<title>ByTender</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
 
 <body>
+    <div class="bg-transparent">
     <header class="bg-dark text-white py-3">
         <div class="container d-flex justify-content-between align-items-center">
             <img src="<?php echo base_url("/assets/images/logo.jpg"); ?>" alt=""
                 class="img-fluid rounded-square" style="width: 100px; height: 100px;">
             <h1 class="mb-0">ByTender</h1>
         </div>
-        <form action="<?php echo base_url('barControlador/buscarBebida'); ?>" method="post"
-            class="form-inline formulario">
-            <div class="container">
-                <div class="input-group">
-                    <input type="text" name="busqueda" placeholder="Buscar bebida favorita" class="form-control">
-                    <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
-                </div>
-            </div>
-        </form>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -88,6 +84,7 @@
             </div>
         </section>
     <?php endif; ?>
+</div>
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js"
