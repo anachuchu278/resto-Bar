@@ -54,6 +54,7 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 $routes->get('/', 'barControlador::index');
+$routes->get('/barControlador/filtrarPorTipo', 'BarControlador::filtrarPorTipo');
 $routes->get('bebidasControlador', 'BebidasControlador::index');
 $routes->get('barControlador/verDetalleOrden/(:num)', 'barControlador::verDetalleOrden/$1');
 $routes->get('barControlador/(:any)', 'barControlador::$1');
@@ -74,3 +75,5 @@ $routes->get('loginVista' , 'loginControlador::Login');
 $routes->get('/', 'SignupController::index');
 $routes->get('/signup', 'RegisterControlador::index');
 $routes->match(['get', 'post'], 'RegisterControlador/store', 'RegisterControlador::store');
+$routes->get('/admin', 'AdminController::index', ['filter' => 'admin_auth']);
+$routes->get('/empleado', 'EmpleadoController::index', ['filter' => 'empleado_auth']);

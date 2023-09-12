@@ -12,24 +12,29 @@ class loginControlador extends BaseController
         echo view('comunes/header');
         return view('loginVista');
     } 
-    public function loguearse(){
+
+    public function loguearse()
+    {
         $LoginModelo = new LoginModelo(); 
         
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
 
-        $result = $LoginModelo->where('email',$email)->first(); 
-        if ($result['id']> 0){
+        $result = $LoginModelo->where('email', $email)->first(); 
+        if ($result != null && $result['id'] > 0) {
             if (password_verify($password, $result['password'])) {
-                //$this->session->set("user",$result); 
+                $this->session->set("user", $result); 
 
                 return view('barVista');
             } else {
-                echo 'Invalid password.';
+                // Si la contraseña no es válida, muestra un mensaje de error en la vista
+                $data['error'] = 'Contraseña no válida.';
+                return view('loginVista', $data);
             }
+        } else {
+            // Si el usuario no se encuentra en la base de datos, muestra un mensaje de error en la vista
+            $data['error'] = 'Usuario no encontrado.';
+            return view('loginVista', $data);
         }
-
-    }
-
-
+    }   
 }

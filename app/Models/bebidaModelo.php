@@ -8,5 +8,5 @@ class BebidaModelo extends Model
 {
     protected $table = 'bebidas';
     protected $primaryKey = 'id_bebida';
-    protected $allowedFields = ['nombre', 'tipo', 'precio', 'descripcion', 'ingredientes'];
+    protected $allowedFields = ['nombre', 'tipo_id', 'precio', 'descripcion', 'ingredientes'];
 }

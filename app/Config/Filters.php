@@ -60,5 +60,8 @@ class Filters extends BaseConfig
      * Example:
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
-    public array $filters = [];
+    public $filters = [
+        'admin_auth' => \App\Filters\AdminAuthFilter::class,
+        'empleado_auth' => \App\Filters\EmpleadoAuthFilter::class,
+    ];
 }
