@@ -77,3 +77,7 @@ $routes->get('/signup', 'RegisterControlador::index');
 $routes->match(['get', 'post'], 'RegisterControlador/store', 'RegisterControlador::store');
 $routes->get('/admin', 'AdminController::index', ['filter' => 'admin_auth']);
 $routes->get('/empleado', 'EmpleadoController::index', ['filter' => 'empleado_auth']);
+$routes->get('carrito', 'CarritoControlador::verCarrito');
+$routes->post('carrito/agregar', 'CarritoControlador::agregarAlCarrito');
+$routes->post('carrito/eliminar', 'CarritoControlador::eliminarDelCarrito');
+$routes->post('carrito/comprar', 'CarritoControlador::realizarCompra');
