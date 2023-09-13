@@ -7,17 +7,10 @@
 
 <body>
     <div class="bg-transparent">
-    <header class="bg-dark text-white py-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <img src="<?php echo base_url("/assets/images/logo.jpg"); ?>" alt=""
-                class="img-fluid rounded-square" style="width: 100px; height: 100px;">
-            <h1 class="mb-0">ByTender</h1>
-        </div>
-    </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="<?php echo base_url(); ?>">INICIO</a>
+            <a class="navbar-brand" href="<?php echo base_url(); ?>">ByTender</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

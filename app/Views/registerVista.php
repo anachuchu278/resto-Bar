@@ -10,6 +10,11 @@
 </head>
 <form method='post' action="<?php base_url('registro')?>">
 <body>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffa345, #ffe259);
+        }
+    </style>
     <div class='container mt-5'>
         <div class='row justify-content-center'>
             <div class='col-md-6'>
