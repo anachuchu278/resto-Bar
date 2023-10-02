@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="<?php echo base_url("/js/carrito.js"); ?>"></script>
   <title>ByTender</title>
   <link rel="icon" href="<?php echo base_url('fondoBotella.png'); ?>" type="image/png">
 </head>
@@ -64,7 +63,7 @@
                 <li class="list-group-item"><strong>Nombre:</strong> <?php echo $bebida['nombre']; ?></li>
                 <li class="list-group-item"><strong>Tipo:</strong> <?php echo $bebida['tipo_id']; ?></li>
                 <li class="list-group-item"><strong>Precio:</strong> <?php echo $bebida['precio']; ?></li>
-                <li class="list-group-item"><strong>Descripción:</strong> <?php echo $bebida['descripcion']; ?></li>
+                <li class="list-group-item"><strong>Descripción:</strong> <?php echo $belbida['descripcion']; ?></li>
                 <li class="list-group-item">
                   <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
                 </li>
@@ -86,9 +85,11 @@
                   <p class="card-text"><strong>Tipo:</strong> <?php echo $bebida['tipo_id']; ?></p>
                   <p class="card-text"><strong>Precio:</strong> <?php echo $bebida['precio']; ?></p>
                   <p class="card-text"><strong>Descripción:</strong> <?php echo $bebida['descripcion']; ?></p>
+                  <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
                 </div>
               </div>
             </div>
+            
           <?php endforeach; ?>
         </div>
       </section>
