@@ -32,9 +32,11 @@ $routes->set404Override();
 $routes->get('/inicio', 'barControlador::index');
 $routes->get('/login' , 'loginControlador::Index');
 $routes->get('/register','registerControlador::Index');
-$routes->get('/crud','logued::crud');
+$routes->get('crud','loginControlador::crud');
+$routes->post('crud','Crud::crud');
 
-$routes->post('login' , 'loginControlador::loguearse');
+
+$routes->post('login' , 'loginControlador::Loguearse');
 $routes->post('/register','registerControlador::registrarse');
 
 /*
@@ -69,7 +71,7 @@ $routes->post('adminBebidas/actualizar/(:num)', 'AdminBebidasControlador::actual
 $routes->post('/llamar_desde_arduino', 'LlamarDesdeArduino::recibirLlamado');
 $routes->post('barControlador/buscarBebida', 'barControlador::buscarBebida');
 $routes->get('barControlador', 'barControlador::index');
-$routes->post('login', 'loginControlador::loguearse');
+$routes->post('login', 'loginControlador::Loguearse');
 $routes->get('loginVista' , 'loginControlador::Login');
 $routes->get('/', 'SignupController::index');
 $routes->get('/signup', 'RegisterControlador::index');
