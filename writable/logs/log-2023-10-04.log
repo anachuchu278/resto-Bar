@@ -1,0 +1,36 @@
+CRITICAL - 2023-10-04 18:49:03 --> Undefined variable $belbida
+in APPPATH\Views\barVista.php on line 66.
+ 1 APPPATH\Views\barVista.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $belbida', 'C:\\xampp\\htdocs\\resto-Bar\\app\\Views\\barVista.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\resto-Bar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\barControlador.php(47): view('barVista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->buscarBebida()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 18:49:17 --> Undefined variable $belbida
+in APPPATH\Views\barVista.php on line 66.
+ 1 APPPATH\Views\barVista.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $belbida', 'C:\\xampp\\htdocs\\resto-Bar\\app\\Views\\barVista.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\resto-Bar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\barControlador.php(47): view('barVista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->buscarBebida()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-04 18:49:43 --> Undefined variable $beibida
+in APPPATH\Views\barVista.php on line 66.
+ 1 APPPATH\Views\barVista.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $beibida', 'C:\\xampp\\htdocs\\resto-Bar\\app\\Views\\barVista.php', 66)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\resto-Bar\\app\\Views\\barVista.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('barVista', [], true)
+ 5 APPPATH\Controllers\barControlador.php(47): view('barVista', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\BarControlador->buscarBebida()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BarControlador))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-10-04 19:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-04 19:49:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-04 19:50:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

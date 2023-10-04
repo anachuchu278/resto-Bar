@@ -1,0 +1,8 @@
+CRITICAL - 2023-09-25 21:55:08 --> Undefined property: App\Controllers\CarritoControlador::$session
+in APPPATH\Controllers\CarritoControlador.php on line 78.
+ 1 APPPATH\Controllers\CarritoControlador.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\CarritoControlador::$session', 'C:\\xampp\\htdocs\\resto-Bar\\app\\Controllers\\CarritoControlador.php', 78)
+ 2 APPPATH\Controllers\CarritoControlador.php(52): App\Controllers\CarritoControlador->isLoggedIn()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\CarritoControlador->verCarrito()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CarritoControlador))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
