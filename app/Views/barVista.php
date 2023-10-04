@@ -6,36 +6,12 @@
 </head>
 
 <body>
-    <div class="bg-transparent">
+    <style>
+        body {
+            background: linear-gradient(to right, #B53A3A , #902C2C);
+        }
+    </style>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="<?php echo base_url(); ?>">ByTender</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <?php if (!empty($tiposBebida)) : ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Filtrar por tipo
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <?php foreach ($tiposBebida as $tipo) : ?>
-                            <li><a class="dropdown-item"
-                                    href="<?php echo base_url('barControlador/filtrarPorTipo/' . $tipo['id']); ?>"><?php echo $tipo['nombre']; ?></a>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </li>
-                    <?php endif; ?>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
     <div class="container py-4">
     <?php if (isset($bebidaEncontrada)) : ?>

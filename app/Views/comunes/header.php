@@ -1,11 +1,11 @@
 <link href="<?php echo base_url() ?>css/bootstrap.min.css" rel="stylesheet">
 <script src="<?php echo base_url() ?>js/bootstrap.bundle.min.js"></script>
 <style>
-  .custom-text-color {
-    color: #FF5733;
+  body {
+    background: #AB762D ;
   }
 </style>
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
   <div class="container-fluid">
     <div>
       <img src="<?php echo base_url("assets/images/unnamed.jpg") ?>" href="<?php site_url("inicio") ?>">
@@ -21,24 +21,12 @@
         <li class="nav-item">
           <a class="nav-link" href="<?= site_url("login") ?>">Login</a>
         </li>
+        <div name="test">
         <li class="nav-item">
           <a class="nav-link" href="<?= site_url("register") ?>">Register</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Acción</a></li>
-            <li><a class="dropdown-item" href="#">Otra acción</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
+        </div>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Deshabilitado</a>
         </li>
       </ul>
       <form class="d-flex" role="search">

@@ -8,13 +8,13 @@
     <link href="<?php echo base_url("css/bootstrap.min.css") ?>" rel="stylesheet">
     <script src="<?php echo base_url("js/bootstrap.bundle.min.js") ?>"></script>
 </head>
-<form method='post' action="<?php base_url('login') ?>">
-    <h2 class="fw-bold text-center py-5">Bienvenido</h2>
+
 
     <body>
+    <form method='post' action="<?php base_url('crud') ?>">
+    <h2 class="fw-bold text-center py-5">Bienvenido</h2>
         <style>
             body {
-                background: #ffe;
                 background: linear-gradient(to right, #ffa345, #ffe259);
             }
         </style>
@@ -24,6 +24,7 @@
                     <div class="card">
                         <div class="card-body card-center">
                             <h1 class="card-title text-center">Iniciar Sesion</h1>
+                            <form method='post' action="<?php base_url('crud')?>">
                             <div class="col bg d-done de-lg-block col-md-5 col-lg-5 col-xl-6"></div>
                             <div class="mb-4">
                                 <label for="email" class="form-label" required="">Correo Electronico</label>
@@ -40,7 +41,7 @@
                                 <button type="submit" class=" rounded col-bg">Ingresar</button>
                             </div>
                             <div class="my_3">
-                                <span>no tienes cuenta? <a href="<?= site_url("register") ?>">Registrate</a></span>
+                                <span>No tienes cuenta? <a href="<?= site_url("register") ?>">Registrate</a></span>
                             </div>
                         </div>
                     </div>

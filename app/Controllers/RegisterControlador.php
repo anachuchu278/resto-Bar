@@ -27,9 +27,7 @@ class registerControlador extends Controller
         $r = $RegisterModelo->insert($data);
 
         if ($r) {
-            echo ('/register');
-        } else {
-            echo "error";
-        }
+            return view("barVista");
+        } 
     }
 }
