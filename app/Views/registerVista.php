@@ -34,7 +34,7 @@
                                 <label for="password" class="form-label">Contraseña</label>
                                 <input name="contrasena" type="password" required class="form-control" id="exampleInputPassword1">
                             </div>
-                            <button type="submit" class="btn btn-primary">Registrar</button>
+                            <button type="submit" class="rounded col-bg">Registrar</button>
                             <div class="my_3">
                                 <span> Ya tienes cuenta? <a href="<?= site_url("login") ?>">Inicia Sesion</a></span>
                             </div>

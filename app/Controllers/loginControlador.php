@@ -22,7 +22,6 @@ class loginControlador extends BaseController
     $result = $LoginModelo->where('email', $email)->first();
 
     if ($result) {
-        // Verificar si $result no es vacío antes de acceder a sus propiedades
         if ($result['id'] > 0 && password_verify($password, $result['contrasena'])) {
             $this->session->set("usuario", $result);
 
@@ -36,6 +35,7 @@ class loginControlador extends BaseController
     }
     public function crud(){
         return view('crud');
+        echo view('comunes/header');
     }
 
 }

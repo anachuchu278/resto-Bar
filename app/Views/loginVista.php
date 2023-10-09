@@ -28,16 +28,16 @@
                             <div class="col bg d-done de-lg-block col-md-5 col-lg-5 col-xl-6"></div>
                             <div class="mb-4">
                                 <label for="email" class="form-label" required="">Correo Electronico</label>
-                                <input type="email" name="email" class="form-control" id="email" aria-describedby="input de email">
+                                <input type="email" name="email" required class="form-control" id="email" aria-describedby="input de email">
                                 <div id="emailHelp" class="form-text text-white">Ingrese su Correo Electronico</div>
                             </div>
 
                             <div class="mb-4">
                                 <label for="contrasena" class="form-label" required="">Contraseña</label>
-                                <input type="password" name="contrasena" class="form-control " id="exampleInputPassword1">
+                                <input type="password" name="contrasena" required class="form-control " id="exampleInputPassword1">
                                 <div class="text-white">ingrese su contraseña</div>
                             </div>
-                            <div class="d-grid">
+                            <div class="">
                                 <button type="submit" class=" rounded col-bg">Ingresar</button>
                             </div>
                             <div class="my_3">

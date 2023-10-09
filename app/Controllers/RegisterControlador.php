@@ -27,7 +27,7 @@ class registerControlador extends Controller
         $r = $RegisterModelo->insert($data);
 
         if ($r) {
-            return view("barVista");
+            return redirect()->to("barVista");
         } 
     }
 }

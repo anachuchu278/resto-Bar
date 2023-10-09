@@ -11,7 +11,13 @@
             background: linear-gradient(to right, #B53A3A , #902C2C);
         }
     </style>
-
+    <form action="<?php echo base_url('barControlador/buscarBebida'); ?>" method="post" class="form-inline formulario">
+<div class="container">
+        <div class="input-group">
+          <input type="text" name="busqueda" placeholder="Buscar bebida favorita" class="form-control">
+          <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+        </div>
+    </form>
 
     <div class="container py-4">
     <?php if (isset($bebidaEncontrada)) : ?>
