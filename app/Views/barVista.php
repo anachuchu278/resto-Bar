@@ -48,6 +48,7 @@
                         <div class="card mb-4 shadow-sm">
                             <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida" class="card-img-top" style="max-height: 200px; object-fit: cover;">
                             <div class="card-body">
+                                <button ><a href="<?php site_url('bebidas'); ?>"> mas informacion</a> </button>
                                 <h5 class="card-title"><?php echo $bebida['nombre']; ?></h5>
                                 <p class="card-text"><strong>Tipo:</strong> <?php echo $bebida['tipo_id']; ?></p>
                                 <p class="card-text"><strong>Precio:</strong> <?php echo $bebida['precio']; ?></p>

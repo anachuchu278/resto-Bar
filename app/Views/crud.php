@@ -10,8 +10,22 @@
 <body>
 
 
-    <h1>holsasddad</h1> 
+    <h1>ENTRO A PROBAR</h1> 
+    <div class="container">
     
+        <section class="mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Información de la bebida:</h2>
+                    <ul class="list-group list-group-flush">
+                       
+                    </ul>
+                </div>
+            </div>
+        </section>
+    
+
+</div>
                         
   
 
