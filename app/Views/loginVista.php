@@ -38,7 +38,8 @@
                                 <div class="text-white">ingrese su contraseña</div>
                             </div>
                             <div class="">
-                                <button type="submit" class=" rounded col-bg">Ingresar</button>
+                                
+                                <a href="<?= site_url("ingreso") ?>">ingresar</a>
                             </div>
                             <div class="my_3">
                                 <span>No tienes cuenta? <a href="<?= site_url("register") ?>">Registrate</a></span>
