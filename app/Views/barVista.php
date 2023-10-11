@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="<?php echo base_url("/css/Carrito.css"); ?>">
-  <script href="<?php echo base_url("/js/carrito.js"); ?>"></script>
+  <link rel="stylesheet" href="<?php echo base_url("css/Carrito.css"); ?>">
+  <script src="<?php echo base_url("js/carrito.js"); ?>"></script>
   <title>ByTender</title>
   <link rel="icon" href="<?php echo base_url('fondoBotella.png'); ?>" type="image/png">
 </head>
@@ -59,15 +59,16 @@
         <div class="card">
           <div class="card-body">
             <h2 class="card-title">Información de la bebida:</h2>
-            <ul class="list-group list-group-flush">
+            <ul class="carrito-items">
               <?php foreach ($bebidaEncontrada as $bebida) : ?>
                 <li class="titulo-item"><strong>Nombre:</strong> <?php echo $bebida['nombre']; ?></li>
                 <li class="list-group-item"><strong>Tipo:</strong> <?php echo $bebida['tipo_id']; ?></li>
                 <li class="precio-item"><strong>Precio:</strong> <?php echo $bebida['precio']; ?></li>
                 <li class="list-group-item"><strong>Descripción:</strong> <?php echo $bebida['descripcion']; ?></li>
                 <li class="list-group-item">
-                  <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
+                  <img class="img-item" src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
                 </li>
+                <button class="boton-item">Agregar al Carrito</button>
               <?php endforeach; ?>
             </ul>
           </div>
@@ -82,10 +83,10 @@
               <div class="card mb-4 shadow-sm">
                 <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida" class="card-img-top" style="max-height: 200px; object-fit: cover;">
                 <div class="card-body">
-                  <h5 class="card-title"><?php echo $bebida['nombre']; ?></h5>
-                  <p class="card-text"><strong>Tipo:</strong> <?php echo $bebida['tipo_id']; ?></p>
+                  <h5 class="titulo-item"><?php echo $bebida['nombre']; ?></h5>
+                  <p class="titulo-item"><strong>Tipo:</strong> <?php echo $bebida['tipo_id']; ?></p>
                   <p class="precio-item"><strong>Precio:</strong> <?php echo $bebida['precio']; ?></p>
-                  <p class="card-text"><strong>Descripción:</strong> <?php echo $bebida['descripcion']; ?></p>
+                  <p class="titulo-item"><strong>Descripción:</strong> <?php echo $bebida['descripcion']; ?></p>
                   <button class="boton-item">Agregar al Carrito</button>
                 </div>
               </div>
