@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Bar - Menú</title>
-    <!-- Enlace al archivo CSS personalizado -->
     <link rel="stylesheet" href="<?php echo base_url('css/bebidasVista.css'); ?>">
 </head>
 <body>

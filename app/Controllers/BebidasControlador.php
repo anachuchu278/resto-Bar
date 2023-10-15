@@ -4,9 +4,9 @@ namespace App\Controllers;
 use App\Models\BarModelo;
 use CodeIgniter\Controller;
 
-class BebidasControlador extends Controller{
-
-    public function index()
+class BebidasControlador extends Controller
+{
+    public function mostrarBebida()
     {
         $bebidaId = $this->request->getPost('bebidaId'); 
 
@@ -18,6 +18,7 @@ class BebidasControlador extends Controller{
             $data['bebidaEncontrada'] = $bebidaEncontrada;
 
         return view('bebidasVista', $data);
+
     }
 }
 }

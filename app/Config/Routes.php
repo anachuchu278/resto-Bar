@@ -33,7 +33,9 @@ $routes->get('/inicio', 'barControlador::index');
 $routes->get('/login' , 'loginControlador::Index');
 $routes->get('/register','registerControlador::Index');
 $routes->get('crud','loginControlador::crud');
-$routes->post('crud','Crud::crud');
+$routes->post('crud','Crud::crud'); 
+
+
 
 
 $routes->post('login' , 'loginControlador::Loguearse');
@@ -68,7 +70,6 @@ $routes->post('adminBebidas/editar/(:num)', 'AdminBebidasControlador::editar/$1'
 $routes->get('adminBebidas/eliminar/(:num)', 'AdminBebidasControlador::eliminar/$1');
 $routes->post('adminBebidas/guardar', 'AdminBebidasControlador::guardar');
 $routes->post('adminBebidas/actualizar/(:num)', 'AdminBebidasControlador::actualizar/$1');
-$routes->post('/llamar_desde_arduino', 'LlamarDesdeArduino::recibirLlamado');
 $routes->post('barControlador/buscarBebida', 'barControlador::buscarBebida');
 $routes->get('barControlador', 'barControlador::index');
 $routes->post('login', 'loginControlador::Loguearse');
@@ -76,7 +77,6 @@ $routes->get('loginVista' , 'loginControlador::Login');
 $routes->get('/', 'SignupController::index');
 $routes->get('/signup', 'RegisterControlador::index');
 $routes->match(['get', 'post'], 'RegisterControlador/store', 'RegisterControlador::store');
-
 $routes->get('hola', 'barControlador::index');
 $routes->post('ingreso', 'Crud::crud');
 

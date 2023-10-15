@@ -48,6 +48,7 @@ class BarControlador extends Controller
         }
 
         return view('barVista', $data);
+        
     }
 
     public function verDetalleOrden($id)
@@ -73,13 +74,6 @@ class BarControlador extends Controller
     public function login(){
         return view('loginVista');
     }
-    public function paginaRegistroExitoso()
-{
-    return view('registro_exitoso'); // Cambia 'registro_exitoso' por el nombre de tu vista
-}
-public function pruebadropdown()
-{
-    return view('pruebadropdown'); // Borrar despues de terminar pruebas.
-}
-    // Otros métodos del controlador, si es necesario
+    
+
 }
