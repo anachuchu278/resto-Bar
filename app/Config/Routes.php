@@ -76,3 +76,12 @@ $routes->get('loginVista' , 'loginControlador::Login');
 $routes->get('/', 'SignupController::index');
 $routes->get('/signup', 'RegisterControlador::index');
 $routes->match(['get', 'post'], 'RegisterControlador/store', 'RegisterControlador::store');
+
+$routes->get('hola', 'barControlador::index');
+$routes->post('ingreso', 'Crud::crud');
+
+$routes->get('bebidas', 'BebidasControlador::mostrarBebida');
+$routes->get('carrito', 'CarritoControlador::verCarrito');
+$routes->post('carrito/agregar', 'CarritoControlador::agregarAlCarrito');
+$routes->post('carrito/eliminar', 'CarritoControlador::eliminarDelCarrito');
+$routes->post('carrito/comprar', 'CarritoControlador::realizarCompra');

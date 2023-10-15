@@ -4,15 +4,20 @@ namespace App\Controllers;
 use App\Models\BarModelo;
 use CodeIgniter\Controller;
 
-class BebidasControlador extends Controller
-{
+class BebidasControlador extends Controller{
+
     public function index()
     {
-        $barModelo = new BarModelo();
-        $bebidas = $barModelo->obtenerTodasLasBebidas();
+        $bebidaId = $this->request->getPost('bebidaId'); 
 
-        $data['bebidas'] = $bebidas;
+        if (!empty($bebidaId)) {
+            // Lógica para buscar bebida por nombre
+            $bebidaModelo = new bebidaModelo();
+            $bebidaEncontrada = $bebidaModelo->find($bebidaId); 
+
+            $data['bebidaEncontrada'] = $bebidaEncontrada;
 
         return view('bebidasVista', $data);
     }
+}
 }
