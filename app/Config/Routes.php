@@ -73,7 +73,8 @@ $routes->get('barControlador', 'barControlador::index');
 $routes->post('login', 'loginControlador::Loguearse');
 $routes->get('loginVista' , 'loginControlador::Login');
 $routes->get('/', 'SignupController::index');
-$routes->post('registro', 'RegisterControlador::registrarse');
+$routes->get('/signup', 'RegisterControlador::index');
+$routes->match(['get', 'post'], 'RegisterControlador/store', 'RegisterControlador::store');
 $routes->get('hola', 'barControlador::index');
 
 

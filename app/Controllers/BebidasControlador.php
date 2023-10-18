@@ -13,3 +13,4 @@ class BebidasControlador extends Controller
         return view('bebidasVista');
     }
 }
+
