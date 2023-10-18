@@ -81,3 +81,4 @@ $routes->get('carrito', 'CarritoControlador::verCarrito');
 $routes->post('carrito/agregar', 'CarritoControlador::agregarAlCarrito');
 $routes->post('carrito/eliminar', 'CarritoControlador::eliminarDelCarrito');
 $routes->post('carrito/comprar', 'CarritoControlador::realizarCompra');
+$routes->post('agregarAlCarrito', 'BarControlador::agregarAlCarrito');

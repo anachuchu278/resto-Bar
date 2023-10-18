@@ -68,7 +68,10 @@
                 <li class="list-group-item">
                   <img class="img-item" src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
                 </li>
-                <button class="boton-item">Agregar al Carrito</button>
+                <form action="<?php echo base_url('barControlador/agregarAlCarrito'); ?>" method="post">
+                  <input type="hidden" name="bebida_id" value="<?php echo $bebida['id']; ?>">
+                  <button type="submit" class="boton-item">Agregar al Carrito</button>
+                </form>
               <?php endforeach; ?>
             </ul>
           </div>

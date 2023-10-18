@@ -74,4 +74,20 @@ class BarControlador extends Controller
 {
     return view('registro_exitoso');
 }
+
+public function agregarAlCarrito()
+{
+    // Obtener el ID de la bebida y la cantidad desde el formulario
+    $bebida_id = $this->request->getPost('bebida_id');
+    $cantidad = $this->request->getPost('cantidad'); // Asegúrate de tener un campo 'cantidad' en tu formulario
+
+    // Obtener el carrito actual del usuario (esto puede variar dependiendo de cómo manejes los carritos por usuario)
+    $carrito_id = $this->obtenerCarritoId(); // Debes tener una función para obtener el ID del carrito del usuario actual
+
+    // Llamar a la función del modelo para agregar la bebida al carrito
+    $this->carrito_model->agregarAlCarrito($carrito_id, $bebida_id, $cantidad);
+
+    // Redirigir a la página del carrito o a donde sea apropiado
+    return redirect()->to(base_url('carrito'));
+}
 }
