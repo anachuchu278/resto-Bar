@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <h2 class="card-title">Información de la bebida:</h2>
                     <ul class="list-group list-group-flush">
-                       
+                       dfsdfsf
                     </ul>
                 </div>
             </div>
