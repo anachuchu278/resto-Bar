@@ -33,9 +33,6 @@ class loginControlador extends BaseController
         echo 'El email no se encuentra registrado';
     }
     }
-    public function crud(){
-        return view('crud');
-        echo view('comunes/header');
-    }
+   
 
 }

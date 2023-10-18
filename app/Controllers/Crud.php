@@ -6,7 +6,7 @@ use App\Models\LoginModelo;
 use App\Models\BebidaModelo;
 
 class Crud extends Controller{
-    public function crud(){
+    public function Ingreso(){
         return view('/comunes/header');
         return view('crud');
     }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\TipoBebidaModelo;
 use App\Models\BebidaModelo;
 use CodeIgniter\Controller;
@@ -8,9 +9,9 @@ use CodeIgniter\Controller;
 class BarControlador extends Controller
 {
     public function index()
-    {   
-        
-     
+    {
+
+
         $bebidaModelo = new BebidaModelo();
         $data['bebidas'] = $bebidaModelo->findAll();
 
@@ -28,8 +29,6 @@ class BarControlador extends Controller
     {
         $tipoBebidaModelo = new TipoBebidaModelo();
         $bebidasPorTipo = $tipoBebidaModelo->getBebidasPorTipo($tipoId);
-
-  
     }
 
     public function buscarBebida()
@@ -48,7 +47,6 @@ class BarControlador extends Controller
         }
 
         return view('barVista', $data);
-        
     }
 
     public function verDetalleOrden($id)
@@ -60,20 +58,39 @@ class BarControlador extends Controller
         return view('barVista', $data);
     }
     public function filtrarPorTipo($tipo)
-{
-    // Obtener las bebidas filtradas por tipo
-    $bebidaModelo = new BebidaModelo();
-    $data['bebidas'] = $bebidaModelo->where('tipo_id', $tipo)->findAll();
+    {
+        // Obtener las bebidas filtradas por tipo
+        $bebidaModelo = new BebidaModelo();
+        $data['bebidas'] = $bebidaModelo->where('tipo_id', $tipo)->findAll();
 
-    // Obtener los tipos de bebida disponibles
-    $tipoBebidaModelo = new TipoBebidaModelo();
-    $data['tiposBebida'] = $tipoBebidaModelo->findAll();
+        // Obtener los tipos de bebida disponibles
+        $tipoBebidaModelo = new TipoBebidaModelo();
+        $data['tiposBebida'] = $tipoBebidaModelo->findAll();
 
-    return view('barVista', $data);
-}
-    public function login(){
+        return view('barVista', $data);
+    }
+    public function login()
+    {
         return view('loginVista');
     }
-    
+    public function informacion()
+    {
+        $info = $this->request->getPost('bebidas');
 
+        if (!empty($info)) {
+            // Lógica para buscar bebida por nombre
+            $bebidaModelo = new BebidaModelo();
+            $bebidaEncontrada = $bebidaModelo->find('id_bebida', $info);
+
+            $data['informacionBebida'] = $bebidaEncontrada;
+        } else {
+            // Si no se ingresa una búsqueda, redirigir a la página principal
+            return redirect()->to(base_url('barControlador'));
+        }
+
+        return view('barVista', $data);
+    }
+    public function Ingresar(){
+        return view('crud');
+    }
 }
