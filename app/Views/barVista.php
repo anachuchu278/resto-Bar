@@ -69,9 +69,10 @@
                   <img class="img-item" src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
                 </li>
                 <form action="<?php echo base_url('barControlador/agregarAlCarrito'); ?>" method="post">
-                  <input type="hidden" name="bebida_id" value="<?php echo $bebida['id']; ?>">
-                  <button type="submit" class="boton-item">Agregar al Carrito</button>
-                </form>
+  <input type="hidden" name="bebida_id" value="<?php echo $bebida['id']; ?>">
+  <input type="number" name="cantidad" value="1"> 
+  <button type="submit" class="boton-item">Agregar al Carrito</button>
+</form>
               <?php endforeach; ?>
             </ul>
           </div>
@@ -90,7 +91,14 @@
                   <p class="titulo-item"><strong>Tipo:</strong> <?php echo $bebida['tipo_id']; ?></p>
                   <p class="precio-item"><strong>Precio:</strong> <?php echo $bebida['precio']; ?></p>
                   <p class="titulo-item"><strong>Descripción:</strong> <?php echo $bebida['descripcion']; ?></p>
-                  <button class="boton-item">Agregar al Carrito</button>
+                  <form action="<?php echo base_url('agregarAlCarrito'); ?>" method="post">
+                  <input type="hidden" name="bebida_id" value="<?php echo $bebida['id_bebida']; ?>">
+                  <form action="<?php echo base_url('barControlador/agregarAlCarrito'); ?>" method="post">
+                  <input type="hidden" name="bebida_id" value="<?php echo $bebida['id_bebida']; ?>">
+                  <input type="number" name="cantidad" value="1"> 
+                  <button type="submit" class="boton-item">Agregar al Carrito</button>
+                  </form>
+                </form>
                 </div>
               </div>
             </div>
@@ -106,3 +114,6 @@
 </body>
 
 </html>
+
+
+

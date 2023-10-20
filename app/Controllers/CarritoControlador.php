@@ -7,6 +7,12 @@ use CodeIgniter\Controller;
 
 class CarritoControlador extends Controller
 {
+    public function __construct()
+    {
+    $this->session = \Config\Services::session();
+    
+    }
+
     public function agregarProducto($productoId, $cantidad = 1)
     {
         // Verificar si el usuario está autenticado
@@ -75,6 +81,6 @@ class CarritoControlador extends Controller
 
     private function isLoggedIn()
     {
-        return $this->session->has('user');
+    return $this->session->has('user');
     }
 }

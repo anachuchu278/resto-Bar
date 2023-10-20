@@ -1,12 +1,21 @@
 <?php
 
 namespace App\Models;
-
 use CodeIgniter\Model;
 
 class CarritoModelo extends Model
 {
-    protected $table = 'carritos';
+    public function agregarAlCarrito($id_carrito, $id_bebida, $cantidad)
+{
+    $data = [
+        'id_carrito' => $id_carrito,
+        'id_bebida' => $id_bebida,
+        'cantidad' => $cantidad, 
+    ];
+
+    $this->db->table('carrito_compras')->insert($data);
+}
+    protected $table = 'carrito';
     protected $primaryKey = 'id';
     protected $allowedFields = ['usuario_id'];
 
@@ -25,7 +34,7 @@ class CarritoModelo extends Model
         }
 
         // Verificar si el producto ya está en el carrito
-        $productoEnCarrito = $this->db->table('productos_carrito')
+        $productoEnCarrito = $this->db->table('carrito_bebidas')
             ->where('carrito_id', $carrito['id'])
             ->where('producto_id', $productoId)
             ->get()->getRowArray();
@@ -33,12 +42,12 @@ class CarritoModelo extends Model
         if ($productoEnCarrito) {
             // Si el producto ya está en el carrito, actualizar la cantidad
             $cantidad += $productoEnCarrito['cantidad'];
-            $this->db->table('productos_carrito')
+            $this->db->table('carrito_bebidas')
                 ->where('id', $productoEnCarrito['id'])
                 ->update(['cantidad' => $cantidad]);
         } else {
             // Si no está en el carrito, agregarlo
-            $this->db->table('productos_carrito')
+            $this->db->table('carrito_bebidas')
                 ->insert(['carrito_id' => $carrito['id'], 'producto_id' => $productoId, 'cantidad' => $cantidad]);
         }
 
@@ -47,7 +56,7 @@ class CarritoModelo extends Model
 
     public function eliminarProductoDelCarrito($carritoId, $productoId)
     {
-        return $this->db->table('productos_carrito')
+        return $this->db->table('carrito_bebidas')
             ->where('carrito_id', $carritoId)
             ->where('producto_id', $productoId)
             ->delete();
@@ -55,7 +64,7 @@ class CarritoModelo extends Model
 
     public function obtenerProductosEnCarrito($carritoId)
     {
-        return $this->db->table('productos_carrito')
+        return $this->db->table('carrito_bebidas')
             ->where('carrito_id', $carritoId)
             ->get()->getResultArray();
     }

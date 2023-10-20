@@ -3,10 +3,17 @@
 namespace App\Controllers;
 use App\Models\TipoBebidaModelo;
 use App\Models\BebidaModelo;
+use App\Models\CarritoModelo;
 use CodeIgniter\Controller;
 
-class BarControlador extends Controller
+
+class barControlador extends Controller
 {
+    public function __construct()
+{
+    $this->session = \Config\Services::session();
+}
+
     public function index()
     {
         $bebidaModelo = new BebidaModelo();
@@ -46,7 +53,23 @@ class BarControlador extends Controller
 
         return view('barVista', $data);
     }
+    public function agregarAlCarrito()
+{
+    // Cargar el modelo CarritoModelo directamente
+    $carritoModelo = new CarritoModelo();
 
+    $bebida_id = $this->request->getPost('bebida_id');
+    $cantidad = $this->request->getPost('cantidad');
+
+    // Reemplaza esta línea con tu lógica para obtener el ID del comprador
+    $comprador_id = 1; // Por ejemplo, si es un ID fijo
+
+    $carrito_id = $this->obtenerCarritoId();
+
+    $carritoModelo->agregarAlCarrito($carrito_id, $bebida_id, $cantidad, $comprador_id);
+
+    return redirect()->to(base_url('carritos'));
+}
     public function verDetalleOrden($id)
     {
         // Lógica para ver detalles de una bebida específica
@@ -67,27 +90,18 @@ class BarControlador extends Controller
 
     return view('barVista', $data);
 }
-    public function login(){
-        return view('loginVista');
+private function obtenerCarritoId()
+{
+    // Por ejemplo, puedes usar el ID del usuario como ID del carrito
+    if ($this->isLoggedIn()) {
+        return $this->session->get('user')['id'];
+    } else {
+        // Si el usuario no está autenticado, puedes generar un ID único
+        return uniqid('carrito_');
     }
-    public function paginaRegistroExitoso()
-{
-    return view('registro_exitoso');
 }
-
-public function agregarAlCarrito()
+private function isLoggedIn()
 {
-    // Obtener el ID de la bebida y la cantidad desde el formulario
-    $bebida_id = $this->request->getPost('bebida_id');
-    $cantidad = $this->request->getPost('cantidad'); // Asegúrate de tener un campo 'cantidad' en tu formulario
-
-    // Obtener el carrito actual del usuario (esto puede variar dependiendo de cómo manejes los carritos por usuario)
-    $carrito_id = $this->obtenerCarritoId(); // Debes tener una función para obtener el ID del carrito del usuario actual
-
-    // Llamar a la función del modelo para agregar la bebida al carrito
-    $this->carrito_model->agregarAlCarrito($carrito_id, $bebida_id, $cantidad);
-
-    // Redirigir a la página del carrito o a donde sea apropiado
-    return redirect()->to(base_url('carrito'));
+    return $this->session->has('user');
 }
 }
