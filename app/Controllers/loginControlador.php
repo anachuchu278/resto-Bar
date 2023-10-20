@@ -23,7 +23,8 @@ class loginControlador extends BaseController
 
     if ($result) {
         if ($result['id'] > 0 && password_verify($password, $result['contrasena'])) {
-            $this->session->set("usuario", $result);
+            $this->session->set('usuario', $result); 
+
 
             return redirect()->to("/crud");
         } else {
@@ -33,6 +34,9 @@ class loginControlador extends BaseController
         echo 'El email no se encuentra registrado';
     }
     }
+    public function logout(){
+        session_destroy();
    
+    }
 
 }

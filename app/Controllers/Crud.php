@@ -3,14 +3,19 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\LoginModelo;
-use App\Models\BebidaModelo;
+use App\Models\CrudModelo;
 
 class Crud extends Controller{
     public function Ingreso(){
-        return view('/comunes/header');
-        return view('crud');
+       
+        $user = session('user');
+
+        if (!$user || $user->id < 1) {
+            return redirect()->to('login');
+        } else {
+        return view('crud' , $data);
     }
 
     
-
+    }
 }
