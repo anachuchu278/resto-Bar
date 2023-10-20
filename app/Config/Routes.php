@@ -87,3 +87,4 @@ $routes->post('carrito/comprar', 'CarritoControlador::realizarCompra');
 $routes->get('informacion', 'BarControlador::informacion');
 $routes->post('informacion', 'BebidasControlador::mostrarBebida');
 $routes->get('logout', 'loginControlador::logout');
+
