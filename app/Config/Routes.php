@@ -32,9 +32,11 @@ $routes->set404Override();
 $routes->get('/inicio', 'barControlador::index');
 $routes->get('/login' , 'loginControlador::Index');
 $routes->get('/register','registerControlador::Index');
-$routes->get('/crud','logued::crud');
+$routes->get('crud', 'BarControlador::Ingresar');
 
-$routes->post('login' , 'loginControlador::loguearse');
+
+$routes->post('bebidas', 'barControlador::informacion');
+$routes->post('login' , 'loginControlador::Loguearse');
 $routes->post('/register','registerControlador::registrarse');
 
 /*
@@ -66,11 +68,23 @@ $routes->post('adminBebidas/editar/(:num)', 'AdminBebidasControlador::editar/$1'
 $routes->get('adminBebidas/eliminar/(:num)', 'AdminBebidasControlador::eliminar/$1');
 $routes->post('adminBebidas/guardar', 'AdminBebidasControlador::guardar');
 $routes->post('adminBebidas/actualizar/(:num)', 'AdminBebidasControlador::actualizar/$1');
-$routes->post('/llamar_desde_arduino', 'LlamarDesdeArduino::recibirLlamado');
 $routes->post('barControlador/buscarBebida', 'barControlador::buscarBebida');
 $routes->get('barControlador', 'barControlador::index');
-$routes->post('login', 'loginControlador::loguearse');
+$routes->post('login', 'loginControlador::Loguearse');
 $routes->get('loginVista' , 'loginControlador::Login');
 $routes->get('/', 'SignupController::index');
 $routes->get('/signup', 'RegisterControlador::index');
 $routes->match(['get', 'post'], 'RegisterControlador/store', 'RegisterControlador::store');
+$routes->get('hola', 'barControlador::index');
+
+
+
+$routes->get('carrito', 'CarritoControlador::verCarrito');
+$routes->post('carrito/agregar', 'CarritoControlador::agregarAlCarrito');
+$routes->post('carrito/eliminar', 'CarritoControlador::eliminarDelCarrito');
+$routes->post('carrito/comprar', 'CarritoControlador::realizarCompra'); 
+
+$routes->get('informacion', 'BarControlador::informacion');
+$routes->post('informacion', 'BebidasControlador::mostrarBebida');
+$routes->get('logout', 'loginControlador::logout');
+

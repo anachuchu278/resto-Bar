@@ -6,36 +6,18 @@
 </head>
 
 <body>
-    <div class="bg-transparent">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="<?php echo base_url(); ?>">ByTender</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <?php if (!empty($tiposBebida)) : ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Filtrar por tipo
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <?php foreach ($tiposBebida as $tipo) : ?>
-                            <li><a class="dropdown-item"
-                                    href="<?php echo base_url('barControlador/filtrarPorTipo/' . $tipo['id']); ?>"><?php echo $tipo['nombre']; ?></a>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </li>
-                    <?php endif; ?>
-                </ul>
-            </div>
+    <style>
+        body {
+            background: linear-gradient(to right, #B53A3A , #902C2C);
+        }
+    </style>
+    <form action="<?php echo base_url('barControlador/buscarBebida'); ?>" method="post" class="form-inline formulario">
+<div class="container">
+        <div class="input-group">
+          <input type="text" name="busqueda" placeholder="Buscar bebida favorita" class="form-control">
+          <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
         </div>
-    </nav>
+    </form>
 
     <div class="container py-4">
     <?php if (isset($bebidaEncontrada)) : ?>
@@ -66,10 +48,12 @@
                         <div class="card mb-4 shadow-sm">
                             <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida" class="card-img-top" style="max-height: 200px; object-fit: cover;">
                             <div class="card-body">
+                                
                                 <h5 class="card-title"><?php echo $bebida['nombre']; ?></h5>
                                 <p class="card-text"><strong>Tipo:</strong> <?php echo $bebida['tipo_id']; ?></p>
                                 <p class="card-text"><strong>Precio:</strong> <?php echo $bebida['precio']; ?></p>
                                 <p class="card-text"><strong>Descripción:</strong> <?php echo $bebida['descripcion']; ?></p>
+                                <button ><a href="<?php site_url('informacion'); ?>"> mas informacion</a> </button>
                             </div>
                         </div>
                     </div>

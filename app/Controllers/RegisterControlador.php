@@ -16,20 +16,20 @@ class registerControlador extends Controller
     public function registrarse()
     {
         $RegisterModelo = new RegisterModelo();
+        
 
         $name = $this->request->getPost('nombre');
         $email = $this->request->getPost('email');
+        
         $password = password_hash($this->request->getPost('contrasena'), PASSWORD_DEFAULT);
 
         $data = ['nombre' => $name, 'email' => $email, 'contrasena' => $password];
-
-
+        
+       
         $r = $RegisterModelo->insert($data);
-
-        if ($r) {
-            echo ('/register');
-        } else {
-            echo "error";
-        }
+        
+        if(!$r==0) {
+            return redirect()->to("hola");
+        } 
     }
 }

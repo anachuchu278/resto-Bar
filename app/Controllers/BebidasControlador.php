@@ -1,18 +1,16 @@
 <?php
+
 namespace App\Controllers;
 
-use App\Models\BarModelo;
+use App\Models\BebidaModelo;
 use CodeIgniter\Controller;
 
 class BebidasControlador extends Controller
 {
-    public function index()
+    public function mostrarBebida()
     {
-        $barModelo = new BarModelo();
-        $bebidas = $barModelo->obtenerTodasLasBebidas();
 
-        $data['bebidas'] = $bebidas;
-
-        return view('bebidasVista', $data);
+        return view('bebidasVista');
     }
 }
+
