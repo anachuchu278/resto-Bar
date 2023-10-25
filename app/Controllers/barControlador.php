@@ -6,24 +6,44 @@ use App\Models\TipoBebidaModelo;
 use App\Models\BebidaModelo;
 use CodeIgniter\Controller;
 
-class BarControlador extends Controller
-{
+class BarControlador extends Controller {
+
+
     public function index()
     {
+        
+        $user = session('usuario');
+        if (isset($user['id']) && $user['id'] > 1) {
+            $bebidaModelo = new BebidaModelo();
+            $data ['bebidas'] = $bebidaModelo->findAll(); 
+            echo view('comunes/header');
+            echo view('barVista', $data);
+            echo view('comunes/footer');
+        } elseif (!$user) {
+            
+          
+        } 
+        
+      
+        
+            $bebidaModelo = new BebidaModelo();
+            $data['bebidas'] = $bebidaModelo->findAll();
 
+                // Obtener los tipos de bebida disponibles
 
-        $bebidaModelo = new BebidaModelo();
-        $data['bebidas'] = $bebidaModelo->findAll();
-
-        // Obtener los tipos de bebida disponibles
-
-        //$tiposBebida = $bebidaModelo->distinct('tipo_id')->findColumn('tipo_id');
-        $tipoBebidaModelo = new TipoBebidaModelo();
-        $data['tiposBebida'] = $tipoBebidaModelo->findAll();
-        echo view('comunes/header');
-        echo view('barVista', $data);
-        echo view('comunes/footer');
+                //$tiposBebida = $bebidaModelo->distinct('tipo_id')->findColumn('tipo_id');
+            $tipoBebidaModelo = new TipoBebidaModelo();
+            $data['tiposBebida'] = $tipoBebidaModelo->findAll();
+            
+            
+          
     }
+    //public function isAdmin() {
+        // $user = session('usuario');
+        // if (!$user || $user['rol'] != 1) {
+        //     return redirect()->to('login'); // Redirige al inicio de sesión si no es un administrador
+        // }
+    
 
     public function bebidasPorTipo($tipoId)
     {
@@ -90,7 +110,10 @@ class BarControlador extends Controller
 
         return view('barVista', $data);
     }
-    public function Ingresar(){
+    public function Ingresar()
+    {
         return view('crud');
     }
+
+
 }

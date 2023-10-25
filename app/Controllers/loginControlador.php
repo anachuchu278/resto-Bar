@@ -9,6 +9,8 @@ class loginControlador extends BaseController
 {
     public function Index()
     {
+        
+
         echo view('comunes/header');
         return view('loginVista');
     }
@@ -22,7 +24,7 @@ class loginControlador extends BaseController
     $result = $LoginModelo->where('email', $email)->first();
 
     if ($result) {
-        if ($result['id'] > 0 && password_verify($password, $result['contrasena'])) {
+        if ($result ['id'] > 0 && password_verify($password, $result ['contrasena'])) {
             $this->session->set('usuario', $result); 
             
 
@@ -33,10 +35,18 @@ class loginControlador extends BaseController
     } else {
         echo 'El email no se encuentra registrado';
     }
-    }
-    public function logout(){
-        session_destroy();
+    $user = session('usuario');
 
+        if (!$user || $user ['rol'] == 1) {
+            return redirect()->to('crud');
+        } else {
+        return view('loginVista ');
     }
-
+    
+    
+    
+    
+    
+    
+}
 }
