@@ -27,13 +27,14 @@
                     <h2 class="card-title">Información de la bebida:</h2>
                     <ul class="list-group list-group-flush">
                         <?php foreach ($bebidaEncontrada as $bebida) : ?>
-                            <li class="list-group-item"><strong>Nombre:</strong> <?php echo $bebida['nombre']; ?></li>
-                            <li class="list-group-item"><strong>Tipo:</strong> <?php echo $bebida['tipo_id']; ?></li>
-                            <li class="list-group-item"><strong>Precio:</strong> <?php echo $bebida['precio']; ?></li>
-                            <li class="list-group-item"><strong>Descripción:</strong> <?php echo $bebida['descripcion']; ?></li>
-                            <li class="list-group-item">
-                                <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
-                            </li>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Nombre:</strong> <?php echo $bebidaEncontrada['nombre']; ?></li>
+                                <li class="list-group-item"><strong>Tipo:</strong> <?php echo $bebidaEncontrada['tipo_id']; ?></li>
+                                <li class="list-group-item"><strong>Precio:</strong> <?php echo $bebidaEncontrada['precio']; ?></li>
+                                <li class="list-group-item"><strong>Descripción:</strong> <?php echo $bebidaEncontrada['descripcion']; ?></li>
+                                <li class="list-group-item">
+                                <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebidaEncontrada['imagen_ruta']; ?>" alt="Imagen de la bebida" style="max-width: 100%; height: auto;"></li>
+                            </ul>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -48,12 +49,11 @@
                         <div class="card mb-4 shadow-sm">
                             <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida" class="card-img-top" style="max-height: 200px; object-fit: cover;">
                             <div class="card-body">
-                                
                                 <h5 class="card-title"><?php echo $bebida['nombre']; ?></h5>
                                 <p class="card-text"><strong>Tipo:</strong> <?php echo $bebida['tipo_id']; ?></p>
                                 <p class="card-text"><strong>Precio:</strong> <?php echo $bebida['precio']; ?></p>
                                 <p class="card-text"><strong>Descripción:</strong> <?php echo $bebida['descripcion']; ?></p>
-                                <button ><a href="<?php site_url('informacion'); ?>"> mas informacion</a> </button>
+                                <a href="<?php echo base_url('barControlador/verDetalleOrden/' . $bebida['tipo_id']); ?>">Más Información</a>
                             </div>
                         </div>
                     </div>

@@ -1,13 +1,18 @@
 <?php
 
 namespace App\Controllers;
-
 use App\Models\TipoBebidaModelo;
+use App\Models\BarModelo;
 use App\Models\BebidaModelo;
 use CodeIgniter\Controller;
 
 class BarControlador extends Controller
 {
+    private $barModelo;
+
+public function __construct() {
+    $this->barModelo = new BebidaModelo();
+}
     public function index()
     {
 
@@ -33,30 +38,24 @@ class BarControlador extends Controller
 
     public function buscarBebida()
     {
-        $busqueda = $this->request->getPost('busqueda'); // Obtener el valor del campo de búsqueda del formulario
-
-        if (!empty($busqueda)) {
-            // Lógica para buscar bebida por nombre
-            $bebidaModelo = new BebidaModelo();
-            $bebidaEncontrada = $bebidaModelo->like('nombre', $busqueda)->findAll();
-
-            $data['bebidaEncontrada'] = $bebidaEncontrada;
+        $busqueda = $this->request->getPost('busqueda');
+    
+        if ($busqueda !== null) {
+            $data['bebidaEncontrada'] = $this->barModelo->buscarBebidaPorNombre($busqueda);
         } else {
-            // Si no se ingresa una búsqueda, redirigir a la página principal
-            return redirect()->to(base_url('barControlador'));
+            $data['bebidaEncontrada'] = null;
         }
-
+    
         return view('barVista', $data);
     }
+public function verDetalleOrden($tipo_id)
+{
+    // Lógica para ver detalles de una bebida específica
+    $bebidaModelo = new barModelo();  // Cambiado a BarModelo
+    $data['bebidaEncontrada'] = $bebidaModelo->where('tipo_id', $tipo_id)->findAll();
 
-    public function verDetalleOrden($id)
-    {
-        // Lógica para ver detalles de una bebida específica
-        $bebidaModelo = new BebidaModelo();
-        $data['bebidaEncontrada'] = $bebidaModelo->find($id);
-
-        return view('barVista', $data);
-    }
+    return view('barVista', $data);
+}
     public function filtrarPorTipo($tipo)
     {
         // Obtener las bebidas filtradas por tipo
