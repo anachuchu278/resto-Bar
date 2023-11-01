@@ -13,15 +13,8 @@ class BarControlador extends Controller {
     {
        
         
-        $user = session('usuario');
-        if (isset($user['id']) && $user['id'] > 0) {
-            
-            
-           
-        } elseif (!$user) {
-            
-          
-        } 
+         $user = session('user');
+        
         
       
         

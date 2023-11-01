@@ -29,7 +29,7 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/inicio', 'barControlador::index');
+//$routes->get('/inicio', 'barControlador::index');
 $routes->get('/login' , 'loginControlador::Index');
 $routes->get('/register','registerControlador::Index');
 $routes->get('crud', 'BarControlador::Ingresar');
@@ -38,6 +38,9 @@ $routes->get('crud', 'BarControlador::Ingresar');
 $routes->post('bebidas', 'barControlador::informacion');
 $routes->post('login' , 'loginControlador::Loguearse');
 $routes->post('/register','registerControlador::registrarse');
+$routes->post('logout','Crud::logout');
+$routes->get('ingreso', 'Crud::ingreso'); 
+
 
 /*
  * --------------------------------------------------------------------
@@ -61,11 +64,7 @@ $routes->get('barControlador/verDetalleOrden/(:num)', 'barControlador::verDetall
 $routes->get('barControlador/(:any)', 'barControlador::$1');
 $routes->get('bebidasControlador/(:any)', 'BebidasControlador::$1');
 $routes->get('adminBebidas', 'AdminBebidasControlador::index');
-$routes->get('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
-$routes->post('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
-$routes->get('adminBebidas/editar/(:num)', 'AdminBebidasControlador::editar/$1');
-$routes->post('adminBebidas/editar/(:num)', 'AdminBebidasControlador::editar/$1');
-$routes->get('adminBebidas/eliminar/(:num)', 'AdminBebidasControlador::eliminar/$1');
+$routes->get('adminBebidas/eliminar/', 'AdminBebidasControlador::eliminar/$1');
 $routes->post('adminBebidas/guardar', 'AdminBebidasControlador::guardar');
 $routes->post('adminBebidas/actualizar/(:num)', 'AdminBebidasControlador::actualizar/$1');
 $routes->post('barControlador/buscarBebida', 'barControlador::buscarBebida');
@@ -86,5 +85,8 @@ $routes->post('carrito/comprar', 'CarritoControlador::realizarCompra');
 
 $routes->get('informacion', 'BarControlador::informacion');
 $routes->post('informacion', 'BebidasControlador::mostrarBebida');
-$routes->get('logout', 'loginControlador::logout');
 
+
+$routes->get('agreg', 'AdminBebidasControlador::agregar');
+$routes->get('adminBebidas/editar', 'AdminBebidasControlador::editar');
+$routes->get('/salir', 'loginControlador::salir');

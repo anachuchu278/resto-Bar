@@ -23,25 +23,23 @@ class loginControlador extends BaseController
     
     $result = $LoginModelo->where('email', $email)->first();
 
-    if ($result) {
-        if ($result ['id'] > 0 && password_verify($password, $result ['contrasena'])) {
-            $this->session->set('usuario', $result); 
+    
+        if ($result  ['id'] > 0 && password_verify($password, $result ['contrasena'])) {
+            $data = [
+                "id" => $result['id'],
+                "nombre" => $result['nombre'],
+                "rol" => $result ['rol'],
+            ];
+            $session = session();
+            $session->set($data );
             
 
             return redirect()->to("/crud");
         } else {
             echo 'La contraseña no es correcta';
         }
-    } else {
-        echo 'El email no se encuentra registrado';
-    }
-    $user = session('usuario');
-
-        if (!$user || $user ['rol'] == 1) {
-            return redirect()->to('crud');
-        } else {
-        return view('loginVista ');
-    }
+     
+   
     
     
     
@@ -49,4 +47,9 @@ class loginControlador extends BaseController
     
     
 }
+    public function salir(){
+        $session = session();
+        $session->destroy();
+        return redirect()->to(base_url('/'));
+    }
 }

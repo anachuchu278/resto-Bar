@@ -15,9 +15,10 @@
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="<?= site_url("inicio") ?>" class="nav-link px-2 link-light link-underline-opacity-25 link-underline-opacity-100-hover">Inicio</a></li>
-        <li><a href="<?= site_url("login") ?>" class="nav-link px-2 link-light link-underline-opacity-25 link-underline-opacity-100-hover">Login</a></li>
-        <li><a href="<?= site_url("register") ?>" class="nav-link px-2 link-light  link-underline-opacity-25 link-underline-opacity-100-hover">Register</a></li>
+        <li><a href="<?= site_url("/") ?>" class="nav-link px-2 link-dark link-underline-opacity-25 link-underline-opacity-100-hover">Inicio</a></li>
+        <li><a href="<?= site_url("login") ?>" class="nav-link px-2 link-dark link-underline-opacity-25 link-underline-opacity-100-hover">Login</a></li>
+        <li><a href="<?= site_url("register") ?>" class="nav-link px-2 link-dark  link-underline-opacity-25 link-underline-opacity-100-hover">Register</a></li>
+        <li><a href="<?= site_url("carrito") ?>" class="nav-link px-2 link-dark  link-underline-opacity-25 link-underline-opacity-100-hover">Carrito</a></li>
       </ul>
       </form>
       <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

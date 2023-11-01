@@ -8,14 +8,23 @@ use App\Models\CrudModelo;
 class Crud extends Controller{
     public function Ingreso(){
        
-        $user = session('usuario');
+        $user = session('user');
 
-        if (!$user || $user ['rol'] == 1) {
-            return redirect()->to('crud');
+        if (!$user || $user ['id'] < 1) {
+            return redirect()->to('loginVista');
         } else {
-        return view('barVista');
+            return view('comunes/header');
+            echo view('crud');
+            
+        }
     }
+    public function logout(){
+        session_destroy(); 
 
+    } 
+    // public function Index(){
+    //     echo view("comunes/header");
+    // }
+    
     
     }
-}
