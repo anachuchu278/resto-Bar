@@ -11,14 +11,13 @@ class BarControlador extends Controller {
 
     public function index()
     {
+       
         
         $user = session('usuario');
-        if (isset($user['id']) && $user['id'] > 1) {
-            $bebidaModelo = new BebidaModelo();
-            $data ['bebidas'] = $bebidaModelo->findAll(); 
-            echo view('comunes/header');
-            echo view('barVista', $data);
-            echo view('comunes/footer');
+        if (isset($user['id']) && $user['id'] > 0) {
+            
+            
+           
         } elseif (!$user) {
             
           
@@ -26,15 +25,17 @@ class BarControlador extends Controller {
         
       
         
-            $bebidaModelo = new BebidaModelo();
-            $data['bebidas'] = $bebidaModelo->findAll();
+        $bebidaModelo = new BebidaModelo();
+        $data['bebidas'] = $bebidaModelo->findAll();
 
                 // Obtener los tipos de bebida disponibles
 
                 //$tiposBebida = $bebidaModelo->distinct('tipo_id')->findColumn('tipo_id');
             $tipoBebidaModelo = new TipoBebidaModelo();
             $data['tiposBebida'] = $tipoBebidaModelo->findAll();
-            
+            echo view('comunes/header');
+            echo view('barVista', $data);
+            echo view('comunes/footer');
             
           
     }
