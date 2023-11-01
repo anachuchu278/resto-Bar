@@ -9,47 +9,36 @@ class loginControlador extends BaseController
 {
     public function Index()
     {
-        
+
 
         echo view('comunes/header');
         return view('loginVista');
     }
     public function loguearse()
-{
-    $LoginModelo = new LoginModelo();
+    {
+        $LoginModelo = new LoginModelo();
 
-    $email = $this->request->getPost('email');
-    $password = $this->request->getPost('contrasena');
-    
-    $result = $LoginModelo->where('email', $email)->first();
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('contrasena');
 
-    
-        if ($result  ['id'] > 0 && password_verify($password, $result ['contrasena'])) {
-            $data = [
-                "id" => $result['id'],
-                "nombre" => $result['nombre'],
-                "rol" => $result ['rol'],
-            ];
-            $session = session();
-            $session->set($data );
-            
+        $result = $LoginModelo->where('email', $email)->first();
 
-            return redirect()->to("/crud");
-        } else {
-            echo 'La contraseña no es correcta';
-        }
-     
-   
-    
-    
-    
-    
-    
-    
-}
-    public function salir(){
-        $session = session();
-        $session->destroy();
-        return redirect()->to(base_url('/'));
+
+        if ($result !== null && $result ['id'] > 0) {
+            if (password_verify($password, $result ['contrasena'])) {
+                // Contraseña correcta, establece la sesión del usuario y redirige a la vista de dashboard
+                $this->session->set("user", $result);
+                return redirect()->to('crud');
+            } else {
+                // Contraseña incorrecta
+                echo 'Contraseña incorrecta';
+            }
+        } 
+    }
+    public function salir()
+    {
+        session_destroy();
+        echo view('comunes/header');
+        return view('loginVista');
     }
 }

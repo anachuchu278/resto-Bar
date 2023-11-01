@@ -3,41 +3,40 @@
 namespace App\Controllers;
 
 use App\Models\TipoBebidaModelo;
+use App\Models\BarModelo;
 use App\Models\BebidaModelo;
 use CodeIgniter\Controller;
 
-class BarControlador extends Controller {
+class BarControlador extends Controller
+{
+    private $barModelo;
 
-
+    public function __construct()
+    {
+        $this->barModelo = new BebidaModelo();
+    }
     public function index()
     {
-       
-        
-         $user = session('user');
-        
-        
-      
-        
+        $user = session('user');
+
         $bebidaModelo = new BebidaModelo();
         $data['bebidas'] = $bebidaModelo->findAll();
 
-                // Obtener los tipos de bebida disponibles
+        // Obtener los tipos de bebida disponibles
 
-                //$tiposBebida = $bebidaModelo->distinct('tipo_id')->findColumn('tipo_id');
-            $tipoBebidaModelo = new TipoBebidaModelo();
-            $data['tiposBebida'] = $tipoBebidaModelo->findAll();
-            echo view('comunes/header');
-            echo view('barVista', $data);
-            echo view('comunes/footer');
-            
-          
+        //$tiposBebida = $bebidaModelo->distinct('tipo_id')->findColumn('tipo_id');
+        $tipoBebidaModelo = new TipoBebidaModelo();
+        $data['tiposBebida'] = $tipoBebidaModelo->findAll();
+        echo view('comunes/header');
+        return view('barVista', $data);
+        echo view('comunes/footer');
     }
     //public function isAdmin() {
-        // $user = session('usuario');
-        // if (!$user || $user['rol'] != 1) {
-        //     return redirect()->to('login'); // Redirige al inicio de sesión si no es un administrador
-        // }
-    
+    // $user = session('usuario');
+    // if (!$user || $user['rol'] != 1) {
+    //     return redirect()->to('login'); // Redirige al inicio de sesión si no es un administrador
+    // }
+
 
     public function bebidasPorTipo($tipoId)
     {
@@ -47,27 +46,21 @@ class BarControlador extends Controller {
 
     public function buscarBebida()
     {
-        $busqueda = $this->request->getPost('busqueda'); // Obtener el valor del campo de búsqueda del formulario
+        $busqueda = $this->request->getPost('busqueda');
 
-        if (!empty($busqueda)) {
-            // Lógica para buscar bebida por nombre
-            $bebidaModelo = new BebidaModelo();
-            $bebidaEncontrada = $bebidaModelo->like('nombre', $busqueda)->findAll();
-
-            $data['bebidaEncontrada'] = $bebidaEncontrada;
+        if ($busqueda !== null) {
+            $data['bebidaEncontrada'] = $this->barModelo->buscarBebidaPorNombre($busqueda);
         } else {
-            // Si no se ingresa una búsqueda, redirigir a la página principal
-            return redirect()->to(base_url('barControlador'));
+            $data['bebidaEncontrada'] = null;
         }
 
         return view('barVista', $data);
     }
-
-    public function verDetalleOrden($id)
+    public function verDetalleOrden($tipo_id)
     {
         // Lógica para ver detalles de una bebida específica
-        $bebidaModelo = new BebidaModelo();
-        $data['bebidaEncontrada'] = $bebidaModelo->find($id);
+        $bebidaModelo = new barModelo();  // Cambiado a BarModelo
+        $data['bebidaEncontrada'] = $bebidaModelo->where('tipo_id', $tipo_id)->findAll();
 
         return view('barVista', $data);
     }
@@ -108,6 +101,4 @@ class BarControlador extends Controller {
     {
         return view('crud');
     }
-
-
 }

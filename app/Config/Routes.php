@@ -29,7 +29,7 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-//$routes->get('/inicio', 'barControlador::index');
+$routes->get('/', 'barControlador::index');
 $routes->get('/login' , 'loginControlador::Index');
 $routes->get('/register','registerControlador::Index');
 $routes->get('crud', 'BarControlador::Ingresar');
@@ -58,7 +58,6 @@ $routes->get('ingreso', 'Crud::ingreso');
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
-$routes->get('/', 'barControlador::index');
 $routes->get('bebidasControlador', 'BebidasControlador::index');
 $routes->get('barControlador/verDetalleOrden/(:num)', 'barControlador::verDetalleOrden/$1');
 $routes->get('barControlador/(:any)', 'barControlador::$1');
@@ -68,10 +67,9 @@ $routes->get('adminBebidas/eliminar/', 'AdminBebidasControlador::eliminar/$1');
 $routes->post('adminBebidas/guardar', 'AdminBebidasControlador::guardar');
 $routes->post('adminBebidas/actualizar/(:num)', 'AdminBebidasControlador::actualizar/$1');
 $routes->post('barControlador/buscarBebida', 'barControlador::buscarBebida');
-$routes->get('barControlador', 'barControlador::index');
 $routes->post('login', 'loginControlador::Loguearse');
 $routes->get('loginVista' , 'loginControlador::Login');
-$routes->get('/', 'SignupController::index');
+//$routes->get('/', 'SignupController::index');
 $routes->get('/signup', 'RegisterControlador::index');
 $routes->match(['get', 'post'], 'RegisterControlador/store', 'RegisterControlador::store');
 $routes->get('hola', 'barControlador::index');
@@ -89,4 +87,4 @@ $routes->post('informacion', 'BebidasControlador::mostrarBebida');
 
 $routes->get('agreg', 'AdminBebidasControlador::agregar');
 $routes->get('adminBebidas/editar', 'AdminBebidasControlador::editar');
-$routes->get('/salir', 'loginControlador::salir');
+$routes->get('salir', 'loginControlador::salir');

@@ -29,7 +29,7 @@ class registerControlador extends Controller
         $r = $RegisterModelo->insert($data);
         
         if(!$r==0) {
-            return redirect()->to("hola");
+            return redirect()->to("login");
         } 
     }
 }
