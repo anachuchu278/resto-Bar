@@ -9,9 +9,10 @@ class SessionAdmin implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         // Do something here
-        if(!session('type') == 'admin') {
-        	return redirect()->to(base_url('/'));
-        }
+        // if(!session('rol') == 1 ) {
+        // 	return redirect()->to(base_url('crud'));
+        // }
+        
     }
 
     //--------------------------------------------------------------------

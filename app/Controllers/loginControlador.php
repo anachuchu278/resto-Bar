@@ -9,7 +9,13 @@ class loginControlador extends BaseController
 {
     public function Index()
     {
-
+        $user = session('user'); 
+        // if (!$user || $user ['id'] < 1) {
+        //     return redirect()->to('');
+        // }
+        // else {
+           
+        // }
 
         echo view('comunes/header');
         return view('loginVista');

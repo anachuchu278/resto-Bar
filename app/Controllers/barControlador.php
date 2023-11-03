@@ -17,7 +17,13 @@ class BarControlador extends Controller
     }
     public function index()
     {
-        $user = session('user');
+        $user = session('user'); 
+        if (!$user || $user ['id'] < 1) {
+            return redirect()->to('login');
+        }
+        else {
+            
+        }
 
         $bebidaModelo = new BebidaModelo();
         $data['bebidas'] = $bebidaModelo->findAll();

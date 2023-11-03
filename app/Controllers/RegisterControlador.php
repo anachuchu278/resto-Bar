@@ -10,6 +10,7 @@ class registerControlador extends Controller
 {
     public function Index()
     {
+        
         echo view('comunes/header');
         return  view('registerVista');
     }

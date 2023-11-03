@@ -35,6 +35,7 @@ $routes->get('/register','registerControlador::Index');
 $routes->get('crud', 'BarControlador::Ingresar');
 
 
+
 $routes->post('bebidas', 'barControlador::informacion');
 $routes->post('login' , 'loginControlador::Loguearse');
 $routes->post('/register','registerControlador::registrarse');
