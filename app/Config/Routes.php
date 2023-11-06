@@ -32,15 +32,15 @@ $routes->set404Override();
 $routes->get('/', 'barControlador::index');
 $routes->get('/login' , 'loginControlador::Index');
 $routes->get('/register','registerControlador::Index');
-$routes->get('crud', 'BarControlador::Ingresar');
+//$routes->get('crud', 'BarControlador::Ingresar');
 
 
 
 $routes->post('bebidas', 'barControlador::informacion');
 $routes->post('login' , 'loginControlador::Loguearse');
 $routes->post('/register','registerControlador::registrarse');
-$routes->post('logout','Crud::logout');
-$routes->get('ingreso', 'Crud::ingreso'); 
+
+$routes->get('crud', 'Crud::ingreso'); 
 
 
 /*

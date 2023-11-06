@@ -11,12 +11,12 @@ class Crud extends Controller{
     public function Ingreso(){
        
       $user = session('user'); 
-        if (!$user || $user ['rol'] == 1) {
-            return redirect()->to('crud');
+        if (!$user || $user ['rol'] < 1) {
+            return redirect()->to('/login');
         }
-        else ($user ['rol'] == 1){
+        else {
             
-
+            //return redirect()->to('crud');
         }
 
     

@@ -30,16 +30,28 @@ class loginControlador extends BaseController
         $result = $LoginModelo->where('email', $email)->first();
 
 
-        if ($result !== null && $result ['id'] > 0) {
-            if (password_verify($password, $result ['contrasena'])) {
-                // Contraseña correcta, establece la sesión del usuario y redirige a la vista de dashboard
+        if ($result !== null && $result['id'] > 0) {
+            if (password_verify($password, $result['contrasena'])) {
+                // Contraseña correcta, establece la sesión del usuario
                 $this->session->set("user", $result);
-                return redirect()->to('crud');
+                $user = session();
+        
+                if ($user = ['rol'] == 1) { 
+                    return redirect()->to('crud'); 
+                } else {
+                    return redirect()->to('/'); 
+                }
             } else {
-                // Contraseña incorrecta
-                echo 'Contraseña incorrecta';
+           
+                return redirect()->to('login')->with('error', 'Contraseña incorrecta');
             }
-        } 
+        } else {
+          
+            return redirect()->to('login')->with('error', 'Usuario no encontrado');
+        }
+        
+                
+          
     }
     public function salir()
     {
