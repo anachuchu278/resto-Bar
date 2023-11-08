@@ -8,14 +8,20 @@
 </head>
 
 <body>
+  <style>
+    body {
+      background: linear-gradient( to right, #fcf9d8, #edebc9 );
+    }
+  </style>
   <form action="<?php base_url('Crud/Ingreso') ?>"></form>
   <div class="card" style="width: 18rem;">
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <label for="admin" class="form-label">
-        <li class="list-group-item"><button><a href="<?php base_url('agreg') ?>">Agregar</a></button>
-          <button><a href="<?php base_url('editar') ?>">Editar</a></button>
+        <li class="list-group-item">
+          <button><a href="<?php echo base_url('adminBebidas/agregar') ?>">Agregar</a></button>
+          <button><a href="<?php echo base_url('editar') ?>">Editar</a></button>
           <button><a class="" href="<?php echo base_url('/salir') ?>">Salir <span class="sr-only">(current)</span></a></button>   
         </li>
       </label>
@@ -31,7 +37,7 @@
     </ul>
 
   </div>
-  </form>
+
 
 
 

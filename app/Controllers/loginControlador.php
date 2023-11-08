@@ -26,20 +26,22 @@ class loginControlador extends BaseController
 
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('contrasena');
+        $rol = $this->request->getPost('rol');
 
         $result = $LoginModelo->where('email', $email)->first();
-
+        
 
         if ($result !== null && $result['id'] > 0) {
             if (password_verify($password, $result['contrasena'])) {
                 // Contraseña correcta, establece la sesión del usuario
                 $this->session->set("user", $result);
                 $user = session();
+                $rol = $result['rol'];
         
-                if ($user = ['rol'] == 1) { 
-                    return redirect()->to('crud'); 
+                if ($rol == 1) {
+                    return redirect()->to('crud');
                 } else {
-                    return redirect()->to('/'); 
+                    return redirect()->to('/');
                 }
             } else {
            
@@ -56,7 +58,6 @@ class loginControlador extends BaseController
     public function salir()
     {
         session_destroy();
-        echo view('comunes/header');
-        return view('loginVista');
+        return redirect()->to('login');
     }
 }

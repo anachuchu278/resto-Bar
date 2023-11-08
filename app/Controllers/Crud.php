@@ -15,8 +15,9 @@ class Crud extends Controller{
             return redirect()->to('/login');
         }
         else {
-            
-            //return redirect()->to('crud');
+            echo view('comunes/header');
+            return view('crud');
+           
         }
 
     

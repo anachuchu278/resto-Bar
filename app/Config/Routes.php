@@ -86,6 +86,7 @@ $routes->get('informacion', 'BarControlador::informacion');
 $routes->post('informacion', 'BebidasControlador::mostrarBebida');
 
 
-$routes->get('agreg', 'AdminBebidasControlador::agregar');
+$routes->get('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
 $routes->get('adminBebidas/editar', 'AdminBebidasControlador::editar');
 $routes->get('salir', 'loginControlador::salir');
+$routes->post('adminBebidas/agregar', 'AdminBebidasControlador::agregar');

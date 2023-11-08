@@ -23,8 +23,9 @@ class AdminBebidasControlador extends Controller
             $bebidaModelo->insert($_POST); // Asumiendo que los datos del formulario se envían por POST
             return redirect()->to(base_url('admin_bebidas'));
         }
-
+        echo view('comunes/header');
         return view('admin_bebidas/agregar');
+       
     }
 
     public function editar($id)

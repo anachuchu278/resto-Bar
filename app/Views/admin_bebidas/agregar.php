@@ -6,22 +6,20 @@
     <link rel="stylesheet" href="<?php echo base_url('css/agregarBebida.css'); ?>">
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="container">
             <h1>Bar - Agregar Bebida</h1>
         </div>
-    </header>
-
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="<?php echo base_url('barControlador'); ?>">Inicio</a></li>
-               
-            </ul>
-        </div>
-    </nav>
+    </header> -->
+    <style>
+    body {
+      background: linear-gradient( to right, #fcf9d8, #edebc9 );
+    }
+  </style>
+    
 
     <div class="container">
+        <div class="">
         <section>
             <h2>Formulario de Agregar Bebida</h2>
             <form action="<?php echo base_url('adminBebidas/guardar'); ?>" method="post">
@@ -35,9 +33,10 @@
                 <textarea name="descripcion" required></textarea>
                 <label for="ingredientes">Ingredientes</label>
                 <textarea name="ingredientes" required></textarea>
-                <input type="submit" value="Agregar">
+                <input type="submit" value="Agregar" class>
             </form>
         </section>
+        </div>
     </div>
 </body>
 </html>

@@ -25,14 +25,10 @@
       <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         </ /img src="" alt="mdo" width="32" height="32" class="rounded-circle">
       </a>
-      <ul class="dropdown-menu text-small">
-        <li><a class="dropdown-item" href="#">Nuevo proyecto...</a></li>
-        <li><a class="dropdown-item" href="#">Configuración</a></li>
-        <li><a class="dropdown-item" href="#">Perfil</a></li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+
+      <ul class="menu">
+        
+        
       </ul>
     </div>
   </div>
