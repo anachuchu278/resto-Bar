@@ -64,7 +64,7 @@ $routes->get('barControlador/verDetalleOrden/(:num)', 'barControlador::verDetall
 $routes->get('barControlador/(:any)', 'barControlador::$1');
 $routes->get('bebidasControlador/(:any)', 'BebidasControlador::$1');
 $routes->get('adminBebidas', 'AdminBebidasControlador::index');
-$routes->get('adminBebidas/eliminar/', 'AdminBebidasControlador::eliminar/$1');
+
 $routes->post('adminBebidas/guardar', 'AdminBebidasControlador::guardar');
 $routes->post('adminBebidas/actualizar/(:num)', 'AdminBebidasControlador::actualizar/$1');
 $routes->post('barControlador/buscarBebida', 'barControlador::buscarBebida');
@@ -90,3 +90,6 @@ $routes->get('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
 $routes->get('adminBebidas/editar', 'AdminBebidasControlador::editar');
 $routes->get('salir', 'loginControlador::salir');
 $routes->post('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
+$routes->post('adminBebidas/editar', 'AdminBebidasControlador::editar');
+$routes->get('adminBebidas/eliminar/', 'AdminBebidasControlador::eliminar/$1');
+$routes->post('adminBebidas/eliminar/', 'AdminBebidasControlador::eliminar/$1');

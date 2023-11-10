@@ -8,11 +8,25 @@ use CodeIgniter\Controller;
 class AdminBebidasControlador extends Controller
 {
     public function index()
-    {
-        $bebidaModelo = new BebidaModelo();
-        $data['bebidas'] = $bebidaModelo->findAll();
+    {   
+        $user = session('user'); 
+        if (!$user || $user ['rol'] < 1) {
+            return redirect()->to('/login');
+        }
+        else {
+            $bebidaModelo = new BebidaModelo();
+            $data['bebidas'] = $bebidaModelo->findAll(); 
+            
+            echo view('comunes/header');
+            return view('admin_bebidas/index', $data);
+           
+        }
 
-        return view('admin_bebidas/index', $data);
+      
+
+
+      
+        
     }
 
     public function agregar()
@@ -28,13 +42,13 @@ class AdminBebidasControlador extends Controller
        
     }
 
-    public function editar($id)
+    public function editar($id_bebida)
     {
         // Aquí se procesa el formulario de edición de la bebida con el ID $id
         $bebidaModelo = new BebidaModelo();
 
         if ($this->request->getMethod() === 'post') {
-            $bebidaModelo->update($id, $_POST); // Asumiendo que los datos del formulario se envían por POST
+            $bebidaModelo->update($id_bebida, $_POST); // Asumiendo que los datos del formulario se envían por POST
             return redirect()->to(base_url('admin_bebidas'));
         }
 
@@ -42,11 +56,12 @@ class AdminBebidasControlador extends Controller
         return view('admin_bebidas/editar', $data);
     }
 
-    public function eliminar($id)
+    public function eliminar($id_bebida)
     {
         // Aquí se procesa la eliminación de la bebida con el ID $id
+        
         $bebidaModelo = new BebidaModelo();
-        $bebidaModelo->delete($id);
+        $bebidaModelo->delete($id_bebida);
         return redirect()->to(base_url('adminBebidas'));
     }
     public function guardar()

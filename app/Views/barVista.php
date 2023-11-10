@@ -8,6 +8,10 @@
 </head>
 
 <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+
+
   <style>
      body {
             background: linear-gradient(to right, #B53A , #902);

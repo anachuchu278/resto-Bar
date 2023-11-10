@@ -1,13 +1,8 @@
 *{
-    padding: 0;
-    margin: 0;
+
+    background: #b8915d;
 }
-body {
-    background-image: url('../assets/images/fondoBar.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #f5f5dc;
-}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -16,7 +11,7 @@ body {
   
 
 header {
-    background-color: #543d23;
+    background-color: #b8915d;
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -33,7 +28,7 @@ nav {
     background-color: #8c6246;
 }
   
-nav ul {
+/* nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -54,10 +49,10 @@ nav a {
   
 nav a:hover {
     background-color: #6b4932;
-}
+} */
   
 
-section {
+/* section {
     padding: 0px 0;
 }
   
@@ -87,14 +82,14 @@ ul li a {
   
 ul li a:hover {
     text-decoration: underline;
-}
+} */
   
 
-form {
+/* form {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-}
+} */
   
 form input[type="text"] {
     padding: 10px;
@@ -115,7 +110,7 @@ form input[type="submit"]:hover {
 }
 
 
-.btn {
+/* .btn {
     padding: 5px 16px;
     font-size: 14px;
     border: none;
@@ -159,4 +154,4 @@ form input[type="submit"]:hover {
 .container td {
     border: 1px solid #ddd;
     padding: 15px;
-  }
+  } */
