@@ -32,4 +32,8 @@ class BebidaModelo extends Model
         // Obtiene todas las bebidas de la base de datos
         return $this->findAll();
     }
+    public function Actualizar($data,$id){
+        $this->update($data,$id);
+
+    }
 }

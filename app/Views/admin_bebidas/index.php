@@ -2,20 +2,14 @@
 <html>
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo base_url('css/index.css') ?>">
     <title>admin</title>
 </head>
 
 <body>
-<style>
-    *{
-        
-    }
-</style>
 
-    <div class="table table-striped-columns">
-        <div class="row align-items-center">
-            <div class="col">
+
+    <div class="container">
             <section>
                 <h2>Bebidas</h2>
                 <a href="<?php echo base_url('adminBebidas/agregar'); ?>" class="btn btn-primary">Agregar Bebida</a>
@@ -39,8 +33,6 @@
                     <?php endforeach; ?>
                 </table>
             </section>
-            </div>
-        </div>
     </div>
 </body>
 

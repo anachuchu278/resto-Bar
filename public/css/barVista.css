@@ -1,188 +1,58 @@
-/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(0deg,#f8efd5, #c39233,#980c0a);
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #86A8E7, #91EAE4);
+    
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    margin: flex;
+    padding-top: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
     padding: 20px;
 }
 
-/* Estilos para el header */
-header {
-    background-color: #333;
-    text-align: center;
-    padding: 10px;
-}
-
-header h1 {
-    margin: 0;
-    padding: 10px;
-    font-family: 'Verdana', sans-serif;
-    font-size: 36px;
-    color: #fff;
-}
-
-/* Estilos para la barra de navegación */
-nav {
-    background-color: #222;
-    padding: 10px; 
-}
-
-.navbar { 
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Centra verticalmente los elementos */
-}
-
-.navbar-item {
-    font-family: 'Verdana', sans-serif;
-    text-align: center;
-    color: #e68f33;
-    text-decoration: none;
-    padding: 5px 10px;
-}
-
-.navbar-link {
-    font-family: 'Verdana', sans-serif;
-    text-align: center;
-    color: #e68f33;
-    text-decoration: none;
-    padding: 5px 10px;
-    font-size: 22px;
-    border: 2px solid #222;
-}
-
-/* Estilos para el formulario de búsqueda */
-form.form-inline {
-    display: flex;
-    align-items: center;
-}
-
-form.form-inline input[type="text"] {
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 15px;
-}
-
-form.form-inline input[type="submit"] {
-    
-    padding: 5px 20px;
-    font-size: 16px;
-    border-radius: 15px;
-    margin-left: 3px; /* Ajusta la posición del botón */
-    margin-top: 3px;
-}
-
-/* Estilos para el título "CryptoCafé" en el header */
-header h1 {
-    margin: 0;
-    padding: 10px;
-    font-family: 'Verdana', sans-serif;
-    font-size: 36px;
-    color: #e68f33;
-    text-align: left; 
-}
-
-/* Estilos para el contenedor del texto "PÁGINA INICIAL" */
-.page-title-container {
-    flex: 1;
-    text-align:center;
-    margin-left: 300px;
-}
-
-.page-title {
-    font-family: 'Verdana', sans-serif;
-    font-size: 24px;
-    color: #e68f33;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-form.form-inline input[type="text"] {
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 15px;
-    background-color: #333;
-    text-align: left;
-}
-
-form.form-inline input[type="submit"] {
-    background-image: url('lupaBuscador.png');
-    padding: 5px 20px;
-    font-size: 10px;
-    border-radius: 15px;
-    margin-left: 3px; /* Ajusta la posición del botón */
-    margin-top: 3px;
-    background-color: #333;
-    color: #fff;
-    width: 100px;
-}
-
-/* Estilos para la sección de bebida encontrada */
-.bebida-encontrada {
-    border: 2px solid #ccc;
-    padding: 10px;
-    background-color: #f2f2f2;
-    margin-bottom: 20px;
-}
-
-.bebida-encontrada h2 {
-    margin: 0;
-    padding: 10px;
-    background-color: #ddd;
-}
-
-.bebida-encontrada .list-group-item {
-    display: block;
+.card-title {
+    font-size: 1.25rem;
     margin-bottom: 10px;
 }
 
-/* Estilos para la sección de bebidas disponibles */
-.bebidas-container {
-    display: flex;
-    flex-wrap: wrap;
+.list-group-item {
+    border: none;
+    padding: 8px;
 }
 
-.bebida-item {
-    flex: 1 1 25%; /* Para que haya 4 bebidas por fila (25% de ancho cada una) */
-    border: 2px solid #ccc;
-    padding: 20px;
-    background-color: #f2f2f2;
-    margin: 10px;
+.list-group-item strong {
+    margin-right: 10px;
 }
 
-.bebida-item strong {
-    display: block;
-    margin-bottom: 5px;
+.row {
+    margin: -15px;
 }
 
-/* Estilos para el botón "Agregar Bebida" */
-.boton {
-    display: inline-block;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 1px;
+.col-md-4 {
+    padding: 15px;
+}
+
+.card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+a {
+    color: #007bff;
     text-decoration: none;
-    margin-top: 20px;
 }
 
-.boton:hover {
-    background-color: #0056b3;
-} 
-.login-container {
-    display: flex;
-    align-items: center;
-    height: 100%;
+a:hover {
+    text-decoration: underline;
 }

@@ -30,30 +30,46 @@ class AdminBebidasControlador extends Controller
     }
 
     public function agregar()
-    {
+    {   
+        $user = session('user'); 
+        if (!$user || $user ['rol'] < 1) {
+            return redirect()->to('/login');
+        }
+        else {
+            echo view('comunes/header');
+            return view('admin_bebidas/agregar');
+           
+        }
         // Aquí se procesa el formulario de agregar una nueva bebida
         if ($this->request->getMethod() === 'post') {
             $bebidaModelo = new BebidaModelo();
             $bebidaModelo->insert($_POST); // Asumiendo que los datos del formulario se envían por POST
             return redirect()->to(base_url('admin_bebidas'));
         }
-        echo view('comunes/header');
-        return view('admin_bebidas/agregar');
+        // echo view('comunes/header');
+        // return view('admin_bebidas/agregar');
        
     }
 
-    public function editar($id_bebida)
+    public function editar()
     {
-        // Aquí se procesa el formulario de edición de la bebida con el ID $id
+        
+       
         $bebidaModelo = new BebidaModelo();
+    
 
-        if ($this->request->getMethod() === 'post') {
-            $bebidaModelo->update($id_bebida, $_POST); // Asumiendo que los datos del formulario se envían por POST
-            return redirect()->to(base_url('admin_bebidas'));
-        }
-
-        $data['bebida'] = $bebidaModelo->find($id);
-        return view('admin_bebidas/editar', $data);
+        $data = [
+            'id_bebida' => $this->request->getVar('id_bebida'),
+            'nombre' => $this->request->getVar('nombre'),
+            'id_tipo' => $this->request->getVar('id_tipo'),
+            'precio' => $this->request->getVar('precio'),
+            'descripcion' => $this->request->getVar('descripcion'),
+            'imagen_ruta' => $this->request->getVar('imagen_ruta'),
+        ];
+        
+        $id=$this->request->getVar('id_bebida');
+        $bebidaModelo->Actualizar($data,$id); 
+        return redirect()->to(base_url('admin_bebidas/editar'));
     }
 
     public function eliminar($id_bebida)
