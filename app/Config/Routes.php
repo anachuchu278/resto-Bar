@@ -58,8 +58,6 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 $routes->get('/', 'barControlador::index');
 $routes->get('bebidasControlador', 'BebidasControlador::index');
 $routes->get('barControlador/verDetalleOrden/(:num)', 'barControlador::verDetalleOrden/$1');
-$routes->get('barControlador/(:any)', 'barControlador::$1');
-$routes->get('bebidasControlador/(:any)', 'BebidasControlador::$1');
 $routes->get('adminBebidas', 'AdminBebidasControlador::index');
 $routes->get('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
 $routes->post('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
@@ -69,6 +67,7 @@ $routes->get('adminBebidas/eliminar/(:num)', 'AdminBebidasControlador::eliminar/
 $routes->post('adminBebidas/guardar', 'AdminBebidasControlador::guardar');
 $routes->post('adminBebidas/actualizar/(:num)', 'AdminBebidasControlador::actualizar/$1');
 $routes->post('barControlador/buscarBebida', 'barControlador::buscarBebida');
+$routes->post('barControlador/detalleBebida', 'barControlador::detalleBebida'); // Ajusté la ruta
 $routes->get('barControlador', 'barControlador::index');
 $routes->post('login', 'loginControlador::Loguearse');
 $routes->get('loginVista' , 'loginControlador::Login');
@@ -76,8 +75,8 @@ $routes->get('/', 'SignupController::index');
 $routes->get('/signup', 'RegisterControlador::index');
 $routes->match(['get', 'post'], 'RegisterControlador/store', 'RegisterControlador::store');
 $routes->get('hola', 'barControlador::index');
-
-
+$routes->post('barControlador/agregarAlCarrito/(:num)', 'barControlador::agregarAlCarrito/$1');
+$routes->post('barControlador/procesarCompra', 'barControlador::procesarCompra');
 
 $routes->get('carrito', 'CarritoControlador::verCarrito');
 $routes->post('carrito/agregar', 'CarritoControlador::agregarAlCarrito');
@@ -88,3 +87,10 @@ $routes->get('informacion', 'BarControlador::informacion');
 $routes->post('informacion', 'BebidasControlador::mostrarBebida');
 $routes->get('logout', 'loginControlador::logout');
 
+$routes->get('barControlador/comprar', 'BarControlador::comprar');
+$routes->post('procesarCompra', 'BarControlador::procesarCompra');
+
+$routes->get('CompraController/mostrarFormulario', 'CompraController::mostrarFormulario');
+$routes->post('CompraController/procesarFormulario', 'CompraController::procesarFormulario');
+
+$routes->get('barControlador/comprarVista', 'BarControlador::comprarVista');
