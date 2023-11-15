@@ -3,6 +3,7 @@
 
 <head>
   <title>ByTender</title>
+<<<<<<< HEAD
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
@@ -21,6 +22,25 @@
       </div>
   </form>
 
+=======
+  <link rel="stylesheet" href="<?php echo base_url('css/barVista.css') ?>">
+</head>
+
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+
+
+  
+  <form action="<?php echo base_url('barControlador/buscarBebida'); ?>" method="post" class="form-inline formulario">
+    <div class="container">
+      <div class="input-group">
+        <input type="text" name="busqueda" placeholder="Buscar bebida favorita" class="form-control">
+        <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+      </div>
+  </form>
+
+>>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
   <div class="container py-4">
     <?php if (isset($bebidaEncontrada)) : ?>
       <section class="mt-4">
@@ -70,11 +90,17 @@
         </div>
       </section>
     <?php endif; ?>
+<<<<<<< HEAD
   </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha384-q9CRHqZndzlxGLOj+xrdLDJa9ittGte1NksRmgJKeCV9DrM7Kz868XYqsKWPpAmn" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-</body>
+=======
+</div>
 
+  
+
+>>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
+</body>
 </html>

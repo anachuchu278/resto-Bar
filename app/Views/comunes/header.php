@@ -15,22 +15,20 @@
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="<?= site_url("inicio") ?>" class="nav-link px-2 link-secondary">Inicio</a></li>
-        <li><a href="<?= site_url("login") ?>" class="nav-link px-2 link-body-emphasis">Login</a></li>
-        <li><a href="<?= site_url("register") ?>" class="nav-link px-2 link-body-emphasis">Register</a></li>
+        <li><a href="<?= site_url("/") ?>" class="nav-link px-2 link-dark link-underline-opacity-25 link-underline-opacity-100-hover">Inicio</a></li>
+        <li><a href="<?= site_url("login") ?>" class="nav-link px-2 link-dark link-underline-opacity-25 link-underline-opacity-100-hover">Login</a></li>
+        <li><a href="<?= site_url("register") ?>" class="nav-link px-2 link-dark  link-underline-opacity-25 link-underline-opacity-100-hover">Register</a></li>
+        <li><a href="<?= site_url("carrito") ?>" class="nav-link px-2 link-dark  link-underline-opacity-25 link-underline-opacity-100-hover">Carrito</a></li>
+        <li><a href="<?= site_url("salir") ?>" class="nav-link px-2 link-dark  link-underline-opacity-25 link-underline-opacity-100-hover">salir</a></li>
       </ul>
       </form>
       <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         </ /img src="" alt="mdo" width="32" height="32" class="rounded-circle">
       </a>
-      <ul class="dropdown-menu text-small">
-        <li><a class="dropdown-item" href="#">Nuevo proyecto...</a></li>
-        <li><a class="dropdown-item" href="#">Configuración</a></li>
-        <li><a class="dropdown-item" href="#">Perfil</a></li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+
+      <ul class="menu">
+        
+        
       </ul>
     </div>
   </div>

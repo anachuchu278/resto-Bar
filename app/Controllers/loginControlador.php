@@ -9,35 +9,60 @@ class loginControlador extends BaseController
 {
     public function Index()
     {
+        $user = session('user'); 
+        // if (!$user || $user ['id'] < 1) {
+        //     return redirect()->to('');
+        // }
+        // else {
+           
+        // }
+
         echo view('comunes/header');
         return view('loginVista');
     }
     public function loguearse()
-{
-    $LoginModelo = new LoginModelo();
+    {
+        $LoginModelo = new LoginModelo();
 
-    $email = $this->request->getPost('email');
-    $password = $this->request->getPost('contrasena');
-    
-    $result = $LoginModelo->where('email', $email)->first();
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('contrasena');
+        $rol = $this->request->getPost('rol');
 
-    if ($result) {
-        if ($result['id'] > 0 && password_verify($password, $result['contrasena'])) {
-            $this->session->set('usuario', $result); 
-            
+        $result = $LoginModelo->where('email', $email)->first();
+        
 
-            return redirect()->to("/crud");
+        if ($result !== null && $result['id'] > 0) {
+            if (password_verify($password, $result['contrasena'])) {
+                // Contraseña correcta, establece la sesión del usuario
+                $this->session->set("user", $result);
+                $user = session();
+                $rol = $result['rol'];
+        
+                if ($rol == 1) {
+                    return redirect()->to('crud');
+                } else {
+                    return redirect()->to('/');
+                }
+            } else {
+           
+                return redirect()->to('login')->with('error', 'Contraseña incorrecta');
+            }
         } else {
-            echo 'La contraseña no es correcta';
+          
+            return redirect()->to('login')->with('error', 'Usuario no encontrado');
         }
-    } else {
-        echo 'El email no se encuentra registrado';
+        
+                
+          
     }
-    }
-    public function logout(){
+    public function salir()
+    {
         session_destroy();
-
+        return redirect()->to('login');
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
 }

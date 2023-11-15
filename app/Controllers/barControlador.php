@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\TipoBebidaModelo;
 use App\Models\BarModelo;
 use App\Models\BebidaModelo;
@@ -12,6 +13,7 @@ class BarControlador extends Controller
     private $barModelo;
     private $CarritoModelo;
 
+<<<<<<< HEAD
 public function __construct() {
     $this->barModelo = new BebidaModelo();
     $this->CarritoModelo = new CarritoModelo();
@@ -20,10 +22,14 @@ public function __construct() {
     }
 }
 
+=======
+    public function __construct()
+    {
+        $this->barModelo = new BebidaModelo();
+    }
+>>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
     public function index()
     {
-
-
         $bebidaModelo = new BebidaModelo();
         $data['bebidas'] = $bebidaModelo->findAll();
 
@@ -32,10 +38,24 @@ public function __construct() {
         //$tiposBebida = $bebidaModelo->distinct('tipo_id')->findColumn('tipo_id');
         $tipoBebidaModelo = new TipoBebidaModelo();
         $data['tiposBebida'] = $tipoBebidaModelo->findAll();
-        echo view('comunes/header');
-        echo view('barVista', $data);
-        echo view('comunes/footer');
+        $user = session('user'); 
+         
+            echo view('comunes/header');
+            return view('barVista', $data);
+            echo view('comunes/footer');
+        
+        
+
+    
+
+        
     }
+    //public function isAdmin() {
+    // $user = session('usuario');
+    // if (!$user || $user['rol'] != 1) {
+    //     return redirect()->to('login'); // Redirige al inicio de sesión si no es un administrador
+    // }
+
 
     public function bebidasPorTipo($tipoId)
     {
@@ -44,6 +64,7 @@ public function __construct() {
     }
 
     public function buscarBebida()
+<<<<<<< HEAD
 {
     $busqueda = $this->request->getPost('busqueda');
 
@@ -64,9 +85,27 @@ public function verDetalleOrden($tipo_id)
     // Lógica para ver detalles de una bebida específica
     $bebidaModelo = new BebidaModelo();  
     $data['bebidaEncontrada'] = $bebidaModelo->where('tipo_id', $tipo_id)->first(); // Usamos 'first' para obtener solo un resultado
+=======
+    {
+        $busqueda = $this->request->getPost('busqueda');
 
-    return view('barVista', $data);
-}
+        if ($busqueda !== null) {
+            $data['bebidaEncontrada'] = $this->barModelo->buscarBebidaPorNombre($busqueda);
+        } else {
+            $data['bebidaEncontrada'] = null;
+        }
+
+        return view('barVista', $data);
+    }
+    public function verDetalleOrden($tipo_id)
+    {
+        // Lógica para ver detalles de una bebida específica
+        $bebidaModelo = new barModelo();  // Cambiado a BarModelo
+        $data['bebidaEncontrada'] = $bebidaModelo->where('tipo_id', $tipo_id)->findAll();
+>>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
+
+        return view('barVista', $data);
+    }
     public function filtrarPorTipo($tipo)
     {
         // Obtener las bebidas filtradas por tipo
@@ -101,6 +140,7 @@ public function verDetalleOrden($tipo_id)
 
         return view('barVista', $data);
     }
+<<<<<<< HEAD
     public function Ingresar(){
         $carrito = session()->get('carrito');
 
@@ -179,6 +219,11 @@ public function verDetalleOrden($tipo_id)
         return view('agregarAlCarrito', ['producto' => $producto]);
     } else {
         return view('barVista');
+=======
+    public function Ingresar()
+    {
+        return view('crud');
+>>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
     }
 }
 
