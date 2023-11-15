@@ -1,3 +1,12 @@
+<?php
+$is_admin = 0; 
+$user = session('user');
+if (null !== $user){
+  $is_admin = (session('user')  ['rol'] == 1);
+} 
+ 
+?>
+<html>
 <link href="<?php echo base_url() ?>css/bootstrap.min.css" rel="stylesheet">
 <script src="<?php echo base_url() ?>js/bootstrap.bundle.min.js"></script>
 <style>
@@ -20,10 +29,21 @@
         <li><a href="<?= site_url("register") ?>" class="nav-link px-2 link-dark  link-underline-opacity-25 link-underline-opacity-100-hover">Register</a></li>
         <li><a href="<?= site_url("carrito") ?>" class="nav-link px-2 link-dark  link-underline-opacity-25 link-underline-opacity-100-hover">Carrito</a></li>
         <li><a href="<?= site_url("salir") ?>" class="nav-link px-2 link-dark  link-underline-opacity-25 link-underline-opacity-100-hover">salir</a></li>
+      
+      
+        <?php if ($is_admin): ?>
+                    <div class="btn-box btns">
+                        <a href="<?= base_url('adminBebidas') ?>"><button type="submit" class="btn">Admin</button></a>
+                    </div>
+        <?php endif; ?>
+        
+      
+     
+      
       </ul>
       </form>
       <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        </ /img src="" alt="mdo" width="32" height="32" class="rounded-circle">
+       
       </a>
 
       <ul class="menu">
@@ -33,4 +53,5 @@
     </div>
   </div>
   </div>
-</header>
+</header> 
+</html>

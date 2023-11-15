@@ -25,7 +25,7 @@
         <section class="mt-4">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title">Información de la bebida:</h2>
+                    <h2 class="card-title">Información de la bebida</h2>
                     <ul class="list-group list-group-flush">
                         <?php foreach ($bebidaEncontrada as $bebida) : ?>
                             <ul class="list-group list-group-flush">
@@ -43,7 +43,7 @@
         </section>
     <?php elseif (isset($bebidas) && is_array($bebidas)) : ?>
         <section class="mt-4">
-            <h2 class="mb-3">Bebidas Disponibles:</h2>
+            <h2 class="mb-3">Bebidas Disponibles</h2>
             <div class="row">
                 <?php foreach ($bebidas as $bebida) : ?>
                     <div class="col-md-4">
