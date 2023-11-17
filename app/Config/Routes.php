@@ -70,6 +70,10 @@ $routes->post('barControlador/buscarBebida', 'barControlador::buscarBebida');
 $routes->post('barControlador/detalleBebida', 'barControlador::detalleBebida'); // Ajusté la ruta
 $routes->get('barControlador', 'barControlador::index');
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3b08d5dfac6289fc948389c2cbbc2266656ca032
 $routes->post('login', 'loginControlador::Loguearse');
 $routes->get('loginVista' , 'loginControlador::Login');
 $routes->get('/', 'SignupController::index');
@@ -95,7 +99,7 @@ $routes->get('CompraController/mostrarFormulario', 'CompraController::mostrarFor
 $routes->post('CompraController/procesarFormulario', 'CompraController::procesarFormulario');
 
 $routes->get('barControlador/comprarVista', 'BarControlador::comprarVista');
-
+$routes->POST('barControlador/comprarVista/(:num)', 'BarControlador::comprar/$1');
 
 $routes->get('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
 $routes->get('salir', 'loginControlador::salir');
