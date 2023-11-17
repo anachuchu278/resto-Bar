@@ -15,10 +15,10 @@ class BebidaModelo extends Model
 
     }
      
-}
 
-<<<<<<< HEAD
-=======
+
+
+
     public function obtenerTodasLasBebidas()
     {
         // Obtiene todas las bebidas de la base de datos
@@ -30,4 +30,4 @@ class BebidaModelo extends Model
 
     }
 }
->>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
+

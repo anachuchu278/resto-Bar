@@ -13,7 +13,7 @@ class BarControlador extends Controller
     private $barModelo;
     private $CarritoModelo;
 
-<<<<<<< HEAD
+
 public function __construct() {
     $this->barModelo = new BebidaModelo();
     $this->CarritoModelo = new CarritoModelo();
@@ -22,12 +22,7 @@ public function __construct() {
     }
 }
 
-=======
-    public function __construct()
-    {
-        $this->barModelo = new BebidaModelo();
-    }
->>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
+
     public function index()
     {
         $bebidaModelo = new BebidaModelo();
@@ -64,7 +59,7 @@ public function __construct() {
     }
 
     public function buscarBebida()
-<<<<<<< HEAD
+
 {
     $busqueda = $this->request->getPost('busqueda');
 
@@ -85,7 +80,7 @@ public function verDetalleOrden($tipo_id)
     // Lógica para ver detalles de una bebida específica
     $bebidaModelo = new BebidaModelo();  
     $data['bebidaEncontrada'] = $bebidaModelo->where('tipo_id', $tipo_id)->first(); // Usamos 'first' para obtener solo un resultado
-=======
+
     {
         $busqueda = $this->request->getPost('busqueda');
 
@@ -97,15 +92,7 @@ public function verDetalleOrden($tipo_id)
 
         return view('barVista', $data);
     }
-    public function verDetalleOrden($tipo_id)
-    {
-        // Lógica para ver detalles de una bebida específica
-        $bebidaModelo = new barModelo();  // Cambiado a BarModelo
-        $data['bebidaEncontrada'] = $bebidaModelo->where('tipo_id', $tipo_id)->findAll();
->>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
-
-        return view('barVista', $data);
-    }
+}
     public function filtrarPorTipo($tipo)
     {
         // Obtener las bebidas filtradas por tipo
@@ -140,7 +127,7 @@ public function verDetalleOrden($tipo_id)
 
         return view('barVista', $data);
     }
-<<<<<<< HEAD
+
     public function Ingresar(){
         $carrito = session()->get('carrito');
 
@@ -190,8 +177,8 @@ public function verDetalleOrden($tipo_id)
     }
     
 
-    public function agregarAlCarrito($id_bebida)
-{
+    public function agregarAlCarrito($id_bebida){
+
     $CarritoModelo = new CarritoModelo();
     $bebidaModelo = new BebidaModelo();
     $producto = $bebidaModelo->find($id_bebida);
@@ -219,11 +206,6 @@ public function verDetalleOrden($tipo_id)
         return view('agregarAlCarrito', ['producto' => $producto]);
     } else {
         return view('barVista');
-=======
-    public function Ingresar()
-    {
-        return view('crud');
->>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
     }
 }
 
@@ -329,3 +311,4 @@ public function procesarCompra()
     return view('procesarCompra', $data);
 }
 }
+

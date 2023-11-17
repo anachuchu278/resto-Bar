@@ -60,9 +60,8 @@ class loginControlador extends BaseController
         session_destroy();
         return redirect()->to('login');
     }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
+
+
 }
