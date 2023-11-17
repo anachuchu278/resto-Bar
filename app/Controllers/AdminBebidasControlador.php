@@ -56,6 +56,7 @@ class AdminBebidasControlador extends Controller
         
        
         $bebidaModelo = new BebidaModelo();
+        
     
 
         $data = [
@@ -69,7 +70,7 @@ class AdminBebidasControlador extends Controller
         
         $id=$this->request->getVar('id_bebida');
         $bebidaModelo->Actualizar($data,$id); 
-        return redirect()->to(base_url('admin_bebidas/editar'));
+        return view('admin_bebidas/editar',$data);
     }
 
     public function eliminar($id_bebida)

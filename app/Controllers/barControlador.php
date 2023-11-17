@@ -8,224 +8,73 @@ use App\Models\BebidaModelo;
 use App\Models\CarritoModelo;
 use CodeIgniter\Controller;
 
-class BarControlador extends Controller
-{
+class BarControlador extends Controller {
+
     private $barModelo;
     private $CarritoModelo;
 
-<<<<<<< HEAD
-public function __construct() {
-    $this->barModelo = new BebidaModelo();
-    $this->CarritoModelo = new CarritoModelo();
-    if (!session()->has('carrito')) {
-        session()->set('carrito', []);
-    }
-}
-
-=======
     public function __construct()
     {
         $this->barModelo = new BebidaModelo();
+        $this->CarritoModelo = new CarritoModelo();
+        if (!session()->has('carrito')) {
+            session()->set('carrito', []);
+        }
     }
->>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
+
     public function index()
     {
         $bebidaModelo = new BebidaModelo();
         $data['bebidas'] = $bebidaModelo->findAll();
 
         // Obtener los tipos de bebida disponibles
-
-        //$tiposBebida = $bebidaModelo->distinct('tipo_id')->findColumn('tipo_id');
         $tipoBebidaModelo = new TipoBebidaModelo();
         $data['tiposBebida'] = $tipoBebidaModelo->findAll();
         $user = session('user'); 
-         
-            echo view('comunes/header');
-            return view('barVista', $data);
-            echo view('comunes/footer');
-        
-        
 
-    
-
-        
+        echo view('comunes/header');
+        echo view('barVista', $data);
+        echo view('comunes/footer');
     }
-    //public function isAdmin() {
-    // $user = session('usuario');
-    // if (!$user || $user['rol'] != 1) {
-    //     return redirect()->to('login'); // Redirige al inicio de sesión si no es un administrador
-    // }
 
-
-    public function bebidasPorTipo($tipoId)
+    public function verDetalleOrden($tipo_id)
     {
-        $tipoBebidaModelo = new TipoBebidaModelo();
-        $bebidasPorTipo = $tipoBebidaModelo->getBebidasPorTipo($tipoId);
+        // Lógica para ver detalles de una bebida específica
+        $bebidaModelo = new BarModelo();  // Cambiado a BarModelo
+        $data['bebidaEncontrada'] = $bebidaModelo->where('tipo_id', $tipo_id)->findAll();
+
+        echo view('barVista', $data);
     }
 
     public function buscarBebida()
-<<<<<<< HEAD
-{
-    $busqueda = $this->request->getPost('busqueda');
-
-    if ($busqueda !== "") {
-        $data['bebidaEncontrada'] = $this->barModelo->buscarBebidaPorNombre($busqueda);
-    } else {
-        $data['bebidaEncontrada'] = null;
-    }
-
-    // Obtener todas las bebidas (puedes ajustar esto según tus necesidades)
-    $bebidaModelo = new BebidaModelo();
-    $data['bebidas'] = $bebidaModelo->findAll();
-
-    return view('barVista', $data);
-}
-public function verDetalleOrden($tipo_id)
-{
-    // Lógica para ver detalles de una bebida específica
-    $bebidaModelo = new BebidaModelo();  
-    $data['bebidaEncontrada'] = $bebidaModelo->where('tipo_id', $tipo_id)->first(); // Usamos 'first' para obtener solo un resultado
-=======
     {
         $busqueda = $this->request->getPost('busqueda');
 
-        if ($busqueda !== null) {
+        if ($busqueda !== "") {
             $data['bebidaEncontrada'] = $this->barModelo->buscarBebidaPorNombre($busqueda);
         } else {
             $data['bebidaEncontrada'] = null;
         }
 
-        return view('barVista', $data);
-    }
-    public function verDetalleOrden($tipo_id)
-    {
-        // Lógica para ver detalles de una bebida específica
-        $bebidaModelo = new barModelo();  // Cambiado a BarModelo
-        $data['bebidaEncontrada'] = $bebidaModelo->where('tipo_id', $tipo_id)->findAll();
->>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
-
-        return view('barVista', $data);
-    }
-    public function filtrarPorTipo($tipo)
-    {
-        // Obtener las bebidas filtradas por tipo
+        // Obtener todas las bebidas (puedes ajustar esto según tus necesidades)
         $bebidaModelo = new BebidaModelo();
-        $data['bebidas'] = $bebidaModelo->where('tipo_id', $tipo)->findAll();
+        $data['bebidas'] = $bebidaModelo->findAll();
 
-        // Obtener los tipos de bebida disponibles
-        $tipoBebidaModelo = new TipoBebidaModelo();
-        $data['tiposBebida'] = $tipoBebidaModelo->findAll();
-
-        return view('barVista', $data);
+        echo view('barVista', $data);
     }
-    public function login()
-    {
-        return view('loginVista');
-    }
-    public function informacion()
-    {
-        
-        $info = $this->request->getPost('bebidas');
 
-        if (!empty($info)) {
-            // Lógica para buscar bebida por nombre
-            $bebidaModelo = new BebidaModelo();
-            $bebidaEncontrada = $bebidaModelo->find('id_bebida', $info);
+    // ... Otros métodos ...
 
-            $data['informacionBebida'] = $bebidaEncontrada;
-        } else {
-            // Si no se ingresa una búsqueda, redirigir a la página principal
-            return redirect()->to(base_url('barControlador'));
-        }
-
-        return view('barVista', $data);
-    }
-<<<<<<< HEAD
-    public function Ingresar(){
-        $carrito = session()->get('carrito');
-
-    $data['carrito'] = $carrito;
-
-    echo view('comprarVista', $data);
-        return view('comprarVista');
-    }
-    public function buscarProductoPorId($id)
-{
-    // Lógica para buscar un producto por su ID
-    $productoModelo = new barModelo(); // Asegúrate de cargar el modelo adecuado
-    $producto = $productoModelo->buscarProductoPorId($id);
-
-    return $producto;
-}
-    public function autenticar()
-    {
-        $email = $this->request->getPost('email');
-        $password = $this->request->getPost('password');
-    
-        // Verifica las credenciales (en este caso, consulta la base de datos)
-        $usuarioModelo = new LoginModelo();
-        $usuario = $usuarioModelo->where('email', $email)
-                                 ->where('password', $password)
-                                 ->first();
-    
-        if ($usuario) {
-            // Credenciales correctas
-            if ($usuario['rol'] == 1) {
-                // Es administrador, redirige a la página de administrador
-                return redirect()->to(base_url('barControlador/administrador'));
-            } else {
-                // Es usuario común, redirige a la página de usuario común
-                return redirect()->to(base_url('barControlador/comprar'));
-            }
-        } else {
-            // Credenciales incorrectas, redirige de vuelta al inicio de sesión
-            return redirect()->to(base_url('barControlador/login'));
-        }
-    }
-    
-    public function administrador()
-    {
-        // Lógica para la página de administrador
-        echo view('adminVista');
-    }
-    
-
-    public function agregarAlCarrito($id_bebida)
-{
-    $CarritoModelo = new CarritoModelo();
-    $bebidaModelo = new BebidaModelo();
-    $producto = $bebidaModelo->find($id_bebida);
-
-    if ($producto) {
-        $cantidad = $this->request->getPost('cantidad');
-        
-        // Asegurémonos de que la cantidad sea un entero válido
-        $cantidad = is_numeric($cantidad) ? intval($cantidad) : 1;
-
-        // Obtenemos el carrito actual
-        $carrito = session()->get('carrito') ?? [];
-
-        // Si el producto ya está en el carrito, actualizamos la cantidad
-        if (isset($carrito[$id_bebida])) {
-            $carrito[$id_bebida] += $cantidad;
-        } else {
-            // Si no, simplemente agregamos el producto al carrito con la cantidad
-            $carrito[$id_bebida] = $cantidad;
-        }
-
-        // Guardamos el carrito actualizado en la sesión
-        session()->set('carrito', $carrito);
-
-        return view('agregarAlCarrito', ['producto' => $producto]);
-    } else {
-        return view('barVista');
-=======
     public function Ingresar()
     {
         return view('crud');
->>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
     }
-}
+
+    // ... Otros métodos ...
+
+
+
+
 
     private function guardarEnCarrito($id_bebida, $cantidad)
 {
@@ -328,4 +177,5 @@ public function procesarCompra()
     // Cargar la vista de procesar compra
     return view('procesarCompra', $data);
 }
+
 }

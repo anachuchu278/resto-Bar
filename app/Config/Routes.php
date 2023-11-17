@@ -66,14 +66,13 @@ $routes->get('adminBebidas', 'AdminBebidasControlador::index');
 $routes->post('adminBebidas/guardar', 'AdminBebidasControlador::guardar');
 $routes->post('adminBebidas/actualizar/(:num)', 'AdminBebidasControlador::actualizar/$1');
 $routes->post('barControlador/buscarBebida', 'barControlador::buscarBebida');
-<<<<<<< HEAD
+
 $routes->post('barControlador/detalleBebida', 'barControlador::detalleBebida'); // Ajusté la ruta
 $routes->get('barControlador', 'barControlador::index');
-=======
->>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
+
 $routes->post('login', 'loginControlador::Loguearse');
 $routes->get('loginVista' , 'loginControlador::Login');
-//$routes->get('/', 'SignupController::index');
+$routes->get('/', 'SignupController::index');
 $routes->get('/signup', 'RegisterControlador::index');
 $routes->match(['get', 'post'], 'RegisterControlador/store', 'RegisterControlador::store');
 $routes->get('hola', 'barControlador::index');
@@ -88,7 +87,7 @@ $routes->post('carrito/comprar', 'CarritoControlador::realizarCompra');
 $routes->get('informacion', 'BarControlador::informacion');
 $routes->post('informacion', 'BebidasControlador::mostrarBebida');
 
-<<<<<<< HEAD
+
 $routes->get('barControlador/comprar', 'BarControlador::comprar');
 $routes->post('procesarCompra', 'BarControlador::procesarCompra');
 
@@ -96,14 +95,13 @@ $routes->get('CompraController/mostrarFormulario', 'CompraController::mostrarFor
 $routes->post('CompraController/procesarFormulario', 'CompraController::procesarFormulario');
 
 $routes->get('barControlador/comprarVista', 'BarControlador::comprarVista');
-=======
+
 
 $routes->get('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
-$routes->get('adminBebidas/editar', 'AdminBebidasControlador::editar');
 $routes->get('salir', 'loginControlador::salir');
 $routes->post('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
 $routes->get('adminBebidas/editar/(:num)', 'AdminBebidasControlador::editar/$1');
-$routes->post('adminBebidas/editar/(:num)', 'AdminBebidasControlador::editar/$1');
+$routes->post('adminBebidas/editar/', 'AdminBebidasControlador::editar/');
 $routes->get('adminBebidas/eliminar/(:num)', 'AdminBebidasControlador::eliminar/$1');
 $routes->post('adminBebidas/eliminar/', 'AdminBebidasControlador::eliminar/$1');
->>>>>>> f1e1a3875fa6066fda8fc604e184ebe522bc3719
+
