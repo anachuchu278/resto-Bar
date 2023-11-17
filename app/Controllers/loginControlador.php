@@ -62,9 +62,8 @@ class loginControlador extends BaseController
     }
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 3b08d5dfac6289fc948389c2cbbc2266656ca032
+
+
 }
