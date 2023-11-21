@@ -49,7 +49,7 @@ class AdminBebidasControlador extends Controller
             $this->guardarRutaEnBaseDeDatos($rutaArchivo);
 
             // Redirecciona o realiza otras acciones según tus necesidades
-            return redirect()->to(base_url('admin_bebidas'));
+            return redirect()->to(base_url('admin_bebidas/index'));
         } else {
             // Maneja el caso en que no se envió ningún archivo
             return "Error al cargar la imagen: " ;
@@ -84,20 +84,25 @@ class AdminBebidasControlador extends Controller
 
     public function editar($resultados)
     {
-        
+       
      // Crear una instancia del modelo
         $bebidaModelo = new BebidaModelo();
-
+        echo var_dump($resultados);
+        
         // Obtener los datos de las bebidas
-        $resultados['bebidas'] = $bebidaModelo->obtenerDatos();
+        $resultados = $bebidaModelo->obtenerDatos($resultados);
+        
 
         // Verificar si $resultados['bebidas'] no es null y contiene elementos
-        if (!is_null($resultados['bebidas']) && count($resultados['bebidas']) > 0) {
-            // Actualizar los datos
-            $bebidaModelo->Actualizar($resultados['bebidas'][0]['id_bebida'], $resultados['bebidas']);
+        if (!empty($resultados['bebidas']) ){
+            $bebidaModelo->Actualizar($resultados);
+            return view('admin_bebidas/editar', $resultados);
+
+        
+        
             
             // Pasar los datos a la vista y cargar la vista
-            return view('admin_bebidas/editar', $resultados);
+            
         } else {
             // Manejar el caso donde $resultados['bebidas'] es null o está vacío
             return "No se encontraron bebidas para actualizar.";

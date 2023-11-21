@@ -175,114 +175,97 @@ public function __construct() {
     // ... Otros métodos ...
   
 
+    }
 
 
 
 
-//     private function guardarEnCarrito($id_bebida, $cantidad)
-// {
-//     $carrito = session()->get('carrito') ?? [];
+public function comprar()
 
-//     // Si el producto ya está en el carrito, actualiza la cantidad
-//     if (array_key_exists($id_bebida, $carrito)) {
-//         $carrito[$id_bebida]['cantidad'] += $cantidad;
-//     } else {
-//         // Si no, agrega un nuevo elemento al carrito
-//         $carrito[$id_bebida] = [
-//             'id_bebida' => $id_bebida,
-//             'cantidad' => $cantidad,
-//         ];
-//     }
+{
+    $carrito = session()->get('carrito') ?? [];
+    $CarritoModelo = new CarritoModelo();
 
-//     // Guarda el carrito en la sesión
-//     session()->set('carrito', $carrito);
-// }
-// public function comprar()
+    $bebidaModelo = new BebidaModelo();
+    $productos = [];
+    $total = 0;
 
-// {
-//     $carrito = session()->get('carrito') ?? [];
-//     $CarritoModelo = new CarritoModelo();
+    foreach ($carrito as $id_bebida => $cantidad) {
+        $producto = $bebidaModelo->find($id_bebida);
 
-//     $bebidaModelo = new BebidaModelo();
-//     $productos = [];
-//     $total = 0;
+        if ($producto) {
+            $productos[$id_bebida] = [
+                'id_bebida' => $id_bebida,
+                'nombre' => $producto['nombre'],
+                'tipo_id' => $producto['tipo_id'],
+                'precio' => $producto['precio'],
+                'descripcion' => $producto['descripcion'],
+                'imagen_ruta' => $producto['imagen_ruta'],
+                'cantidad' => $cantidad,
+            ];
 
-//     foreach ($carrito as $id_bebida => $cantidad) {
-//         $producto = $bebidaModelo->find($id_bebida);
+            $total += $producto['precio'] * $cantidad;
+        }
+    }
 
-//         if ($producto) {
-//             $productos[$id_bebida] = [
-//                 'id_bebida' => $id_bebida,
-//                 'nombre' => $producto['nombre'],
-//                 'tipo_id' => $producto['tipo_id'],
-//                 'precio' => $producto['precio'],
-//                 'descripcion' => $producto['descripcion'],
-//                 'imagen_ruta' => $producto['imagen_ruta'],
-//                 'cantidad' => $cantidad,
-//             ];
+    session()->set('productos_carrito', $productos);
+    session()->set('total_carrito', $total);
 
-//             $total += $producto['precio'] * $cantidad;
-//         }
-//     }
+    $data = [
+        'productos' => $productos,
+        'total' => $total,
+        // Otros datos que necesitas pasar a la vista
+    ];
 
-//     session()->set('productos_carrito', $productos);
-//     session()->set('total_carrito', $total);
+    return view('ComprarVista', $data);
+}
+public function procesarCompra()
+{
+    // Obtener el carrito de la sesión
+    $carrito = session()->get('carrito') ?? [];
 
-//     $data = [
-//         'productos' => $productos,
-//         'total' => $total,
-//         // Otros datos que necesitas pasar a la vista
-//     ];
+    // Verificar si el carrito está vacío
+    if (empty($carrito)) {
+        // Puedes redirigir o mostrar un mensaje de error
+        return redirect()->to(base_url(''));
+    }
 
-//     return view('ComprarVista', $data);
-// }
-// public function procesarCompra()
-// {
-//     // Obtener el carrito de la sesión
-//     $carrito = session()->get('carrito') ?? [];
+    // Obtener detalles de productos desde la base de datos
+    $bebidaModelo = new BebidaModelo();
+    $CarritoModelo = new CarritoModelo();
 
-//     // Verificar si el carrito está vacío
-//     if (empty($carrito)) {
-//         // Puedes redirigir o mostrar un mensaje de error
-//         return redirect()->to(base_url(''));
-//     }
+    // Limpiar carrito después de procesar la compra
+    session()->remove('carrito');
 
-//     // Obtener detalles de productos desde la base de datos
-//     $bebidaModelo = new BebidaModelo();
-//     $CarritoModelo = new CarritoModelo();
+    $total = 0;
 
-//     // Limpiar carrito después de procesar la compra
-//     session()->remove('carrito');
+    foreach ($carrito as $id_bebida => $cantidad) {
+        $producto = $bebidaModelo->find($id_bebida);
 
-//     $total = 0;
+        if ($producto) {
+            // Calcular el total
+            $total += $producto['precio'] * $cantidad;
 
-//     foreach ($carrito as $id_bebida => $cantidad) {
-//         $producto = $bebidaModelo->find($id_bebida);
+            // Insertar en la tabla carrito_compras
+            $CarritoModelo->insert([
+                'id_bebida' => $id_bebida,
+                'cantidad' => $cantidad,
+            ]);
+        }
+    }
 
-//         if ($producto) {
-//             // Calcular el total
-//             $total += $producto['precio'] * $cantidad;
+    // Datos para pasar a la vista
+    $data = [
+        'total' => $total,
+        // Otros datos que puedas necesitar
+    ];
 
-//             // Insertar en la tabla carrito_compras
-//             $CarritoModelo->insert([
-//                 'id_bebida' => $id_bebida,
-//                 'cantidad' => $cantidad,
-//             ]);
-//         }
-//     }
+    // Cargar la vista de procesar compra
+    return view('procesarCompra', $data);
+}
 
-//     // Datos para pasar a la vista
-//     $data = [
-//         'total' => $total,
-//         // Otros datos que puedas necesitar
-//     ];
 
-//     // Cargar la vista de procesar compra
-//     return view('procesarCompra', $data);
-// }
-// }
 
-} 
     public function usuarioCuenta(){
         $user = session('user'); 
         if (!$user || $user ['id'] < 1) {

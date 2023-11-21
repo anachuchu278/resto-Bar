@@ -1,5 +1,7 @@
-<?php namespace App\Models;
+<?php
+namespace App\Models;
 
+use App\Controllers\BebidasControlador;
 use CodeIgniter\Model;
 
 class BebidaModelo extends Model
@@ -9,12 +11,13 @@ class BebidaModelo extends Model
     protected $allowedFields = ['nombre', 'tipo_id', 'precio', 'descripcion', 'imagen_ruta'];
 
 
-    public function buscarBebidaPorId($id){
+    public function buscarBebidaPorId($id)
+    {
 
         return $this->find($id);
 
     }
-     
+
 
 
 
@@ -24,24 +27,24 @@ class BebidaModelo extends Model
         // Obtiene todas las bebidas de la base de datos
         return $this->findAll();
     }
-    public function obtenerDatos(){
-        $query = $this->db->table('bebidas')
-            ->select('id_bebida, nombre, tipo_id, precio, descripcion, imagen_ruta')
-            ->get();
 
-        $resultados = $query->getResult();
+    public function obtenerDatos($resultados)
+    {
+        $query = $this->db->query("SELECT nombre,tipo_id,precio,descripcion FROM bebidas WHERE ");  
         
+        $resultados = $query->getResult();
+        return $resultados;
+
     }
 
+
     public function Actualizar($resultados)
-{
-    // Asegúrate de que $resultados no esté vacío y 'id_bebida' sea un valor válido
-    if (!empty($resultados) && is_numeric($resultados['id_bebida'])) {
+    {
+        // Asegúrate de que $resultados no esté vacío y 'id_bebida' sea un valor válido
+    if (!empty($resultados)) {
         // Filtra los datos permitidos antes de actualizar
         $this->set($resultados);
-        
-        // Filtra el identificador único
-        $this->where('id_bebida', $resultados['id_bebida']);
+
 
         // Realiza la actualización en la base de datos
         $this->update();
@@ -50,13 +53,12 @@ class BebidaModelo extends Model
     } else {
         return false; // Opcional: Devuelve false para indicar error
     }
-}
-private function guardarRutaEnBaseDeDatos($rutaArchivo)
-{
- 
-    $bebidaModelo = new bebidaModelo();
-    $bebidaModelo->insert(['imagen' => $rutaArchivo]);
-}
+    }
+    public function guardarRutaEnBaseDeDatos($rutaArchivo)
+    {
+
+        $bebidaModelo = new bebidaModelo();
+        $bebidaModelo->insert(['imagen' => $rutaArchivo]);
+    }
 
 }
-
