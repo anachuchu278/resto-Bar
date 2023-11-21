@@ -27,7 +27,39 @@ class AdminBebidasControlador extends Controller
 
       
         
+    } 
+
+
+
+    public function guardar_imagen()
+    {
+        // Obtén la instancia de la request
+        $request = service('request');
+
+        // Verifica si se ha enviado un archivo
+        if ($file = $request->getFile('imagen')) {
+            // Genera un nombre único para el archivo
+            $newName = $file->getRandomName();
+
+            // Mueve el archivo a la carpeta public/uploads
+            $file->move('./public/uploads', $newName);
+
+            // Guarda la ruta del archivo en la base de datos
+            $rutaArchivo = 'uploads/' . $newName;
+            $this->guardarRutaEnBaseDeDatos($rutaArchivo);
+
+            // Redirecciona o realiza otras acciones según tus necesidades
+            return redirect()->to(base_url('admin_bebidas'));
+        } else {
+            // Maneja el caso en que no se envió ningún archivo
+            return "Error al cargar la imagen: " ;
+
+        }
     }
+
+   
+
+
 
     public function agregar()
     {   
@@ -46,31 +78,32 @@ class AdminBebidasControlador extends Controller
             $bebidaModelo->insert($_POST); // Asumiendo que los datos del formulario se envían por POST
             return redirect()->to(base_url('admin_bebidas'));
         }
-        // echo view('comunes/header');
-        // return view('admin_bebidas/agregar');
+       
        
     }
 
-    public function editar()
+    public function editar($resultados)
     {
         
-       
+     // Crear una instancia del modelo
         $bebidaModelo = new BebidaModelo();
-        
-    
 
-        $data = [
-            'id_bebida' => $this->request->getVar('id_bebida'),
-            'nombre' => $this->request->getVar('nombre'),
-            'id_tipo' => $this->request->getVar('id_tipo'),
-            'precio' => $this->request->getVar('precio'),
-            'descripcion' => $this->request->getVar('descripcion'),
-            'imagen_ruta' => $this->request->getVar('imagen_ruta'),
-        ];
-        
-        $id=$this->request->getVar('id_bebida');
-        $bebidaModelo->Actualizar($data,$id); 
-        return view('admin_bebidas/editar',$data);
+        // Obtener los datos de las bebidas
+        $resultados['bebidas'] = $bebidaModelo->obtenerDatos();
+
+        // Verificar si $resultados['bebidas'] no es null y contiene elementos
+        if (!is_null($resultados['bebidas']) && count($resultados['bebidas']) > 0) {
+            // Actualizar los datos
+            $bebidaModelo->Actualizar($resultados['bebidas'][0]['id_bebida'], $resultados['bebidas']);
+            
+            // Pasar los datos a la vista y cargar la vista
+            return view('admin_bebidas/editar', $resultados);
+        } else {
+            // Manejar el caso donde $resultados['bebidas'] es null o está vacío
+            return "No se encontraron bebidas para actualizar.";
+        }
+
+
     }
 
     public function eliminar($id_bebida)

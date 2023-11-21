@@ -25,6 +25,7 @@
 
                 <section>
                     <h2>Formulario de Agregar Bebida</h2>
+                    <form action="<?php echo base_url('AdminBebidasControlador/guardar_imagen')?> " method="post">
                     <form action="<?php echo base_url('adminBebidas/guardar'); ?>" method="post">
                         <label for="nombre">Nombre:</label>
                         <input type="text" name="nombre" required>
@@ -37,8 +38,12 @@
                         <label for="ingredientes">Ingredientes</label>
                         <textarea name="ingredientes" required></textarea>
                         <label for="imagen">Imagen del producto</label>
+
                         <input type="file" name="imagen" accept="image/*" required>
+                        
                         <input type="submit" value="Agregar" class>
+                        
+                    </form>
                     </form>
                 </section>
     </div>

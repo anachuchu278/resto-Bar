@@ -24,17 +24,17 @@
     <div class="container">
         <section>
             <h2>Formulario de Editar Bebida</h2>
-            <form action="<?php echo base_url('adminBebidas/actualizar/' . $data['id_bebida']); ?>" method="post">
+            <form action="<?php echo base_url('adminBebidas/actualizar/' . $resultados['id_bebida']); ?>" method="post">
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" value="<?php echo $data['nombre']; ?>" required>
+                <input type="text" name="nombre" value="<?php echo $resultados['nombre']; ?>" required>
                 <label for="tipo">Tipo:</label>
-                <input type="text" name="tipo" value="<?php echo $data['tipo']; ?>" required>
+                <input type="text" name="tipo" value="<?php echo $resultados['tipo']; ?>" required>
                 <label for="precio">Precio:</label>
-                <input type="number" name="precio" value="<?php echo $data['precio']; ?>" required>
+                <input type="number" name="precio" value="<?php echo $resultados['precio']; ?>" required>
                 <label for="descripcion">Descripción:</label>
-                <textarea name="descripcion" required><?php echo $data['descripcion']; ?></textarea>
+                <textarea name="descripcion" required><?php echo $resultados['descripcion']; ?></textarea>
                 <label for="ingredientes">Ingredientes:</label>
-                <textarea name="ingredientes" required><?php echo $data['ingredientes']; ?></textarea>
+                <textarea name="ingredientes" required><?php echo $resultados['ingredientes']; ?></textarea>
                 <input type="submit" value="Guardar Cambios">
             </form>
         </section>

@@ -25,32 +25,38 @@ class BebidaModelo extends Model
         return $this->findAll();
     }
     public function obtenerDatos(){
-        return $this->db->query('
-        SELECT * 
-        ');
+        $query = $this->db->table('bebidas')
+            ->select('id_bebida, nombre, tipo_id, precio, descripcion, imagen_ruta')
+            ->get();
+
+        $resultados = $query->getResult();
+        
     }
 
-    public function Actualizar($data, $id)
-    {
-        // Asegúrate de que $data no esté vacío y $id sea un valor válido
-        if (!empty($data) && is_numeric($id)) {
-            // Filtra los datos permitidos antes de actualizar
-            $this->set($data);
-            
-            // Filtra el identificador único
-            $this->where('id_bebida', $id);
+    public function Actualizar($resultados)
+{
+    // Asegúrate de que $resultados no esté vacío y 'id_bebida' sea un valor válido
+    if (!empty($resultados) && is_numeric($resultados['id_bebida'])) {
+        // Filtra los datos permitidos antes de actualizar
+        $this->set($resultados);
+        
+        // Filtra el identificador único
+        $this->where('id_bebida', $resultados['id_bebida']);
 
-            // Realiza la actualización en la base de datos
-            $this->update();
+        // Realiza la actualización en la base de datos
+        $this->update();
 
-            return true; // Opcional: Devuelve true para indicar éxito
-        } else {
-            return false; // Opcional: Devuelve false para indicar error
-        }
+        return true; // Opcional: Devuelve true para indicar éxito
+    } else {
+        return false; // Opcional: Devuelve false para indicar error
     }
 }
+private function guardarRutaEnBaseDeDatos($rutaArchivo)
+{
+ 
+    $bebidaModelo = new bebidaModelo();
+    $bebidaModelo->insert(['imagen' => $rutaArchivo]);
+}
 
-<<<<<<< HEAD
+}
 
-=======
->>>>>>> 3b08d5dfac6289fc948389c2cbbc2266656ca032

@@ -10,11 +10,15 @@ if (null !== $user){
 <link href="<?php echo base_url() ?>css/bootstrap.min.css" rel="stylesheet">
 <script src="<?php echo base_url() ?>js/bootstrap.bundle.min.js"></script>
 <style>
+  .nav-item:hover {
+    background-color: #f8f9fa; /* Cambia esto al color deseado */
+  }
   body {
     background: #AB762D;
   }
 </style>
 <header class="p-3 mb-3 border-bottom">
+  
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
@@ -42,11 +46,12 @@ if (null !== $user){
       
       </ul>
       </form>
-      <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('usuarioCuenta') ?>">Cuenta</a></li>
        
-      </a>
+    
 
-      <ul class="menu">
+      
         
         
       </ul>
