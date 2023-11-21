@@ -19,7 +19,9 @@ if (null !== $user){
 </head>
 
 <body>
-  <h2>Bienvenido, <?php echo $user['nombre'];?></h2>
+  <?php if ($is_logged): ?>
+  <h2>Bienvenido, <?php echo $user['nombre'];?>!</h2>
+  <?php endif;?>
   <style>
     body {
       background: linear-gradient(to right, #A1A09B, #bbb7af);

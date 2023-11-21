@@ -284,7 +284,11 @@ public function __construct() {
 
 } 
     public function usuarioCuenta(){
-                    // En tu controlador u otro lugar adecuado
+        $user = session('user'); 
+        if (!$user || $user ['id'] < 1) {
+            return redirect()->to('/login');
+        }
+        else {
             $session = session(); // Asegúrate de cargar la sesión si aún no lo has hecho
             $user = $session->get('user'); // Suponiendo que 'user' es la clave en la que has almacenado los datos de usuario
 
@@ -294,6 +298,9 @@ public function __construct() {
             
             echo view('comunes/header');
             return view('cuentaUsuario', $data);
+           
+        }      // En tu controlador u otro lugar adecuado
+            
            
         
     }

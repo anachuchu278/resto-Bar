@@ -12,7 +12,8 @@ class registerControlador extends Controller
     {
         
         echo view('comunes/header');
-        return  view('registerVista');
+        echo  view('registerVista');
+        return view('comunes/footer');
     }
     public function registrarse()
     {

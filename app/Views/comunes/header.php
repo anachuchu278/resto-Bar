@@ -4,6 +4,11 @@ $user = session('user');
 if (null !== $user){
   $is_admin = (session('user')  ['rol'] == 1);
 } 
+$is_logged = 0;
+$user = session('user');
+if (null !== $user){
+  $is_logged = (session('user')  ['id']  > 0);
+} 
  
 ?>
 <html>
@@ -46,6 +51,7 @@ if (null !== $user){
       
       </ul>
       </form>
+      <?php if ($is_logged):?>
       <ul class="nav">
         <li class="nav-item"><a class="nav-link" href="<?php echo base_url('usuarioCuenta') ?>">Cuenta</a></li>
        
@@ -55,6 +61,7 @@ if (null !== $user){
         
         
       </ul>
+      <?php endif;?>
     </div>
   </div>
   </div>
