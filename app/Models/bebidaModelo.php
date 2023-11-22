@@ -17,15 +17,11 @@ class BebidaModelo extends Model
         return $this->find($id);
 
     }
-<<<<<<< HEAD
-     
-=======
 
 
 
 
 
->>>>>>> e21c9ae8fc386f0f67e9580aa242730e761dc47b
     public function obtenerTodasLasBebidas()
     {
         // Obtiene todas las bebidas de la base de datos
@@ -41,7 +37,6 @@ class BebidaModelo extends Model
 
     }
 
-<<<<<<< HEAD
     public function buscarBebidaPorNombre($nombre)
 {
     $query = $this->db->table($this->table)
@@ -54,8 +49,6 @@ class BebidaModelo extends Model
         return null;
     }
 }
-=======
->>>>>>> e21c9ae8fc386f0f67e9580aa242730e761dc47b
 
     public function Actualizar($resultados)
     {
@@ -78,17 +71,5 @@ class BebidaModelo extends Model
 
         $bebidaModelo = new bebidaModelo();
         $bebidaModelo->insert(['imagen' => $rutaArchivo]);
-    }
-    public function buscarBebidaPorNombre($nombre)
-    {
-        $query = $this->db->table($this->table)
-            ->where('nombre', $nombre)
-            ->get();
-    
-        if ($query->getNumRows() > 0) {
-            return $query->getRowArray(); // Cambiado a getRowArray() para obtener solo un resultado
-        } else {
-            return null;
-        }
     }
 }
