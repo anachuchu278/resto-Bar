@@ -41,6 +41,7 @@ $routes->post('login' , 'loginControlador::Loguearse');
 $routes->post('/register','registerControlador::registrarse');
 
 $routes->get('crud', 'Crud::ingreso'); 
+$routes->post('crud', 'Crud::ingreso'); 
 
 
 /*
@@ -62,6 +63,8 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 $routes->get('bebidasControlador', 'BebidasControlador::index');
 $routes->get('barControlador/verDetalleOrden/(:num)', 'barControlador::verDetalleOrden/$1');
 $routes->get('adminBebidas', 'AdminBebidasControlador::index');
+$routes->get('barControlador/index', 'barControlador::index');
+$routes->post('barControlador/filtrarPorTipo', 'barControlador::filtrarPorTipo');
 
 $routes->post('adminBebidas/guardar', 'AdminBebidasControlador::guardar');
 $routes->post('adminBebidas/actualizar/(:num)', 'AdminBebidasControlador::actualizar/$1');
@@ -89,7 +92,7 @@ $routes->post('informacion', 'BebidasControlador::mostrarBebida');
 
 
 $routes->get('barControlador/comprar', 'BarControlador::comprar');
-$routes->post('procesarCompra', 'BarControlador::procesarCompra');
+$routes->get('procesarCompra', 'MetodoPagoControlador::procesarCompra');
 
 $routes->get('CompraController/mostrarFormulario', 'CompraController::mostrarFormulario');
 $routes->post('CompraController/procesarFormulario', 'CompraController::procesarFormulario');

@@ -2,7 +2,7 @@
 $is_logged = 0;
 $user = session('user');
 if (null !== $user){
-  $is_logged = (session('user')  ['id']  > 0);
+  $is_logged = (session('user')['id'] > 0);
 } 
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,14 @@ if (null !== $user){
   <?php endif;?>
   <style>
     body {
-      background: linear-gradient(to right, #A1A09B, #bbb7af);
+      background: linear-gradient(to right, #FCEFEF, #bbb7af); /* Cremita */
+    }
+    .btn-primary {
+      background-color: #dc3545; /* Rojo como color principal */
+      border-color: #dc3545;
+    }
+    .formulario {
+      margin-top: 20px;
     }
   </style>
   <form action="<?php echo base_url('barControlador/buscarBebida'); ?>" method="post" class="form-inline formulario">
@@ -33,104 +40,90 @@ if (null !== $user){
         <input type="text" name="busqueda" placeholder="Buscar bebida favorita" class="form-control">
         <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
       </div>
+    </div>
   </form>
+  <div class="dropdown">
+  <form action="<?= base_url('barControlador/filtrarPorTipo') ?>" method="post">
+    <select name="tipo_id">
+        <?php foreach ($tiposBebida as $tipo) : ?>
+            <option value="<?= $tipo['id'] ?>"><?= $tipo['nombre'] ?></option>
+        <?php endforeach; ?>
+    </select>
+    <button type="submit">Filtrar</button>
+</form>
+</div>
 
+  <div class="container py-4">
+    <?php if (isset($bebidaEncontrada)): ?>
+    <section class="mt-4">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Información de la bebida:</h2>
+          <ul class="list-group list-group-flush">
+            <?php foreach ($bebidaEncontrada as $bebida): ?>
+            <li class="list-group-item"><strong>Nombre:</strong>
+              <?php echo $bebidaEncontrada['nombre']; ?>
+            </li>
+            <li class="list-group-item"><strong>Tipo:</strong>
+              <?php echo $bebidaEncontrada['tipo_id']; ?>
+            </li>
+            <li class="list-group-item"><strong>Precio:</strong>
+              <?php echo $bebidaEncontrada['precio']; ?>
+            </li>
+            <li class="list-group-item"><strong>Descripción:</strong>
+              <?php echo $bebidaEncontrada['descripcion']; ?>
+            </li>
+            <li class="list-group-item">
+              <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebidaEncontrada['imagen_ruta']; ?>"
+                alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
+            </li>
+            <?php endforeach; ?>
+          </ul>
 
-  <link rel="stylesheet" href="<?php echo base_url('css/barVista.css') ?>">
-
-  <body>
-
-
-
-    <div class="container py-4">
-      <?php if (isset($bebidaEncontrada)): ?>
-
-        <section class="mt-4">
-          <div class="card">
+        </div>
+      </div>
+    </section>
+    <?php elseif (isset($bebidas) && is_array($bebidas)): ?>
+    <section class="mt-4">
+      <h2 class="mb-3">Bebidas Disponibles:</h2>
+      <div class="row">
+        <?php foreach ($bebidas as $bebida): ?>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>"
+              alt="Imagen de la bebida" class="card-img-top" style="max-height: 200px; object-fit: cover;">
             <div class="card-body">
-              <h2 class="card-title">Información de la bebida:</h2>
-              <ul class="list-group list-group-flush">
-                <?php foreach ($bebidaEncontrada as $bebida): ?>
-                  <li class="list-group-item"><strong>Nombre:</strong>
-                    <?php echo $bebidaEncontrada['nombre']; ?>
-                  </li>
-                  <li class="list-group-item"><strong>Tipo:</strong>
-                    <?php echo $bebidaEncontrada['tipo_id']; ?>
-                  </li>
-                  <li class="list-group-item"><strong>Precio:</strong>
-                    <?php echo $bebidaEncontrada['precio']; ?>
-                  </li>
-                  <li class="list-group-item"><strong>Descripción:</strong>
-                    <?php echo $bebidaEncontrada['descripcion']; ?>
-                  </li>
-                  <li class="list-group-item">
-                    <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebidaEncontrada['imagen_ruta']; ?>"
-                      alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
-                  </li>
-                <?php endforeach; ?>
-              </ul>
-
+              <h5 class="card-title">
+                <?php echo $bebida['nombre']; ?>
+              </h5>
+              <p class="card-text"><strong>Tipo:</strong>
+                <?php echo $bebida['tipo_id']; ?>
+              </p>
+              <p class="card-text"><strong>Precio:</strong>
+                <?php echo $bebida['precio']; ?>
+              </p>
+              <p class="card-text"><strong>Descripción:</strong>
+                <?php echo $bebida['descripcion']; ?>
+              </p>
+              <button><a href="<?php site_url('informacion'); ?>"> mas informacion</a> </button>
+              <?php if ($is_logged):?>
+              <form action="<?= base_url('barControlador/agregarAlCarrito/' . $bebida['id_bebida']); ?>" method="post">
+                <div class="mb-3">
+                  <label for="cantidad" class="form-label">Cantidad</label>
+                  <input type="number" class="form-control" id="cantidad" name="cantidad" value="1">
+                </div>
+                <button class="btn btn-primary" type="submit">Agregar al Carrito</button>
+              </form>
+              <?php endif;?>
             </div>
           </div>
-        </section>
-      <?php elseif (isset($bebidas) && is_array($bebidas)): ?>
-        <section class="mt-4">
-          <h2 class="mb-3">Bebidas Disponibles:</h2>
-          <div class="row">
-            <?php foreach ($bebidas as $bebida): ?>
-              <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                  <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>"
-                    alt="Imagen de la bebida" class="card-img-top" style="max-height: 200px; object-fit: cover;">
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      <?php echo $bebida['nombre']; ?>
-                    </h5>
-                    <p class="card-text"><strong>Tipo:</strong>
-                      <?php echo $bebida['tipo_id']; ?>
-                    </p>
-                    <p class="card-text"><strong>Precio:</strong>
-                      <?php echo $bebida['precio']; ?>
-                    </p>
-                    <p class="card-text"><strong>Descripción:</strong>
-                      <?php echo $bebida['descripcion']; ?>
-                    </p>
-                    <button><a href="<?php site_url('informacion'); ?>"> mas informacion</a> </button>
-                    <?php if ($is_logged):?>
+        </div>
+        <?php endforeach; ?>
+      </div>
+    </section>
+    <?php endif; ?>
+  </div>
 
-                    <form action="<?= base_url('barControlador/agregarAlCarrito/' . $bebida['id_bebida']); ?>"
-                      method="post">
-                      <div class="mb-3">
-                        <label for="cantidad" class="form-label">Cantidad</label>
-                        <input type="number" class="form-control" id="cantidad" name="cantidad" value="1">
-                      </div>
-                      <button class="btn btn-primary" type="submit">Agregar al Carrito</button>
-                    </form>
-                    <?php endif;?>
-
-                  </div>
-                </div>
-              </div>
-            <?php endforeach; ?>
-          </div>
-        </section>
-      <?php endif; ?>
-
-    </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js"
-      integrity="sha384-q9CRHqZndzlxGLOj+xrdLDJa9ittGte1NksRmgJKeCV9DrM7Kz868XYqsKWPpAmn"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-      crossorigin="anonymous"></script>
-
-    </div>
-
-
-
-
-  </body>
+</body>
 
 </html>

@@ -10,9 +10,22 @@
 </head>
 <form method='post' action="<?php base_url('registro')?>">
 <body>
-    <style>
+<style>
         body {
-            background: linear-gradient(to right, #ffa345, #ffe259);
+            background: linear-gradient(to right, #FCEFEF, #bbb7af);
+        }
+
+        .card-center {
+            margin-top: 5%;
+        }
+
+        .form-text {
+            color: white;
+        }
+
+        .btn-ingresar {
+            background-color: (to right, #ffa345, #ffe259);
+            color: white;
         }
     </style>
     <div class='container mt-5'>

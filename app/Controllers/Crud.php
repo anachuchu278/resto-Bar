@@ -16,7 +16,7 @@ class Crud extends Controller{
         }
         else {
             echo view('comunes/header');
-            return view('crud');
+            echo view('crud');
            
         }
 

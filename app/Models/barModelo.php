@@ -20,4 +20,12 @@ class BarModelo extends Model
         return null;
     }
 }
+public function filtrarBebidasPorTipo($tipo)
+{
+    // Ajusta la lógica según tu estructura de base de datos
+    $this->db->select('*');
+    $this->db->from('bebidas');
+    $this->db->where('tipo', $tipo);
+    return $this->db->get()->result_array();
+}
 }

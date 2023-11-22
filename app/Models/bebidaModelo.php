@@ -15,10 +15,6 @@ class BebidaModelo extends Model
 
     }
      
-
-
-
-
     public function obtenerTodasLasBebidas()
     {
         // Obtiene todas las bebidas de la base de datos
@@ -32,6 +28,19 @@ class BebidaModelo extends Model
         $resultados = $query->getResult();
         
     }
+
+    public function buscarBebidaPorNombre($nombre)
+{
+    $query = $this->db->table($this->table)
+        ->where('nombre', $nombre)
+        ->get();
+
+    if ($query->getNumRows() > 0) {
+        return $query->getRowArray(); // Cambiado a getRowArray() para obtener solo un resultado
+    } else {
+        return null;
+    }
+}
 
     public function Actualizar($resultados)
 {

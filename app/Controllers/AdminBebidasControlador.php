@@ -37,15 +37,15 @@ class AdminBebidasControlador extends Controller
         $request = service('request');
 
         // Verifica si se ha enviado un archivo
-        if ($file = $request->getFile('imagen')) {
+        if ($file = $request->getFile('imagen-ruta')) {
             // Genera un nombre único para el archivo
             $newName = $file->getRandomName();
 
             // Mueve el archivo a la carpeta public/uploads
-            $file->move('./public/uploads', $newName);
+            $file->move('./public/assets/', $newName);
 
             // Guarda la ruta del archivo en la base de datos
-            $rutaArchivo = 'uploads/' . $newName;
+            $rutaArchivo = 'assets/' . $newName;
             $this->guardarRutaEnBaseDeDatos($rutaArchivo);
 
             // Redirecciona o realiza otras acciones según tus necesidades
