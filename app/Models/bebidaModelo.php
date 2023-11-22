@@ -30,10 +30,10 @@ class BebidaModelo extends Model
 
     public function obtenerDatos($resultados)
     {
-        $query = $this->db->query("SELECT nombre,tipo_id,precio,descripcion FROM bebidas WHERE ");  
-        
-        $resultados = $query->getResult();
-        return $resultados;
+            // $query = $this->db->query("SELECT 'nombre' FROM bebidas WHERE 'nombre' = 'Johnnie Walker Blue Label'");  s
+            
+            // $resultados = $query->getResult();
+            // return $resultados;
 
     }
 
@@ -60,5 +60,16 @@ class BebidaModelo extends Model
         $bebidaModelo = new bebidaModelo();
         $bebidaModelo->insert(['imagen' => $rutaArchivo]);
     }
-
+    public function buscarBebidaPorNombre($nombre)
+    {
+        $query = $this->db->table($this->table)
+            ->where('nombre', $nombre)
+            ->get();
+    
+        if ($query->getNumRows() > 0) {
+            return $query->getRowArray(); // Cambiado a getRowArray() para obtener solo un resultado
+        } else {
+            return null;
+        }
+    }
 }
