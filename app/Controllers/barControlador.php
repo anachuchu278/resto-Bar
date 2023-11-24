@@ -115,11 +115,9 @@ public function filtrarPorTipo($tipo)
     }
 }
 
-<<<<<<< HEAD
+
 public function comprar()
-=======
-    }
->>>>>>> e21c9ae8fc386f0f67e9580aa242730e761dc47b
+
 
 {
     $carrito = session()->get('carrito') ?? [];
@@ -132,7 +130,7 @@ public function comprar()
     foreach ($carrito as $id_bebida => $cantidad) {
         $producto = $bebidaModelo->find($id_bebida);
 
-<<<<<<< HEAD
+
         if ($producto) {
             $productos[$id_bebida] = [
                 'id_bebida' => $id_bebida,
@@ -203,94 +201,9 @@ public function procesarCompra()
     // Cargar la vista de procesar compra
     return view('procesarCompra', $data);
 }
-=======
-public function comprar()
-
-{
-    $carrito = session()->get('carrito') ?? [];
-    $CarritoModelo = new CarritoModelo();
-
-    $bebidaModelo = new BebidaModelo();
-    $productos = [];
-    $total = 0;
-
-    foreach ($carrito as $id_bebida => $cantidad) {
-        $producto = $bebidaModelo->find($id_bebida);
-
-        if ($producto) {
-            $productos[$id_bebida] = [
-                'id_bebida' => $id_bebida,
-                'nombre' => $producto['nombre'],
-                'tipo_id' => $producto['tipo_id'],
-                'precio' => $producto['precio'],
-                'descripcion' => $producto['descripcion'],
-                'imagen_ruta' => $producto['imagen_ruta'],
-                'cantidad' => $cantidad,
-            ];
-
-            $total += $producto['precio'] * $cantidad;
-        }
-    }
-
-    session()->set('productos_carrito', $productos);
-    session()->set('total_carrito', $total);
-
-    $data = [
-        'productos' => $productos,
-        'total' => $total,
-        // Otros datos que necesitas pasar a la vista
-    ];
-
-    return view('ComprarVista', $data);
-}
-public function procesarCompra()
-{
-    // Obtener el carrito de la sesión
-    $carrito = session()->get('carrito') ?? [];
-
-    // Verificar si el carrito está vacío
-    if (empty($carrito)) {
-        // Puedes redirigir o mostrar un mensaje de error
-        return redirect()->to(base_url(''));
-    }
-
-    // Obtener detalles de productos desde la base de datos
-    $bebidaModelo = new BebidaModelo();
-    $CarritoModelo = new CarritoModelo();
-
-    // Limpiar carrito después de procesar la compra
-    session()->remove('carrito');
-
-    $total = 0;
-
-    foreach ($carrito as $id_bebida => $cantidad) {
-        $producto = $bebidaModelo->find($id_bebida);
-
-        if ($producto) {
-            // Calcular el total
-            $total += $producto['precio'] * $cantidad;
-
-            // Insertar en la tabla carrito_compras
-            $CarritoModelo->insert([
-                'id_bebida' => $id_bebida,
-                'cantidad' => $cantidad,
-            ]);
-        }
-    }
-
-    // Datos para pasar a la vista
-    $data = [
-        'total' => $total,
-        // Otros datos que puedas necesitar
-    ];
-
-    // Cargar la vista de procesar compra
-    return view('procesarCompra', $data);
-}
 
 
 
->>>>>>> e21c9ae8fc386f0f67e9580aa242730e761dc47b
     public function usuarioCuenta(){
         $user = session('user'); 
         if (!$user || $user ['id'] < 1) {

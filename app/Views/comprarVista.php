@@ -80,8 +80,8 @@
 <script>
     paypal.Buttons({
         style: {
-            shape: 'pill',
-            color: 'blue',
+            shape: 'rect',
+            color: 'gold',
             layout: 'vertical',
             label: 'pay',
         },

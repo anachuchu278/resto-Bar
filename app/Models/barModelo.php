@@ -25,7 +25,7 @@ public function filtrarBebidasPorTipo($tipo)
     // Ajusta la lógica según tu estructura de base de datos
     $this->db->select('*');
     $this->db->from('bebidas');
-    $this->db->where('tipo', $tipo);
+    $this->db->where('tipo_id', $tipo);
     return $this->db->get()->result_array();
 }
 }
