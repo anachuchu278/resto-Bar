@@ -45,8 +45,8 @@ if (null !== $user){
   <div class="dropdown">
   <form action="<?= base_url('barControlador/filtrarPorTipo') ?>" method="post">
     <select name="tipo_id">
-        <?php foreach ($tiposBebida as $tipo) : ?>
-            <option value="<?= $tipo['id'] ?>"><?= $tipo['nombre'] ?></option>
+        <?php foreach ($filtrar as $tipo) : ?>
+            <option value="<?= $tipo['tipo_id'] ?>"><?php $tipo['nombre']?></option>
         <?php endforeach; ?>
     </select>
     <button type="submit">Filtrar</button>

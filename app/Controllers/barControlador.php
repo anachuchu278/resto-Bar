@@ -30,9 +30,15 @@ public function __construct() {
         $data['bebidas'] = $bebidaModelo->findAll();
 
         // Obtener los tipos de bebida disponibles
-        $tipoBebidaModelo = new TipoBebidaModelo();
-        $data['tiposBebida'] = $tipoBebidaModelo->findAll();
+        $barModelo = new barModelo();
+        $data['filtrar'] = $barModelo->findAll();
+
+     
         $user = session('user'); 
+
+
+
+
 
         echo view('comunes/header');
         echo view('barVista', $data);
@@ -66,10 +72,11 @@ public function __construct() {
     return view('barVista', $data);
 }
 
-public function filtrarPorTipo($tipo)
-{
-    $barModelo = new BarModelo();
-    $data['bebidas'] = $barModelo->filtrarBebidasPorTipo($tipo);
+public function filtrarPorTipo()
+{   
+    $tipo = $this->request->getPost('tipo_id');
+    $barModelo = new barModelo();
+    $data['filtrar'] = $barModelo->filtrarBebidasPorTipo($tipo);
 
     echo view('barVista', $data);
 }
