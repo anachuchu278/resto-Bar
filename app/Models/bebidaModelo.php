@@ -28,12 +28,30 @@ class BebidaModelo extends Model
         return $this->findAll();
     }
 
-    public function obtenerDatos($resultados)
+    public function obtenerDatos($id)
     {
-            // $query = $this->db->query("SELECT 'nombre' FROM bebidas WHERE 'nombre' = 'Johnnie Walker Blue Label'");  s
-            
-            // $resultados = $query->getResult();
-            // return $resultados;
+        
+
+        $query = $this->db->query("SELECT * FROM bebidas WHERE id_bebida = ?", [$id]);
+        
+        
+        $resultado = $query->getRow();
+        
+        return $resultado;
+        
+
+            // if (!empty($resultados)) {
+            //     // Filtra los datos permitidos antes de actualizar
+            //     $this->set($resultados);
+        
+        
+            //     // Realiza la actualización en la base de datos
+            //     $this->update();
+        
+            //     return true; // Opcional: Devuelve true para indicar éxito
+            // } else {
+            //     return false; // Opcional: Devuelve false para indicar error
+            // }
 
     }
 

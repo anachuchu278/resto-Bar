@@ -21,23 +21,28 @@
         </div>
     </nav>
 
-    <div class="container">
-        <section>
-            <h2>Formulario de Editar Bebida</h2>
-            <form action="<?php echo base_url('adminBebidas/actualizar/' . $resultados['id_bebida']); ?>" method="post">
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" value="<?php echo $resultados['nombre']; ?>" required>
-                <label for="tipo">Tipo:</label>
-                <input type="text" name="tipo" value="<?php echo $resultados['tipo']; ?>" required>
-                <label for="precio">Precio:</label>
-                <input type="number" name="precio" value="<?php echo $resultados['precio']; ?>" required>
-                <label for="descripcion">Descripción:</label>
-                <textarea name="descripcion" required><?php echo $resultados['descripcion']; ?></textarea>
-                <label for="ingredientes">Ingredientes:</label>
-                <textarea name="ingredientes" required><?php echo $resultados['ingredientes']; ?></textarea>
-                <input type="submit" value="Guardar Cambios">
-            </form>
-        </section>
-    </div>
+    <!-- ... (código anterior) ... -->
+
+        <div class="container">
+            <section>
+                <?php foreach ($bebida as $item) :?>
+                <h2>Formulario de Editar Bebida</h2>
+                <form action="<?php echo base_url('admin_bebidas/actualizar/' ); ?>" method="post">
+                    <label for="nombre">ID:</label>
+                    <input type="text" name="nombre" value="<?php echo $item['id_bebida']; ?>" required>
+
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" value="<?php echo $item['nombre']; ?>" required>
+                    <label for="tipo">Tipo:</label>
+                    <input type="text" name="tipo" value="<?php echo $item['tipo']; ?>" required>
+                    <label for="precio">Precio:</label>
+                    <input type="number" name="precio" value="<?php echo $item['precio']; ?>" required>
+                    <label for="descripcion">Descripción:</label>
+                    <!-- ... (resto del formulario) ... -->
+                </form>
+                <?php endforeach; ?>
+            </section>
+        </div>
+
 </body>
 </html>
