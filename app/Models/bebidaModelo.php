@@ -22,6 +22,8 @@ class BebidaModelo extends Model
 
 
 
+
+
     public function obtenerTodasLasBebidas()
     {
         // Obtiene todas las bebidas de la base de datos

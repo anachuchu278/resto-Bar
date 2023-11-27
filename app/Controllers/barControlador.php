@@ -120,23 +120,7 @@ public function filtrarPorTipo()
     } else {
         return view('barVista');
     }
-
-
-    
-
-
-    $carrito = session()->get('carrito') ?? [];
-    $CarritoModelo = new CarritoModelo();
-
-    $bebidaModelo = new BebidaModelo();
-    $productos = [];
-    $total = 0;
-
-    foreach ($carrito as $id_bebida => $cantidad) {
-    $producto = $bebidaModelo->find($id_bebida);
     }
-}
-
 public function comprar()
 {
     $carrito = session()->get('carrito') ?? [];
@@ -179,6 +163,7 @@ public function procesarCompra()
 {
     // Obtener el carrito de la sesión
     $carrito = session()->get('carrito') ?? [];
+
 
     // Verificar si el carrito está vacío
     if (empty($carrito)) {
