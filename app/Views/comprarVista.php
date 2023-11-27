@@ -60,10 +60,6 @@
             <p>Total: <?= $total; ?></p>
             <a href="<?= base_url('barControlador/index') ?>" class="btn btn-primary">Volver a la lista de bebidas</a>
 
-            <form action="<?= base_url('barControlador/procesarCompra'); ?>" method="post" class="mt-3">
-                <button type="submit" class="btn btn-primary">Procesar Compra</button>
-            </form>
-
         <?php else : ?>
             <p>No hay productos en el carrito.</p>
         <?php endif; ?>
@@ -81,7 +77,7 @@
     paypal.Buttons({
         style: {
             shape: 'rect',
-            color: 'gold',
+            color: 'silver',
             layout: 'vertical',
             label: 'pay',
         },

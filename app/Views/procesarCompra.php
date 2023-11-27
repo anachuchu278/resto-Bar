@@ -70,10 +70,6 @@
 
             <p>Total: <?= $total; ?></p>
 
-            <form action="<?= base_url('barControlador/procesarCompra'); ?>" method="post">
-                <button type="submit">Confirmar Compra</button>
-            </form>
-
         <?php else : ?>
             <p>No hay productos en el carrito.</p>
         <?php endif; ?>
