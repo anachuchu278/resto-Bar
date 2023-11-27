@@ -42,7 +42,7 @@ class CompraController extends BaseController
 
         $compraModelo->insert($data);
 
-        // Puedes redirigir a la página de comprar después de procesar el formulario
+        echo view('comunes/header');
         return redirect()->to(base_url('barControlador/comprarVista'));
     }
 }
