@@ -90,10 +90,8 @@ if (null !== $user){
         <?php foreach ($bebidas as $bebida): ?>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>"
-              alt="Imagen de la bebida" class="card-img-top" style="max-height: 200px; object-fit: cover;">
-            <div class="card-body">
-              <h5 class="card-title">
+          <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>"
+                alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
                 <?php echo $bebida['nombre']; ?>
               </h5>
               <p class="card-text"><strong>Tipo:</strong>

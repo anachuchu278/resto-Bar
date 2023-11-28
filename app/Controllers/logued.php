@@ -9,17 +9,10 @@ class Loguearse extends BaseController
     
     $user = session('user'); 
     if (!$user) {
-        return redirect()->to('login
-        
-        ');
+        return redirect()->to('login');
     }
     else {
-        
         return redirect()->to('crud');
     }
-
-
-
-
 } 
 }

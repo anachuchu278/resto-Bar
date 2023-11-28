@@ -31,7 +31,7 @@ class AdminBebidasControlador extends Controller
 
 
 
-    public function guardar_imagen()
+     public function guardar_imagen()
     {
         // Obtén la instancia de la request
         $request = service('request');
@@ -49,12 +49,8 @@ class AdminBebidasControlador extends Controller
             $this->guardarRutaEnBaseDeDatos($rutaArchivo);
 
             // Redirecciona o realiza otras acciones según tus necesidades
-            return redirect()->to(base_url('admin_bebidas/index'));
-        } else {
-            // Maneja el caso en que no se envió ningún archivo
-            return "Error al cargar la imagen: " ;
-
-        }
+            echo view('');
+        } 
     }
 
    
@@ -68,18 +64,34 @@ class AdminBebidasControlador extends Controller
             return redirect()->to('/login');
         }
         else {
-            echo view('comunes/header');
-            return view('admin_bebidas/agregar');
-           
+            // Aquí se procesa el formulario de agregar una nueva bebida
+            if ($this->request->getMethod() === 'post') {
+                $bebidaModelo = new BebidaModelo();
+                $data = [
+                    'nombre' => $this->request->getPost('nombre'),
+                    'tipo' => $this->request->getPost('tipo'),
+                    'precio' => $this->request->getPost('precio'),
+                    'descripcion' => $this->request->getPost('descripcion'),
+                    'ingredientes' => $this->request->getPost('ingredientes'),
+                ];
+    
+                // Aquí debes agregar el código para manejar la carga de la imagen
+                if(isset($_FILES['imagen'])){
+                    $file_name = $_FILES['imagen']['name'];
+                    $file_tmp = $_FILES['imagen']['tmp_name'];
+                    
+                    move_uploaded_file($file_tmp,"images/".$file_name);
+                    $data['imagen'] = "images/".$file_name;
+                }
+    
+                $bebidaModelo->insert($data);
+                return redirect()->to(base_url('admin_bebidas'));
+            }
+            else {
+                echo view('comunes/header');
+                return view('admin_bebidas/agregar');
+            }
         }
-        // Aquí se procesa el formulario de agregar una nueva bebida
-        if ($this->request->getMethod() === 'post') {
-            $bebidaModelo = new BebidaModelo();
-            $bebidaModelo->insert($_POST); // Asumiendo que los datos del formulario se envían por POST
-            return redirect()->to(base_url('admin_bebidas'));
-        }
-       
-       
     }
 
     public function editar($resultados)

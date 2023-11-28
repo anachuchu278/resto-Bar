@@ -29,14 +29,15 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+$routes->post('/', 'barControlador::index');
 $routes->get('/', 'barControlador::index');
 $routes->get('/login' , 'loginControlador::Index');
 $routes->get('/register','registerControlador::Index');
-//$routes->get('crud', 'BarControlador::Ingresar');
 
 
 
-$routes->post('bebidas', 'barControlador::informacion');
+
+
 $routes->post('login' , 'loginControlador::Loguearse');
 $routes->post('/register','registerControlador::registrarse');
 
@@ -60,7 +61,7 @@ $routes->post('crud', 'Crud::ingreso');
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
-$routes->get('bebidasControlador', 'BebidasControlador::index');
+
 $routes->get('barControlador/verDetalleOrden/(:num)', 'barControlador::verDetalleOrden/$1');
 $routes->get('adminBebidas', 'AdminBebidasControlador::index');
 $routes->get('barControlador/index', 'barControlador::index');
@@ -70,15 +71,12 @@ $routes->post('adminBebidas/guardar', 'AdminBebidasControlador::guardar');
 $routes->post('adminBebidas/actualizar/(:num)', 'AdminBebidasControlador::actualizar/$1');
 $routes->post('barControlador/buscarBebida', 'barControlador::buscarBebida');
 
-$routes->post('barControlador/detalleBebida', 'barControlador::detalleBebida'); // Ajusté la ruta
 $routes->get('barControlador', 'barControlador::index');
 
 $routes->post('login', 'loginControlador::Loguearse');
 $routes->get('loginVista' , 'loginControlador::Login');
-$routes->get('/', 'SignupController::index');
-$routes->get('/signup', 'RegisterControlador::index');
-$routes->match(['get', 'post'], 'RegisterControlador/store', 'RegisterControlador::store');
-$routes->get('hola', 'barControlador::index');
+
+
 $routes->post('barControlador/agregarAlCarrito/(:num)', 'barControlador::agregarAlCarrito/$1');
 $routes->post('barControlador/procesarCompra', 'barControlador::procesarCompra');
 
@@ -86,9 +84,6 @@ $routes->get('carrito', 'CarritoControlador::verCarrito');
 $routes->post('carrito/agregar', 'CarritoControlador::agregarAlCarrito');
 $routes->post('carrito/eliminar', 'CarritoControlador::eliminarDelCarrito');
 $routes->post('carrito/comprar', 'CarritoControlador::realizarCompra'); 
-
-$routes->get('informacion', 'BarControlador::informacion');
-$routes->post('informacion', 'BebidasControlador::mostrarBebida');
 
 
 $routes->get('barControlador/comprar', 'BarControlador::comprar');
@@ -100,7 +95,6 @@ $routes->post('CompraController/procesarFormulario', 'CompraController::procesar
 $routes->get('barControlador/comprarVista', 'BarControlador::comprarVista');
 $routes->POST('barControlador/comprarVista/(:num)', 'BarControlador::comprar/$1');
 
-$routes->get('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
 $routes->get('salir', 'loginControlador::salir');
 $routes->post('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
 $routes->get('adminBebidas/editar/(:num)', 'AdminBebidasControlador::editar/$1');

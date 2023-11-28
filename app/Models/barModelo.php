@@ -31,15 +31,15 @@ class barModelo extends Model
 public function filtrarBebidasPorTipo($tipo)
 {
     // Ajusta la lógica según tu estructura de base de datos
-<<<<<<< HEAD
+
     $this->db->select('*');
     $this->db->from('bebidas');
     $this->db->where('tipo_id', $tipo);
     return $this->db->get()->result_array();
-=======
+
     $query = $this->db->query("SELECT tipo_id FROM bebidas JOIN tipos_bebida ON bebidas.tipo_id = tipos_bebida.nombre");
     return $query->getResultArray();
         
->>>>>>> 66f0219b73052551d03d04c3094823c6b3a76a89
+
 }
 }

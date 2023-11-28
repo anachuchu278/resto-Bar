@@ -68,10 +68,17 @@ class BebidaModelo extends Model
         return false; // Opcional: Devuelve false para indicar error
     }
     }
-    public function guardarRutaEnBaseDeDatos($rutaArchivo)
+    public function guardarRutaEnBaseDeDatos()
     {
-
-        $bebidaModelo = new bebidaModelo();
-        $bebidaModelo->insert(['imagen' => $rutaArchivo]);
+        // Asume que tienes los demás datos de la bebida en un array $data
+        $data = [
+            'nombre' => $this->request->getPost('nombre'),
+            'tipo' => $this->request->getPost('tipo'),
+            'precio' => $this->request->getPost('precio'),
+            'descripcion' => $this->request->getPost('descripcion'),
+            'ingredientes' => $this->request->getPost('ingredientes'),
+            'imagen' => $this->request->getPost('imagen_ruta'),
+        ];
+        $this->insert($data);
     }
 }
