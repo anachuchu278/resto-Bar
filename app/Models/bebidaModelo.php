@@ -42,20 +42,12 @@ class BebidaModelo extends Model
         return $resultado;
         
 
-            // if (!empty($resultados)) {
-            //     // Filtra los datos permitidos antes de actualizar
-            //     $this->set($resultados);
-        
-        
-            //     // Realiza la actualización en la base de datos
-            //     $this->update();
-        
-            //     return true; // Opcional: Devuelve true para indicar éxito
-            // } else {
-            //     return false; // Opcional: Devuelve false para indicar error
-            // }
+            
 
     }
+   public function agregar(){
+       
+   }
 
     public function buscarBebidaPorNombre($nombre)
 {
@@ -70,20 +62,18 @@ class BebidaModelo extends Model
     }
 }
 
-    public function Actualizar($resultados)
+    public function Actualizar($id)
     {
-        // Asegúrate de que $resultados no esté vacío y 'id_bebida' sea un valor válido
-    if (!empty($resultados)) {
-        // Filtra los datos permitidos antes de actualizar
-        $this->set($resultados);
+        
+    if (!empty($resultados) && isset($resultados->id_bebida)) {
+       
+        $id = $resultados->id_bebida;
 
+        $this->update($id,$resultados);
 
-        // Realiza la actualización en la base de datos
-        $this->update();
-
-        return true; // Opcional: Devuelve true para indicar éxito
+        return true; 
     } else {
-        return false; // Opcional: Devuelve false para indicar error
+        return false; 
     }
     }
     public function guardarRutaEnBaseDeDatos()
