@@ -64,6 +64,7 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 
 $routes->get('barControlador/verDetalleOrden/(:num)', 'barControlador::verDetalleOrden/$1');
 $routes->get('adminBebidas', 'AdminBebidasControlador::index');
+$routes->post('adminBebidas', 'AdminBebidasControlador::index');
 $routes->get('barControlador/index', 'barControlador::index');
 $routes->post('barControlador/filtrarPorTipo', 'barControlador::filtrarPorTipo');
 
@@ -96,6 +97,7 @@ $routes->get('barControlador/comprarVista', 'BarControlador::comprarVista');
 $routes->POST('barControlador/comprarVista/(:num)', 'BarControlador::comprar/$1');
 
 $routes->get('salir', 'loginControlador::salir');
+$routes->get('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
 $routes->post('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
 $routes->get('adminBebidas/editar/(:num)', 'AdminBebidasControlador::editar/$1');
 $routes->post('adminBebidas/editar/', 'AdminBebidasControlador::editar/');

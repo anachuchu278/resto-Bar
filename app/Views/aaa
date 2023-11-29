@@ -1,0 +1,11 @@
+
+                $bebidaModelo = new BebidaModelo();
+                $data = [
+                    'nombre' => $this->request->getPost('nombre'),
+                    'tipo' => $this->request->getPost('tipo'),
+                    'precio' => $this->request->getPost('precio'),
+                    'descripcion' => $this->request->getPost('descripcion'),
+                    'ingredientes' => $this->request->getPost('ingredientes'),
+                ];
+                var_dump($data);
+                $bebidaModelo->insert($data);

@@ -48,11 +48,6 @@ class AdminBebidasControlador extends Controller
         //     $rutaArchivo = 'assets/' . $newName;
         //     $this->guardarRutaEnBaseDeDatos($rutaArchivo);
 
-<<<<<<< HEAD
-            // Redirecciona o realiza otras acciones según tus necesidades
-            echo view('');
-        } 
-=======
         //     // Redirecciona o realiza otras acciones según tus necesidades
         //     return redirect()->to(base_url('admin_bebidas/index'));
         // } else {
@@ -60,7 +55,6 @@ class AdminBebidasControlador extends Controller
         //     return "Error al cargar la imagen: " ;
 
         // }
->>>>>>> 73ce50e4997b882929b2f30d32a0d53282834a03
     }
 
    
@@ -74,35 +68,16 @@ class AdminBebidasControlador extends Controller
             return redirect()->to('/login');
         }
         else {
-            // Aquí se procesa el formulario de agregar una nueva bebida
-            if ($this->request->getMethod() === 'post') {
-                $bebidaModelo = new BebidaModelo();
-                $data = [
-                    'nombre' => $this->request->getPost('nombre'),
-                    'tipo' => $this->request->getPost('tipo'),
-                    'precio' => $this->request->getPost('precio'),
-                    'descripcion' => $this->request->getPost('descripcion'),
-                    'ingredientes' => $this->request->getPost('ingredientes'),
-                ];
-    
-                // Aquí debes agregar el código para manejar la carga de la imagen
-                if(isset($_FILES['imagen'])){
-                    $file_name = $_FILES['imagen']['name'];
-                    $file_tmp = $_FILES['imagen']['tmp_name'];
-                    
-                    move_uploaded_file($file_tmp,"images/".$file_name);
-                    $data['imagen'] = "images/".$file_name;
-                }
-    
-                $bebidaModelo->insert($data);
-                return redirect()->to(base_url('admin_bebidas'));
+            echo view('comunes/header');
+            echo view('admin_bebidas/agregar');
+            return view('comunes/footer');
             }
-            else {
-                echo view('comunes/header');
-                return view('admin_bebidas/agregar');
-            }
+        
+            
+        
+            
         }
-    }
+    
 
     public function editar($id)
     {
@@ -111,10 +86,31 @@ class AdminBebidasControlador extends Controller
         
         $bebidaModelo = new BebidaModelo();
         $data['bebida'] = $bebidaModelo->obtenerDatos($id);
-        //var_dump($data);
+       
         
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+              
+                $datosActualizados = [
+                    'nombre' => $_POST['nombre'],
+                    'tipo_id' => $_POST['tipo_id'],
+                    'precio' => $_POST['precio'],
+                    'descripcion' => $_POST['descripcion'],
+                    'imagen_ruta' => $_POST['imagen_ruta'],
+                ];
+    
+              
+                $actualizacionExitosa = $bebidaModelo->actualizarDatos($id, $datosActualizados);
+    
+                if ($actualizacionExitosa) {
+                    echo "Bebida actualizada con éxito";
+                } else {
+                    echo "Error al actualizar la bebida";
+                }
+            }
+    
+          
+            return view('admin_bebidas/editar', $data);
         
-        return view('admin_bebidas/editar', $data);
     
     }
 

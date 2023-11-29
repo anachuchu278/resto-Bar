@@ -25,22 +25,22 @@
 
         <div class="container">
             <section>
-                <?php foreach ($bebida as $item) :?>
+                
                 <h2>Formulario de Editar Bebida</h2>
-                <form action="<?php echo base_url('admin_bebidas/actualizar/' ); ?>" method="post">
-                    <label for="nombre">ID:</label>
-                    <input type="text" name="nombre" value="<?php echo $item['id_bebida']; ?>" required>
-
+                <form action="<?php echo base_url(''); ?>" method="post">
+                   
+                    <input type="hidden" name="id_bebida" value="<?php  $bebida->id_bebida; ?>" >
                     <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" value="<?php echo $item['nombre']; ?>" required>
+                    <input type="text" name="nombre" value="<?php  $bebida->nombre; ?>" >
                     <label for="tipo">Tipo:</label>
-                    <input type="text" name="tipo" value="<?php echo $item['tipo']; ?>" required>
+                    <input type="text" name="tipo" value="<?php  $bebida->tipo_id; ?>" >
                     <label for="precio">Precio:</label>
-                    <input type="number" name="precio" value="<?php echo $item['precio']; ?>" required>
+                    <input type="number" name="precio" value="<?php  $bebida->precio; ?>" >
                     <label for="descripcion">Descripción:</label>
-                    <!-- ... (resto del formulario) ... -->
+                    <input type="text" name="descripcion" value="<?php $bebida->descripcion;?>">
+                    <input type="submit" value="Agregar" class>
                 </form>
-                <?php endforeach; ?>
+                
             </section>
         </div>
 
