@@ -97,8 +97,8 @@ $routes->get('barControlador/comprarVista', 'BarControlador::comprarVista');
 $routes->POST('barControlador/comprarVista/(:num)', 'BarControlador::comprar/$1');
 
 $routes->get('salir', 'loginControlador::salir');
-$routes->get('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
-$routes->post('adminBebidas/agregar', 'AdminBebidasControlador::agregar');
+$routes->get('adminBebidas/agregar', 'AdminBebidasControlador::agregarVista');
+$routes->post('adminBebidas/agregar', 'AdminBebidasControlador::agregarVista');
 $routes->get('adminBebidas/editar/(:num)', 'AdminBebidasControlador::editar/$1');
 $routes->post('adminBebidas/editar/', 'AdminBebidasControlador::editar/');
 $routes->get('adminBebidas/eliminar/(:num)', 'AdminBebidasControlador::eliminar/$1');
@@ -106,5 +106,10 @@ $routes->post('adminBebidas/eliminar/', 'AdminBebidasControlador::eliminar/$1');
 $routes->get('AdminBebidasControlador/guardar_imagen', 'AdminBebidasControlador::guardar_imagen');
 $routes->post('AdminBebidasControlador/guardar_imagen', 'AdminBebidasControlador::guardar_imagen');
 $routes->get('usuarioCuenta', 'barControlador::usuarioCuenta');
+
+$routes->post('agregar', 'AdminBebidasControlador::agregarA');
+$routes->get('admin_bebidas/agregar', 'AdminBebidasControlador::tipos');
+
+
 
 

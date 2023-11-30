@@ -9,3 +9,39 @@
                 ];
                 var_dump($data);
                 $bebidaModelo->insert($data);
+
+                $user = session('user'); 
+        if (!$user || $user ['rol'] < 1) {
+            return redirect()->to('/login');
+        }
+        else {
+            
+        $imagen = $this->request->getFile('imagen');
+
+        // verifica imagen válida
+        if ($imagen->isValid() && !$imagen->hasMoved()) {
+
+            // genera nombre único para la imagen
+            $nuevoNombreImagen = $imagen->getRandomName();
+
+            // mueve la imagen a la carpeta 
+            $imagen->move('img', $nuevoNombreImagen);
+
+            // ruta completa de la imagen para almacenar en la db
+            $rutaImagen = base_url('img/' . $nuevoNombreImagen);
+
+            // insertar imágen
+            $idNuevaImagen = $imagenModel->insert([
+                "imagen" => $rutaImagen
+            ]);
+
+            // datos para insertar en la db
+            $data = [
+                'nombre' => $this->request->getPost('nombre'),
+                'precio' => $this->request->getPost('precio'),
+                'stock' => $this->request->getPost('stock'),
+                'descripcion' => $this->request->getPost('descripcion'),
+                'id_tipo' => $this->request->getPost('tipo'),
+                'id_estado' => $this->request->getPost('estado'),
+                'id_imagen' => $idNuevaImagen, 
+            ]

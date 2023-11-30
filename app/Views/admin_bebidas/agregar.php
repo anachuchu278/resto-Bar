@@ -26,17 +26,24 @@
                 <section>
                     <h2>Formulario de Agregar Bebida</h2>
                   
-                    <form action="<?php echo base_url('adminBebidas'); ?>" method="post">
+                    <form action="<?php echo base_url('agregar'); ?>" method="post" enctype="multipart/form-data">
                         <label for="nombre">Nombre:</label>
                         <input type="text" name="nombre" required>
                         <label for="tipo">Tipo:</label>
-                        <input type="text" name="tipo" required>
+                        <select name="tipo" id="">
+                        <?php foreach ($tipo as $tip): ?>
+                            <option value="<?= $tip ['id_tipo']?>">
+                            <?= $tip['nombre_tipo']?>
+                        </option>
+                        <?php endforeach;?>
+                        </select>
                         <label for="precio">Precio:</label>
                         <input type="number" name="precio" required>
                         <label for="descripcion">Descripción:</label>
                         <textarea name="descripcion" required></textarea>
                         <label for="ingredientes">Ingredientes</label>
                         <textarea name="ingredientes" required></textarea>
+                        <!-- <input type="file" name="imagen" required> -->
                         
                         
                         <input type="submit" value="Agregar" class>
