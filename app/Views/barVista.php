@@ -9,14 +9,23 @@ if (null !== $user){
 <html>
 
 <head>
+  <!-- <link rel="shortcut icon" href="img/descarga.png"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="icon" type="image/png" href="http://localhost/resto-Bar/public/img/faviconn.png"> -->
+  <link rel="shortcut icon" href="<? base_url('public\img\descarga.png') ?>">
   <title>ByTender</title>
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+<<<<<<< HEAD
     crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="<?php echo base_url('css/barVista.css'); ?>">
   <link rel="shortcut icon" href="public/assets/images/coca-lata.png" type="image/x-icon">
+=======
+    crossorigin="anonymous"></script>
+>>>>>>> dd1713357f1a04e19ca68581bc0be9fb753bb4cb
 </head>
 
 <body>
@@ -35,6 +44,7 @@ if (null !== $user){
       margin-top: 20px;
     }
   </style>
+<<<<<<< HEAD
   <div class="dropdown">
   <form action="<?= base_url('barControlador/filtrarPorTipo') ?>" method="post">
     <select name="tipo_id">
@@ -44,6 +54,21 @@ if (null !== $user){
         
     </select>
     <button class='boton' type="submit">Filtrar</button>
+=======
+  <form action="<?= base_url('barControlador/filtrarPorTipo') ?>" method="post">
+    <div class="dropdown">
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <?php foreach ($filtrar as $tipo) : ?>
+                <li><button class="dropdown-item" type="submit" name="tipo_id" value="<?= $tipo['tipo_id'] ?>"><?php  echo $tipo['tipo_id']?></button></li>
+            <?php endforeach; ?>
+        </ul>
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Filtrar por tipo
+          </button>
+        
+        
+    </div>
+>>>>>>> dd1713357f1a04e19ca68581bc0be9fb753bb4cb
 </form>
 </div>
 

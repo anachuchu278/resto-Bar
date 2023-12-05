@@ -75,6 +75,7 @@ public function __construct() {
 
 public function filtrarPorTipo()
 {   
+<<<<<<< HEAD
     
     // Verificar si se ha enviado el formulario
     if ($this->request->getPost()) {
@@ -93,7 +94,17 @@ public function filtrarPorTipo()
     // Obtener los tipos para el menú desplegable
     $tipoModelo = new tipoModelo();
     $data['filtrar'] = $tipoModelo->tipo();
+=======
+    $tipo = $this->request->getPost('tipo_id');
+      // Print out the tipo_id
+>>>>>>> dd1713357f1a04e19ca68581bc0be9fb753bb4cb
 
+    $barModelo = new barModelo();
+    $result = $barModelo->filtrarBebidasPorTipo($tipo);
+
+  // Print out the result
+
+    $data['filtrar'] = $result;
     echo view('barVista', $data);
 }
 

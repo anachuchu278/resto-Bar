@@ -41,6 +41,14 @@ class AdminBebidasControlador extends Controller
         //     $rutaArchivo = 'assets/' . $newName;
         //     $this->guardarRutaEnBaseDeDatos($rutaArchivo);
 
+<<<<<<< HEAD
+
+            // Redirecciona o realiza otras acciones según tus necesidades
+            //echo view('');
+        } 
+
+=======
+>>>>>>> d43251ea3e0f73422111c559f20896aae1043f02
         //     // Redirecciona o realiza otras acciones según tus necesidades
         //     return redirect()->to(base_url('admin_bebidas/index'));
         // } else {
@@ -48,7 +56,12 @@ class AdminBebidasControlador extends Controller
         //     return "Error al cargar la imagen: " ;
 
         // }
+<<<<<<< HEAD
+
+    
+=======
     }
+>>>>>>> d43251ea3e0f73422111c559f20896aae1043f02
 
 
 
