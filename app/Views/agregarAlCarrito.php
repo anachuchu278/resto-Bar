@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="<?php echo base_url('css/carrito.css'); ?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar al Carrito</title>
@@ -11,11 +12,11 @@
         <h2 class="mb-4">Agregar al Carrito</h2>
         <ul class="list-group">
     <li class="list-group-item"><strong>Nombre:</strong> <?= $producto['nombre']; ?></li>
-    <li class="list-group-item"><strong>Tipo:</strong> <?= $producto['tipo_id']; ?></li>
+    <li class="list-group-item"><strong>Tipo:</strong> <?= $producto['id_tipo']; ?></li>
     <li class="list-group-item"><strong>Precio:</strong> <?= $producto['precio']; ?></li>
     <li class="list-group-item"><strong>Descripción:</strong> <?= $producto['descripcion']; ?></li>
     <li class="list-group-item">
-        <img src="<?= base_url('assets/images/' . $producto['imagen_ruta']); ?>" alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
+        <img src="<?= base_url('assets/images/' . $producto['id_imagen']); ?>" alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
     </li>
 </ul>
 

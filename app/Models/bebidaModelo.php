@@ -8,7 +8,7 @@ class BebidaModelo extends Model
 {
     protected $table = 'bebidas';
     protected $primaryKey = 'id_bebida';
-    protected $allowedFields = ['nombre', 'tipo_id', 'precio', 'descripcion', 'id_imagen'];
+    protected $allowedFields = ['nombre', 'id_tipo', 'precio', 'descripcion', 'id_imagen'];
 
 
     public function buscarBebidaPorId($id)
@@ -22,7 +22,7 @@ public function insertBebida($data){
     $str = 'INSERT INTO bebidas (nombre, tipo_id, precio, descripcion,ingredientes, id_imagen)
     VALUES ("'.$data['nombre'].'", "'.$data['tipo_id'].'", "'.$data['precio'].'", "'.$data['descripcion'].'", "'.$data['ingredientes'].$data['id_imagen'] .'")';
 
-    $query = $this->db->query($str);
+    $data = $this->db->query($str);
 
 }
 

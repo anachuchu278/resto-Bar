@@ -19,14 +19,7 @@ class AdminBebidasControlador extends Controller
 
             echo view('comunes/header');
             return view('admin_bebidas/index', $data);
-
         }
-
-
-
-
-
-
     }
 
 
@@ -65,18 +58,20 @@ class AdminBebidasControlador extends Controller
     {
         echo view('comunes/header');
         return view('admin_bebidas/agregar');
-
-
     }
-     public function tipos()
+    // En tu controlador
+    public function tipos()
     {
-        $tipoModelo = new tipoModelo();
-        $tipo = $this->request->getPost('id_tipo');
-        $data['tipo'] = $tipoModelo->tipo();
+        // Obtener los tipos y pasarlos a la vista
+        $tipoModelo = new TipoModelo(); // Asegúrate de tener el nombre correcto del modelo
+        $data['tipos'] = $tipoModelo->tipo();
 
-        return view('admin_bebidas/agregar', $data);
+        // Cargar la vista con los datos
+        echo view('admin_bebidas/agregar', $data);
     }
-    public function agregarA()
+
+
+    public function agregarA($data)
     {
         $user = session('user');
         if (!$user || $user['rol'] < 1) {
@@ -106,24 +101,22 @@ class AdminBebidasControlador extends Controller
 
 
             // datos para insertar en la db
-            $data = [
-                'nombre' => $this->request->getPost('nombre'),
-                'precio' => $this->request->getPost('precio'),
-                //'stock' => $this->request->getPost('stock'),
-                'descripcion' => $this->request->getPost('descripcion'),
-                'id_tipo' => $this->request->getPost('tipo_id'),
-                'ingredientes' => $this->request->getPost('ingredientes'),
-                //'id_estado' => $this->request->getPost('estado'),
-                //'id_imagen' => $idNuevaImagen, 
-            ];
-            //var_dump($data);
+            // $data = [
+            //     'nombre' => $this->request->getPost('nombre'),
+            //     'precio' => $this->request->getPost('precio'),
+            //     //'stock' => $this->request->getPost('stock'),
+            //     'descripcion' => $this->request->getPost('descripcion'),
+            //     'id_tipo' => $this->request->getPost('tipo_id'),
+            //     'ingredientes' => $this->request->getPost('ingredientes'),
+            //     //'id_estado' => $this->request->getPost('estado'),
+            //     //'id_imagen' => $idNuevaImagen, 
+            // ];
 
-            $bebidaModelo->insert($data);
+            $bebidaModelo->insertBebida($data);
             return redirect()->to('adminBebidas');
         }
-
     }
-   
+
     public function editar($id)
     {
 
@@ -155,8 +148,6 @@ class AdminBebidasControlador extends Controller
 
 
         return view('admin_bebidas/editar', $data);
-
-
     }
 
     public function eliminar($id_bebida)
@@ -176,17 +167,17 @@ class AdminBebidasControlador extends Controller
             return redirect()->to(base_url('adminBebidas'));
         }
     }
-    public function actualizar($id)
-    {
-        // Aquí se procesa la actualización de la bebida con el ID $id
-        $bebidaModelo = new BebidaModelo();
+    // public function actualizar($id)
+    // {
+    //     // Aquí se procesa la actualización de la bebida con el ID $id
+    //     $bebidaModelo = new BebidaModelo();
 
-        if ($this->request->getMethod() === 'post') {
-            $bebidaModelo->update($id, $_POST); // Asumiendo que los datos del formulario se envían por POST
-            return redirect()->to(base_url('adminBebidas'));
-        }
+    //     if ($this->request->getMethod() === 'post') {
+    //         $bebidaModelo->update($id, $_POST); // Asumiendo que los datos del formulario se envían por POST
+    //         return redirect()->to(base_url('adminBebidas'));
+    //     }
 
-        $data['bebida'] = $bebidaModelo->find($id);
-        return view('admin_bebidas/editar', $data);
-    }
+    //     $data['bebida'] = $bebidaModelo->find($id);
+    //     return view('admin_bebidas/editar', $data);
+    // }
 }

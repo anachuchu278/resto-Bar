@@ -31,9 +31,9 @@
                         <input type="text" name="nombre" required>
                         <label for="tipo">Tipo:</label>
                         <select name="tipo" id="">
-                        <?php foreach ($tipo as $tip): ?>
-                            <option value="<?= $tip ['id_tipo']?>">
-                            <?= $tip['nombre_tipo']?>
+                        <?php foreach ($tipos as $tip): ?>
+                            <option value="<?= $tip ['id_tipo'] ?>">
+                            <?= $tip ['nombre_tipo']?>
                         </option>
                         <?php endforeach;?>
                         </select>

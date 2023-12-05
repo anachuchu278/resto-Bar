@@ -10,11 +10,12 @@ if (null !== $user){
 
 <head>
   <title>ByTender</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="<?php echo base_url('css/barVista.css'); ?>">
   <link rel="shortcut icon" href="public/assets/images/coca-lata.png" type="image/x-icon">
 </head>
 
@@ -34,22 +35,15 @@ if (null !== $user){
       margin-top: 20px;
     }
   </style>
-  <form action="<?php echo base_url('barControlador/buscarBebida'); ?>" method="post" class="form-inline formulario">
-    <div class="container">
-      <div class="input-group">
-        <input type="text" name="busqueda" placeholder="Buscar bebida favorita" class="form-control">
-        <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
-      </div>
-    </div>
-  </form>
   <div class="dropdown">
   <form action="<?= base_url('barControlador/filtrarPorTipo') ?>" method="post">
     <select name="tipo_id">
         <?php foreach ($filtrar as $tipo) : ?>
-            <option value="<?= $tipo['tipo_id'] ?>"><?php  echo $tipo['tipo_id']?></option>
+          <option value="<?= $tipo['id_tipo'] ?>"><?php echo isset($tipo['nombre_tipo']) ? $tipo['nombre_tipo'] : 'Alcoholicas' ?></option>
         <?php endforeach; ?>
+        
     </select>
-    <button type="submit">Filtrar</button>
+    <button class='boton' type="submit">Filtrar</button>
 </form>
 </div>
 
@@ -90,12 +84,12 @@ if (null !== $user){
         <?php foreach ($bebidas as $bebida): ?>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-          <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['imagen_ruta']; ?>"
+          <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['id_imagen']; ?>"
                 alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
                 <?php echo $bebida['nombre']; ?>
               </h5>
               <p class="card-text"><strong>Tipo:</strong>
-                <?php echo $bebida['tipo_id']; ?>
+                <?php echo $bebida['id_tipo']; ?>
               </p>
               <p class="card-text"><strong>Precio:</strong>
                 <?php echo $bebida['precio']; ?>

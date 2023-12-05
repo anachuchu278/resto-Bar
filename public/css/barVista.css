@@ -80,3 +80,44 @@ footer {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Agregar una sombra sutil */
     
 }
+/* Estilo para el contenedor del dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Estilo para el botón del dropdown */
+  .boton {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 8px 12px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de selección */
+  }
+  
+  /* Estilo para el menú desplegable */
+  select {
+    padding: 8px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del menú */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de selección */
+  }
+  
+  /* Estilo para el contenedor del menú desplegable */
+  form {
+    display: inline-block;
+  }
+  
+  /* Estilo para los elementos de opción en el menú desplegable */
+  option {
+    background-color: #fff; /* Color de fondo */
+    color: #333; /* Color del texto */
+  }
+  
+  /* Estilo para el menú desplegable cuando está abierto */
+  select:focus {
+    outline: none; /* Sin contorno al enfocar */
+    border: 1px solid #4CAF50; /* Cambio de color del borde al enfocar */
+  }
+  

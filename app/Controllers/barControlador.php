@@ -8,6 +8,7 @@ use App\Models\BebidaModelo;
 use App\Models\CarritoModelo;
 use CodeIgniter\Controller;
 use App\Models\loginModelo;
+use App\Models\tipoModelo;
 
 class BarControlador extends Controller {
 
@@ -74,12 +75,28 @@ public function __construct() {
 
 public function filtrarPorTipo()
 {   
-    $tipo = $this->request->getPost('tipo_id');
-    $barModelo = new barModelo();
-    $data['filtrar'] = $barModelo->filtrarBebidasPorTipo($tipo);
+    
+    // Verificar si se ha enviado el formulario
+    if ($this->request->getPost()) {
+        // Obtener el tipo seleccionado
+        $tipo_id = $this->request->getPost('tipo_id');
+
+        // Llamar al modelo para obtener las bebidas filtradas por tipo
+        $tipoModelo = new tipoModelo(); // Asegúrate de tener un modelo para las bebidas (puedes cambiar 'barModelo' al nombre correcto)
+        $data['bebidas'] = $tipoModelo->filtrarPorTipo($tipo_id);
+    } else {
+        // Si no se ha enviado el formulario, simplemente obtén todas las bebidas
+        $tipoModelo = new tipoModelo();
+        $data['bebidas'] = $tipoModelo->findAll();
+    }
+    
+    // Obtener los tipos para el menú desplegable
+    $tipoModelo = new tipoModelo();
+    $data['filtrar'] = $tipoModelo->tipo();
 
     echo view('barVista', $data);
 }
+
 
 
     public function buscarProductoPorId($id)

@@ -33,7 +33,7 @@
                     <label for="nombre">Nombre:</label>
                     <input type="text" name="nombre" value="<?php  $bebida->nombre; ?>" >
                     <label for="tipo">Tipo:</label>
-                    <input type="text" name="tipo" value="<?php  $bebida->tipo_id; ?>" >
+                    <input type="text" name="tipo" value="<?php  $bebida->id_tipo; ?>" >
                     <label for="precio">Precio:</label>
                     <input type="number" name="precio" value="<?php  $bebida->precio; ?>" >
                     <label for="descripcion">Descripción:</label>
