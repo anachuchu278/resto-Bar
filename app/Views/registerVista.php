@@ -7,6 +7,8 @@
 
     <link href="<?php echo base_url("css/bootstrap.min.css") ?>" rel="stylesheet">
     <script src="<?php echo base_url("js/bootstrap.bundle.min.js") ?>"></script>
+    <link rel="shortcut icon" href="<? base_url('./img/descarga.png') ?>">
+
 </head>
 <form method='post' action="<?php base_url('registro')?>">
 <body>

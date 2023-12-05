@@ -75,9 +75,14 @@ public function __construct() {
 public function filtrarPorTipo()
 {   
     $tipo = $this->request->getPost('tipo_id');
-    $barModelo = new barModelo();
-    $data['filtrar'] = $barModelo->filtrarBebidasPorTipo($tipo);
+      // Print out the tipo_id
 
+    $barModelo = new barModelo();
+    $result = $barModelo->filtrarBebidasPorTipo($tipo);
+
+  // Print out the result
+
+    $data['filtrar'] = $result;
     echo view('barVista', $data);
 }
 
