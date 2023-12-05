@@ -8,7 +8,7 @@ class BebidaModelo extends Model
 {
     protected $table = 'bebidas';
     protected $primaryKey = 'id_bebida';
-    protected $allowedFields = ['nombre', 'tipo_id', 'precio', 'descripcion', 'imagen_ruta'];
+    protected $allowedFields = ['nombre', 'tipo_id', 'precio', 'descripcion', 'id_imagen'];
 
 
     public function buscarBebidaPorId($id)
@@ -18,6 +18,13 @@ class BebidaModelo extends Model
 
     }
 
+public function insertBebida($data){
+    $str = 'INSERT INTO bebidas (nombre, tipo_id, precio, descripcion,ingredientes, id_imagen)
+    VALUES ("'.$data['nombre'].'", "'.$data['tipo_id'].'", "'.$data['precio'].'", "'.$data['descripcion'].'", "'.$data['ingredientes'].$data['id_imagen'] .'")';
+
+    $query = $this->db->query($str);
+
+}
 
 
 
@@ -42,20 +49,10 @@ class BebidaModelo extends Model
         return $resultado;
         
 
-            // if (!empty($resultados)) {
-            //     // Filtra los datos permitidos antes de actualizar
-            //     $this->set($resultados);
-        
-        
-            //     // Realiza la actualización en la base de datos
-            //     $this->update();
-        
-            //     return true; // Opcional: Devuelve true para indicar éxito
-            // } else {
-            //     return false; // Opcional: Devuelve false para indicar error
-            // }
+            
 
     }
+ 
 
     public function buscarBebidaPorNombre($nombre)
 {
@@ -70,20 +67,18 @@ class BebidaModelo extends Model
     }
 }
 
-    public function Actualizar($resultados)
+    public function Actualizar($id)
     {
-        // Asegúrate de que $resultados no esté vacío y 'id_bebida' sea un valor válido
-    if (!empty($resultados)) {
-        // Filtra los datos permitidos antes de actualizar
-        $this->set($resultados);
+        
+    if (!empty($resultados) && isset($resultados->id_bebida)) {
+       
+        $id = $resultados->id_bebida;
 
+        $this->update($id,$resultados);
 
-        // Realiza la actualización en la base de datos
-        $this->update();
-
-        return true; // Opcional: Devuelve true para indicar éxito
+        return true; 
     } else {
-        return false; // Opcional: Devuelve false para indicar error
+        return false; 
     }
     }
     public function guardarRutaEnBaseDeDatos()
