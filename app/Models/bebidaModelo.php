@@ -8,7 +8,7 @@ class BebidaModelo extends Model
 {
     protected $table = 'bebidas';
     protected $primaryKey = 'id_bebida';
-    protected $allowedFields = ['nombre', 'id_tipo', 'precio', 'descripcion', 'id_imagen'];
+    protected $allowedFields = ['nombre', 'id_tipo', 'precio', 'descripcion', 'imagen_ruta'];
 
 
     public function buscarBebidaPorId($id)
@@ -20,7 +20,7 @@ class BebidaModelo extends Model
 
 public function insertBebida($data){
     $str = 'INSERT INTO bebidas (nombre, tipo_id, precio, descripcion,ingredientes, id_imagen)
-    VALUES ("'.$data['nombre'].'", "'.$data['tipo_id'].'", "'.$data['precio'].'", "'.$data['descripcion'].'", "'.$data['ingredientes'].$data['id_imagen'] .'")';
+    VALUES ("'.$data['nombre'].'", "'.$data['id_tipo'].'", "'.$data['precio'].'", "'.$data['descripcion'].'", "'.$data['ingredientes'].$data['id_imagen'] .'")';
 
     $data = $this->db->query($str);
 
@@ -81,17 +81,5 @@ public function insertBebida($data){
         return false; 
     }
     }
-    public function guardarRutaEnBaseDeDatos()
-    {
-        // Asume que tienes los demás datos de la bebida en un array $data
-        $data = [
-            'nombre' => $this->request->getPost('nombre'),
-            'tipo' => $this->request->getPost('tipo'),
-            'precio' => $this->request->getPost('precio'),
-            'descripcion' => $this->request->getPost('descripcion'),
-            'ingredientes' => $this->request->getPost('ingredientes'),
-            'imagen' => $this->request->getPost('imagen_ruta'),
-        ];
-        $this->insert($data);
-    }
+   
 }

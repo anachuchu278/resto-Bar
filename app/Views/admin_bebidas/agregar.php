@@ -4,8 +4,8 @@
 <head>
     <title>Bar - Agregar Bebida</title>
     <link rel="stylesheet" href="<?php echo base_url('css/adminBebidas.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('css/agregarBebida.css'); ?>"> 
-   
+    <link rel="stylesheet" href="<?php echo base_url('css/agregarBebida.css'); ?>">
+
 </head>
 
 <body>
@@ -23,34 +23,30 @@
 
     <div class="container">
 
-                <section>
-                    <h2>Formulario de Agregar Bebida</h2>
-                  
-                    <form action="<?php echo base_url('agregar'); ?>" method="post" enctype="multipart/form-data">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" required>
-                        <label for="tipo">Tipo:</label>
-                        <select name="tipo" id="">
-                        <?php foreach ($tipos as $tip): ?>
-                            <option value="<?= $tip ['id_tipo'] ?>">
-                            <?= $tip ['nombre_tipo']?>
-                        </option>
-                        <?php endforeach;?>
-                        </select>
-                        <label for="precio">Precio:</label>
-                        <input type="number" name="precio" required>
-                        <label for="descripcion">Descripción:</label>
-                        <textarea name="descripcion" required></textarea>
-                        <label for="ingredientes">Ingredientes</label>
-                        <textarea name="ingredientes" required></textarea>
-                        <!-- <input type="file" name="imagen" required> -->
-                        
-                        
-                        <input type="submit" value="Agregar" class>
-                        
-                    </form>
-                   
-                </section>
+        <section>
+            <h2>Formulario de Agregar Bebida</h2>
+
+            <form action="<?php echo site_url('agregar'); ?>" method="post" enctype="multipart/form-data">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" required>
+                <label for="tipo">Tipo:</label>
+                <select name="tipos" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <label for="precio">Precio:</label>
+                <input type="number" name="precio" required>
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" required></textarea>
+                <label for="imagen_ruta">imagen</label>
+                <input type="file" name="imagen_ruta" required>
+
+
+                <input type="submit" value="Agregar" class>
+
+            </form>
+
+        </section>
     </div>
 </body>
 

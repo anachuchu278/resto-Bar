@@ -19,13 +19,9 @@ if (null !== $user){
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-<<<<<<< HEAD
     crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="<?php echo base_url('css/barVista.css'); ?>">
   <link rel="shortcut icon" href="public/assets/images/coca-lata.png" type="image/x-icon">
-=======
-    crossorigin="anonymous"></script>
->>>>>>> dd1713357f1a04e19ca68581bc0be9fb753bb4cb
 </head>
 
 <body>
@@ -44,31 +40,10 @@ if (null !== $user){
       margin-top: 20px;
     }
   </style>
-<<<<<<< HEAD
   <div class="dropdown">
   <form action="<?= base_url('barControlador/filtrarPorTipo') ?>" method="post">
-    <select name="tipo_id">
-        <?php foreach ($filtrar as $tipo) : ?>
-          <option value="<?= $tipo['id_tipo'] ?>"><?php echo isset($tipo['nombre_tipo']) ? $tipo['nombre_tipo'] : 'Alcoholicas' ?></option>
-        <?php endforeach; ?>
-        
-    </select>
+   
     <button class='boton' type="submit">Filtrar</button>
-=======
-  <form action="<?= base_url('barControlador/filtrarPorTipo') ?>" method="post">
-    <div class="dropdown">
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <?php foreach ($filtrar as $tipo) : ?>
-                <li><button class="dropdown-item" type="submit" name="tipo_id" value="<?= $tipo['tipo_id'] ?>"><?php  echo $tipo['tipo_id']?></button></li>
-            <?php endforeach; ?>
-        </ul>
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Filtrar por tipo
-          </button>
-        
-        
-    </div>
->>>>>>> dd1713357f1a04e19ca68581bc0be9fb753bb4cb
 </form>
 </div>
 
@@ -93,8 +68,8 @@ if (null !== $user){
               <?php echo $bebidaEncontrada['descripcion']; ?>
             </li>
             <li class="list-group-item">
-              <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebidaEncontrada['imagen_ruta']; ?>"
-                alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
+              <img src="<?=  base_url()?>/uploads/<?=$bebidaEncontrada['imagen_ruta'];?>" class="img-thumbnail" alt="">
+                
             </li>
             <?php endforeach; ?>
           </ul>
@@ -109,7 +84,7 @@ if (null !== $user){
         <?php foreach ($bebidas as $bebida): ?>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-          <img src="<?php echo base_url(); ?>assets/images/<?php echo $bebida['id_imagen']; ?>"
+          <img src="<?=  base_url()?>/uploads/<?=$bebida['imagen_ruta'];?>"
                 alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
                 <?php echo $bebida['nombre']; ?>
               </h5>

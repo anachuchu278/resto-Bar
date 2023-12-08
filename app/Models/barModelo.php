@@ -28,15 +28,8 @@ public function filtrarBebidasPorTipo($tipo)
     $builder->where('tipo_id', $tipo);
     $result = $builder->get()->getResultArray();
 
-<<<<<<< HEAD
     echo "Result: ";
     print_r($result);  // Print out the result
-=======
-    $query = $this->db->query("SELECT tipo_id FROM bebidas");
-    
-    return $query->getResultArray();
-        
->>>>>>> d43251ea3e0f73422111c559f20896aae1043f02
 
     return $result;
 }

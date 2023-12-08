@@ -109,6 +109,8 @@ $routes->get('usuarioCuenta', 'barControlador::usuarioCuenta');
 
 $routes->post('agregar', 'AdminBebidasControlador::agregarA');
 $routes->get('admin_bebidas/agregar', 'AdminBebidasControlador::tipos');
+$routes->post('actualizar','AdminBebidasControlador::actualizar');
+
 
 
 
