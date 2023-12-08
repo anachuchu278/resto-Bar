@@ -85,6 +85,27 @@ class AdminBebidasControlador extends Controller
         ];
         $id= $this->request->getVar('id_bebida');
         $bebidaModelo->update($id,$datos);
+        $validacion = $this->validate([
+            'imagen_ruta' => [
+                'uploaded[imagen_ruta]',
+                'mime_in[imagen_ruta,image/jpg,image/jpeg,image/png]',
+                'max_size[imagen_ruta,1200]',
+            ]
+            ]);
+            if($validacion){
+                $datosBebida=$bebidaModelo->where('id_bebida',$id)->first();
+                $ruta=('../public/uploads/'.$datosBebida['imagen_ruta']);
+                unlink($ruta);
+                if($imagen=$this->request->getFile('imagen_ruta')){
+                    $nuevoNombre=$imagen->getRandomName();
+                    $imagen->move('../public/uploads/',$nuevoNombre);
+                    $datos = [
+                        'imagen_ruta'=>$nuevoNombre
+                    ];
+                    $bebidaModelo->update($id,$datos);
+            
+                   }
+            }
 
         return redirect()->to('/');
 
