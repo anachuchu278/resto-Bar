@@ -31,7 +31,7 @@ textarea {
 }
 
 input[type="file"] {
-    margin-bottom: 20px; /* Adjust as needed */
+    margin-bottom: 20px; 
 }
 
 input[type="submit"] {
@@ -48,7 +48,7 @@ input[type="submit"]:hover {
     background-color: #45a049;
 }
 
-/* Optional: Add some additional styling for better aesthetics */
+
 h2 {
     color: #333;
 }

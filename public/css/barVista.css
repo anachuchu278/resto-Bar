@@ -17,7 +17,7 @@ body {
 }
 
 .card {
-    flex: 0 0 calc(33.33% - 20px); /* Esto hará que haya 3 tarjetas en una fila con espacio entre ellas */
+    flex: 0 0 calc(33.33% - 20px); 
     box-sizing: border-box;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -57,14 +57,6 @@ body {
     border-top-right-radius: 8px;
 }
 
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
 .card-title {
     color: #333; /* Cambia el color del texto según tus preferencias */
     font-size: 1.5em; /* Ajusta el tamaño del texto según tus preferencias */

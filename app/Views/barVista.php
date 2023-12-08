@@ -97,7 +97,6 @@ if (null !== $user){
               <p class="card-text"><strong>Descripción:</strong>
                 <?php echo $bebida['descripcion']; ?>
               </p>
-              <button><a href="<?php site_url('informacion'); ?>"> mas informacion</a> </button>
               <?php if ($is_logged):?>
               <form action="<?= base_url('barControlador/agregarAlCarrito/' . $bebida['id_bebida']); ?>" method="post">
                 <div class="mb-3">

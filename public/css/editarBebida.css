@@ -1,10 +1,13 @@
 .container {
-    width: 80%;
+    width: 70%;
     margin: auto;
 }
-
+body {
+    background-color: #f4f4f4;
+}
 section {
     margin-bottom: 20px;
+    background-color:  #f4f4f4;
 }
 
 form {
