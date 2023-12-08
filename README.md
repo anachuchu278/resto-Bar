@@ -1,1 +1,1 @@
-Bytender es una pagina que ofrece un servicio de venta de bebidas que ofrece un apartado de envios
+Bytender se destaca como una plataforma online líder en la compra de bebidas, ofreciendo una experiencia única a sus usuarios. Su extenso catálogo abarca desde bebidas tradicionales hasta las más exclusivas y refinadas, con un enfoque en la curación experta de productos. La plataforma no solo proporciona productos, sino también experiencias, convirtiéndose en un espacio donde los usuarios pueden explorar la rica historia y diversidad de las bebidas.
