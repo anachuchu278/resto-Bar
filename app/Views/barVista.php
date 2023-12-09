@@ -15,11 +15,6 @@ if (null !== $user){
   <!-- <link rel="icon" type="image/png" href="http://localhost/resto-Bar/public/img/faviconn.png"> -->
   <link rel="shortcut icon" href="<? base_url('public\img\descarga.png') ?>">
   <title>ByTender</title>
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="<?php echo base_url('css/barVista.css'); ?>">
   <link rel="shortcut icon" href="public/assets/images/coca-lata.png" type="image/x-icon">
 </head>
@@ -28,22 +23,11 @@ if (null !== $user){
   <?php if ($is_logged): ?>
   <h2>Bienvenido, <?php echo $user['nombre'];?>!</h2>
   <?php endif;?>
-  <style>
-    body {
-      background: linear-gradient(to right, #FCEFEF, #bbb7af); /* Cremita */
-    }
-    .btn-primary {
-      background-color: #dc3545; /* Rojo como color principal */
-      border-color: #dc3545;
-    }
-    .formulario {
-      margin-top: 20px;
-    }
-  </style>
+ 
   <div class="dropdown">
   <form action="<?= base_url('barControlador/filtrarPorTipo') ?>" method="post">
    
-    <button class='boton' type="submit">Filtrar</button>
+  <!-- <button class='boton' type="submit">Filtrar</button> -->
 </form>
 </div>
 
@@ -79,16 +63,15 @@ if (null !== $user){
     </section>
     <?php elseif (isset($bebidas) && is_array($bebidas)): ?>
     <section class="mt-4">
-      <h2 class="mb-3">Bebidas Disponibles:</h2>
+      <h2 class="titulo">Bebidas Disponibles:</h2>
       <div class="row">
         <?php foreach ($bebidas as $bebida): ?>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
           <img src="<?=  base_url()?>/uploads/<?=$bebida['imagen_ruta'];?>"
-                alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
-                <?php echo $bebida['nombre']; ?>
-              </h5>
-              <p class="card-text"><strong>Tipo:</strong>
+                alt="Imagen de la bebida" >
+                <h3><?php echo $bebida['nombre']; ?></h3>
+              <p class="card-text"><strong>Tipo:</strong> 
                 <?php echo $bebida['id_tipo']; ?>
               </p>
               <p class="card-text"><strong>Precio:</strong>

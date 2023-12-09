@@ -1,6 +1,7 @@
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to right, #86A8E7, #91EAE4);
+    align-items: auto;
     
 }
 
@@ -17,12 +18,15 @@ body {
 }
 
 .card {
-    flex: 0 0 calc(33.33% - 20px); 
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.card img {
+    width: 100%;
+    height: auto; /* Mantener la proporción de la imagen */
+    display: block;
 }
 
 .card-body {
@@ -52,42 +56,24 @@ body {
     padding: 15px;
 }
 
-.card-img-top {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
+
 
 .card-title {
-    color: #333; /* Cambia el color del texto según tus preferencias */
-    font-size: 1.5em; /* Ajusta el tamaño del texto según tus preferencias */
-    font-weight: bold; /* Puedes ajustar el grosor del texto */
-    /* Otros estilos que desees agregar */
-}
-h2 {
-    color: #333; /* Color del texto */
-    font-size: 1.5em; /* Tamaño de la fuente */
-    font-weight: bold; /* Grosor de la fuente */
-    align-items: center;
+    color: #333;
+    font-size: 1.5em;
+    font-weight: bold; 
+   
 }
 
-footer {
-    min-height: 50px; /* Ajusta esta altura según tus necesidades */
-  
-    align-items: center;
-    justify-content: center;
-    background-color: #f8f9fa; /* Fondo del footer */
-    color: #343a40; /* Color del texto en el footer */
-    padding: 10px; /* Ajustar el espaciado interior según sea necesario */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Agregar una sombra sutil */
-    
-}
-/* Estilo para el contenedor del dropdown */
+
+
+
 .dropdown {
     position: relative;
     display: inline-block;
   }
   
-  /* Estilo para el botón del dropdown */
+
   .boton {
     background-color: #4CAF50; /* Color de fondo */
     color: white; /* Color del texto */
@@ -121,4 +107,9 @@ footer {
     outline: none; /* Sin contorno al enfocar */
     border: 1px solid #4CAF50; /* Cambio de color del borde al enfocar */
   }
-  
+.titulo {
+    color: #333; /* Color del texto */
+    text-align: center; /* Alineación del texto al centro */
+    margin-top: 20px; /* Espaciado superior */
+
+}

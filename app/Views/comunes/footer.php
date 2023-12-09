@@ -3,49 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <style>
-        /* Agrega un estilo personalizado para el fondo crema */
-        .bg-crema {
-            background-color: #f5f5dc; /* Puedes ajustar el color según tus preferencias */
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/4c74974fbd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="<?php echo base_url('css/footer.css')?>">
     <title>Tu Página</title>
 </head>
 <body>
 
-<footer class="bg-light bg-crema text-dark py-5">
-    <div class="container">
-        <div class="row">
-            <!-- Acerca de nosotros -->
-            <div class="col-lg-6 mb-4">
-                <h5 class="text-primary">About Us</h5>
-                <hr class="mb-4">
-                <p>
-                    Nosotros somos bytender tu tienda de venta de bebidas de confianza!
-                </p>
-            </div>
-
-            <!-- Ayuda -->
-            <div class="col-lg-6 mb-4">
-                <h5 class="text-primary">Help</h5>
-                <hr class="mb-4">
-                <p>
-                    <a href="<?= site_url("register") ?>" class="text-dark">Register</a>
-                    <a href="#" class="text-dark">Carrito de Compras</a>
-                </p>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <h5 class="text-primary">Contacto</h5>
-                <hr class="mb-4">
-                <p>
-                    <a href="<?= site_url("register") ?>" class="text-dark">Register</a>
-                    <a href="#" class="text-dark">Carrito de Compras</a>
-                </p>
+<footer class="pie-pagina">
+    <div class="grupo-1">
+        <div class="box">
+            <figure>
+            <a href="#"></a>
+            <img src="<?php echo base_url('assets/unnamed.jpg')?>" alt="imagen de la pagina">
+            </figure>
+        </div>
+        <div class="box">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ex.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ex.</p>
+        </div>
+        <div class="box">
+            <h2>Social Media</h2>
+            <div class="red-social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-github"></a>
             </div>
         </div>
     </div>
+    <div class="grupo-2">
+        <small>&copy; 2023 <b>Bytender</b> - Todos los derechos reservados.</small>
+    </div>
+    
 </footer>
 
 </body>
