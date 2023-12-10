@@ -1,16 +1,17 @@
+/* Estilos generales para el cuerpo de la página */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #86A8E7, #91EAE4);
-    align-items: auto;
-    
+    background: #D2B48C;
 }
 
+/* Contenedor principal */
 .container {
     width: 100%;
-    margin: flex;
+    margin: auto; /* "auto" centra el contenedor */
     padding-top: 20px;
 }
 
+/* Tarjetas */
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -20,12 +21,18 @@ body {
 .card {
     width: 300px;
     margin: 20px;
-    border: 1px solid #ccc;
     padding: 10px;
+    border: 1px solid #ccc;
+    transition: all 300ms ease;
+
 }
+.card:hover {
+    color: grey;
+}
+
 .card img {
     width: 100%;
-    height: auto; /* Mantener la proporción de la imagen */
+    height: auto;
     display: block;
 }
 
@@ -34,11 +41,14 @@ body {
 }
 
 .card-title {
-    font-size: 1.25rem;
+    color: #333;
+    font-size: 1.5em;
+    font-weight: bold;
     margin-bottom: 10px;
+    text-align: center;
 }
 
-
+/* Lista de grupos */
 .list-group-item {
     border: none;
     padding: 8px;
@@ -48,6 +58,7 @@ body {
     margin-right: 10px;
 }
 
+/* Filas y columnas */
 .row {
     margin: -15px;
 }
@@ -56,60 +67,50 @@ body {
     padding: 15px;
 }
 
-
-
-.card-title {
-    color: #333;
-    font-size: 1.5em;
-    font-weight: bold; 
-   
-}
-
-
-
-
+/* Dropdown */
 .dropdown {
     position: relative;
     display: inline-block;
-  }
-  
+}
 
-  .boton {
-    background-color: #4CAF50; /* Color de fondo */
-    color: white; /* Color del texto */
-    padding: 8px 12px; /* Espaciado interno */
-    border: none; /* Sin borde */
-    border-radius: 4px; /* Bordes redondeados */
-    cursor: pointer; /* Cursor de selección */
-  }
-  
-  /* Estilo para el menú desplegable */
-  select {
-    padding: 8px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Borde del menú */
-    border-radius: 4px; /* Bordes redondeados */
-    cursor: pointer; /* Cursor de selección */
-  }
-  
-  /* Estilo para el contenedor del menú desplegable */
-  form {
+/* Botón del dropdown */
+.boton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Menú desplegable */
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Contenedor del menú desplegable */
+form {
     display: inline-block;
-  }
-  
-  /* Estilo para los elementos de opción en el menú desplegable */
-  option {
-    background-color: #fff; /* Color de fondo */
-    color: #333; /* Color del texto */
-  }
-  
-  /* Estilo para el menú desplegable cuando está abierto */
-  select:focus {
-    outline: none; /* Sin contorno al enfocar */
-    border: 1px solid #4CAF50; /* Cambio de color del borde al enfocar */
-  }
-.titulo {
-    color: #333; /* Color del texto */
-    text-align: center; /* Alineación del texto al centro */
-    margin-top: 20px; /* Espaciado superior */
+}
 
+/* Opciones del menú desplegable */
+option {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Enfocar el menú desplegable */
+select:focus {
+    outline: none;
+    border: 1px solid #4CAF50;
+}
+
+/* Título */
+.titulo {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
 }

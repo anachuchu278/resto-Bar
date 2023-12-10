@@ -11,13 +11,13 @@
 
     <div class="container">
         <section>
-            <h2>Bienvenido,
+            <h2 class="section-title">Bienvenido,
                 <?php echo $user['nombre']; ?>
             </h2>
-            <h3>Datos del Usuario</h3>
+            <h3 class="section-subtitle">Datos del Usuario</h3>
             <div class="card">
                 <div class="card-body">
-                    <table>
+                    <table class="user-table">
                         <tr>
                             <th>Nombre</th>
                             <td>
@@ -25,7 +25,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>Correo Electronico</th>
+                            <th>Correo Electrónico</th>
                             <td>
                                 <?php echo $user['email']; ?>
                             </td>
@@ -45,10 +45,9 @@
                     </table>
                 </div>
             </div>
-
-
         </section>
     </div>
+
 </body>
 
 </html>
