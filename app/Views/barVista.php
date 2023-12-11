@@ -2,7 +2,7 @@
 $is_logged = 0;
 $user = session('user');
 if (null !== $user) {
-  $is_logged = (session('user')['id'] > 0);
+  $is_logged = (session('user')['id_usuario'] > 0);
 }
 ?>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ if (null !== $user) {
                   <?php echo $bebidaEncontrada['nombre']; ?>
                 </li>
                 <li class="list-group-item"><strong>Tipo:</strong>
-                  <?php echo $bebidaEncontrada['tipo_id']; ?>
+                  <?php echo $bebidaEncontrada['id_tipo']; ?>
                 </li>
                 <li class="list-group-item"><strong>Precio:</strong>
                   <?php echo $bebidaEncontrada['precio']; ?>
@@ -64,6 +64,7 @@ if (null !== $user) {
           </div>
         </div>
       </section>
+      <?php var_dump($bebidas);?>
     <?php elseif (isset($bebidas) && is_array($bebidas)): ?>
       <section class="mt-4">
         <div class="container">
@@ -78,7 +79,13 @@ if (null !== $user) {
                       <?php echo $bebida['nombre']; ?>
                     </h3>
                     <p class="card-text"><strong>Tipo:</strong>
-                      <?php echo $bebida['id_tipo']; ?>
+
+                      <?php 
+                      if($bebida['id_tipo']==1){
+                           echo "Alcoholica";
+                      }else{
+                        echo "No Alcoholica";
+                      } ; ?>
                     </p>
                     <p class="card-text"><strong>Precio:</strong>
                       <?php echo $bebida['precio']; ?>

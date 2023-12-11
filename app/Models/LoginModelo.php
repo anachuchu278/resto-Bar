@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class LoginModelo extends Model
 {
     protected $table = 'usuarios';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id_usuario';
 
     protected $useAutoIncrement = true;
 

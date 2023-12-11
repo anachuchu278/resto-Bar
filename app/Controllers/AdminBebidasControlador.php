@@ -46,7 +46,8 @@ class AdminBebidasControlador extends Controller {
     public function agregarA() {
         $bebidaModelo = new BebidaModelo();
 
-
+       // $tipoModelo = new tipoModelo();
+      // $datos['bebida'] = $tipoModelo->where('id_tipo', $id_tipo)->first();
 
         if($imagen = $this->request->getFile('imagen_ruta')) {
             $nuevoNombre = $imagen->getRandomName();
@@ -59,6 +60,7 @@ class AdminBebidasControlador extends Controller {
                 'imagen_ruta' => $nuevoNombre
 
             ];
+           
             $bebidaModelo->insert($datos);
 
         }

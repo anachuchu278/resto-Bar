@@ -29,9 +29,9 @@
                         <label for="nombre">Nombre:</label>
                         <input type="text" name="nombre" value="<?= $bebida['nombre']?>"required>
                         <label for="tipo">Tipo:</label>
-                        <select name="tipos" id="" >
-                            <option value="<?= $bebida['id_tipo']?>">1</option>
-                            <option value="<?= $bebida['id_tipo']?>">2</option>
+                        <select name="id_tipo" id="id_tipo" >
+                            <option value="<?= $bebida['id_tipo']?>">Alcoholica</option>
+                            <option value="<?= $bebida['id_tipo']?>">No Alcoholica</option>
                         </select>
                         <label for="precio">Precio:</label>
                         <input type="number" name="precio" value="<?= $bebida['precio']?>" required>

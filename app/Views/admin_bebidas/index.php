@@ -20,6 +20,7 @@
                         <th>Precio</th>
                         <th>Acciones</th>
                     </tr>
+                    
                     <?php foreach ($bebidas as $bebida) : ?>
                         <tr>
                             <td scope='col'><?php echo $bebida['nombre']; ?></td>

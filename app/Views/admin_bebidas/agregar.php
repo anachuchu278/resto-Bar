@@ -30,10 +30,11 @@
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" required>
                 <label for="tipo">Tipo:</label>
-                <select name="tipos" id="">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
+                <select name="id_tipo" id='id_tipo'>
+                        <option value="1">Alcoholica</option>
+                        <option value="2">No Alcoholica</option>
                 </select>
+                <div id="selected-option-display"> - </div>
                 <label for="precio">Precio:</label>
                 <input type="number" name="precio" required>
                 <label for="descripcion">Descripción:</label>
@@ -48,6 +49,13 @@
 
         </section>
     </div>
+    <script>
+        document.querySelector('select').addEventListener('change', (event) => {
+  const selectedOptionContent = event.target.querySelector('option:checked').textContent;
+  
+  document.querySelector('#selected-option-display').innerHTML = selectedOptionContent;
+});
+    </script>
 </body>
 
 </html>

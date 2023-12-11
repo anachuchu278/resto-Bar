@@ -7,7 +7,7 @@ if (null !== $user){
 $is_logged = 0;
 $user = session('user');
 if (null !== $user){
-  $is_logged = (session('user')['id'] > 0);
+  $is_logged = (session('user')['id_usuario'] > 0);
 } 
 ?>
 <html>
