@@ -41,7 +41,6 @@ if (null !== $user){
         <li><a href="<?= site_url("/") ?>" class="nav-link px-2 link-dark link-underline-opacity-25 link-underline-opacity-100-hover btn btn-outline-light">Inicio</a></li>
         <li><a href="<?= site_url("login") ?>" class="nav-link px-2 link-dark link-underline-opacity-25 link-underline-opacity-100-hover btn btn-outline-light">Login</a></li>
         <li><a href="<?= site_url("register") ?>" class="nav-link px-2 link-dark  link-underline-opacity-25 link-underline-opacity-100-hover btn btn-outline-light">Register</a></li>
-        <li><a href="<?= site_url("carrito") ?>" class="nav-link px-2 link-dark  link-underline-opacity-25 link-underline-opacity-100-hover btn btn-outline-light">Carrito</a></li>
         <li><a href="<?= site_url("salir") ?>" class="nav-link px-2 link-dark  link-underline-opacity-25 link-underline-opacity-100-hover btn btn-outline-light">Salir</a></li>
       
         <?php if ($is_admin): ?>

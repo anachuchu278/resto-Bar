@@ -93,7 +93,8 @@ $routes->get('procesarCompra', 'MetodoPagoControlador::procesarCompra');
 $routes->get('CompraController/mostrarFormulario', 'CompraController::mostrarFormulario');
 $routes->post('CompraController/procesarFormulario', 'CompraController::procesarFormulario');
 
-$routes->get('barControlador/comprarVista', 'BarControlador::comprarVista');
+$routes->get('barControlador/comprarVista', 'BarControlador::agregarAlCarrito');
+$routes->post('barControlador/comprarVista', 'BarControlador::agregarAlCarrito');
 $routes->POST('barControlador/comprarVista/(:num)', 'BarControlador::comprar/$1');
 
 $routes->get('salir', 'loginControlador::salir');

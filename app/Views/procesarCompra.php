@@ -46,7 +46,7 @@
 <body>
 
     <div class="container mt-5">
-        <h1>Procesar Compra</h1>
+        <h1>Tu compra ah sido exitosaa!!</h1>
 
         <!-- Verificar si hay productos en el carrito -->
         <?php if (!empty($productos)) : ?>
@@ -77,7 +77,7 @@
             <p>Total: <?= $total; ?></p>
 
         <?php else : ?>
-            <p>No hay productos en el carrito.</p>
+            <p>Vuelve al inicio para seguir comprando</p>
             <form action="<?php echo base_url(''); ?>" method="post">
                 <a href="<?php echo base_url(''); ?>">
                     <input type="button"class="btn" value="Seguir Comprando">

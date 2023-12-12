@@ -31,8 +31,8 @@ class AdminBebidasControlador extends Controller
 
 
 
-    public function guardar_imagen()
-    {
+    //public function guardar_imagen()
+    //{
         // Obtén la instancia de la request
         // $request = service('request');
 
@@ -48,14 +48,11 @@ class AdminBebidasControlador extends Controller
         //     $rutaArchivo = 'assets/' . $newName;
         //     $this->guardarRutaEnBaseDeDatos($rutaArchivo);
 
-<<<<<<< HEAD
 
             // Redirecciona o realiza otras acciones según tus necesidades
             //echo view('');
-        } 
+        //} 
 
-=======
->>>>>>> d43251ea3e0f73422111c559f20896aae1043f02
         //     // Redirecciona o realiza otras acciones según tus necesidades
         //     return redirect()->to(base_url('admin_bebidas/index'));
         // } else {
@@ -63,12 +60,8 @@ class AdminBebidasControlador extends Controller
         //     return "Error al cargar la imagen: " ;
 
         // }
-<<<<<<< HEAD
 
     
-=======
-    }
->>>>>>> d43251ea3e0f73422111c559f20896aae1043f02
 
 
 
@@ -96,6 +89,7 @@ class AdminBebidasControlador extends Controller
             return redirect()->to('/login');
         } else {
             $bebidaModelo = new BebidaModelo();
+       
 
 
             // $imagen = $this->request->getFile('imagen');
@@ -122,14 +116,13 @@ class AdminBebidasControlador extends Controller
             $data = [
                 'nombre' => $this->request->getPost('nombre'),
                 'precio' => $this->request->getPost('precio'),
-                //'stock' => $this->request->getPost('stock'),
+              
                 'descripcion' => $this->request->getPost('descripcion'),
                 'id_tipo' => $this->request->getPost('tipo_id'),
                 'ingredientes' => $this->request->getPost('ingredientes'),
-                //'id_estado' => $this->request->getPost('estado'),
-                //'id_imagen' => $idNuevaImagen, 
+            
             ];
-            //var_dump($data);
+            
 
             $bebidaModelo->insert($data);
             return redirect()->to('adminBebidas');
@@ -143,6 +136,7 @@ class AdminBebidasControlador extends Controller
 
 
         $bebidaModelo = new BebidaModelo();
+        
         $data['bebida'] = $bebidaModelo->obtenerDatos($id);
 
 

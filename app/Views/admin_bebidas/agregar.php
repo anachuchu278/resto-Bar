@@ -31,11 +31,11 @@
                         <input type="text" name="nombre" required>
                         <label for="tipo">Tipo:</label>
                         <select name="tipo" id="">
-                        <?php foreach ($tipo as $tip): ?>
-                            <option value="<?= $tip ['id_tipo']?>">
-                            <?= $tip['nombre_tipo']?>
+                     
+                            <option value='tipo_id'>
+                           
                         </option>
-                        <?php endforeach;?>
+                    
                         </select>
                         <label for="precio">Precio:</label>
                         <input type="number" name="precio" required>
