@@ -33,7 +33,7 @@
                         <tr>
                             <th>ID</th>
                             <td>
-                                <?php echo $user['id']; ?>
+                                <?php echo $user['id_usuario']; ?>
                             </td>
                         </tr>
                         <tr>

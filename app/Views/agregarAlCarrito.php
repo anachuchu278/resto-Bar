@@ -16,7 +16,7 @@
     <li class="list-group-item"><strong>Precio:</strong> <?= $producto['precio']; ?></li>
     <li class="list-group-item"><strong>Descripción:</strong> <?= $producto['descripcion']; ?></li>
     <li class="list-group-item">
-        <img src="<?= base_url('assets/images/' . $producto['id_imagen']); ?>" alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
+        <img src="<?= base_url('assets/images/' . $producto['imagen_ruta']); ?>" alt="Imagen de la bebida" style="max-width: 100%; height: auto;">
     </li>
 </ul>
 

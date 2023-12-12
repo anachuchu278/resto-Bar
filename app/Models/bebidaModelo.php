@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use App\Controllers\BebidasControlador;
@@ -15,17 +16,18 @@ class BebidaModelo extends Model
     {
 
         return $this->find($id);
-
     }
 
-public function insertBebida($data){
-    $str = 'INSERT INTO bebidas (nombre, tipo_id, precio, descripcion,ingredientes, id_imagen)
-    VALUES ("'.$data['nombre'].'", "'.$data['id_tipo'].'", "'.$data['precio'].'", "'.$data['descripcion'].'", "'.$data['ingredientes'].$data['id_imagen'] .'")';
-
-    $data = $this->db->query($str);
-
-}
-
+    
+    public function obtenerPrecioUnitario($id_bebida)
+    {
+        $bebida = $this->find($id_bebida);
+        if ($bebida) {
+            return $bebida['precio'];
+        } else {
+            return null;
+        }
+    }
 
 
 
@@ -39,47 +41,42 @@ public function insertBebida($data){
 
     public function obtenerDatos($id)
     {
-        
+
 
         $query = $this->db->query("SELECT * FROM bebidas WHERE id_bebida = ?", [$id]);
-        
-        
+
+
         $resultado = $query->getRow();
-        
+
         return $resultado;
-        
-
-            
-
     }
- 
+
 
     public function buscarBebidaPorNombre($nombre)
-{
-    $query = $this->db->table($this->table)
-        ->where('nombre', $nombre)
-        ->get();
+    {
+        $query = $this->db->table($this->table)
+            ->where('nombre', $nombre)
+            ->get();
 
-    if ($query->getNumRows() > 0) {
-        return $query->getRowArray(); // Cambiado a getRowArray() para obtener solo un resultado
-    } else {
-        return null;
+        if ($query->getNumRows() > 0) {
+            return $query->getRowArray(); // Cambiado a getRowArray() para obtener solo un resultado
+        } else {
+            return null;
+        }
     }
-}
 
     public function Actualizar($id)
     {
-        
-    if (!empty($resultados) && isset($resultados->id_bebida)) {
-       
-        $id = $resultados->id_bebida;
 
-        $this->update($id,$resultados);
+        if (!empty($resultados) && isset($resultados->id_bebida)) {
 
-        return true; 
-    } else {
-        return false; 
+            $id = $resultados->id_bebida;
+
+            $this->update($id, $resultados);
+
+            return true;
+        } else {
+            return false;
+        }
     }
-    }
-   
 }

@@ -17,9 +17,7 @@ if (null !== $user){
   .nav-item:hover {
     background-color: #f8f9fa; /* Cambia esto al color deseado */
   }
-  body {
-    background: #AB762D;
-  }
+  
 </style>
 <header class="p-3 mb-3 border-bottom">
   
@@ -45,7 +43,7 @@ if (null !== $user){
         <li><a href="<?= site_url("salir") ?>" class="nav-link px-2 link-dark  link-underline-opacity-25 link-underline-opacity-100-hover btn btn-outline-light">Salir</a></li>
       
         <?php if ($is_admin): ?>
-          <li class="nav-item"><a href="<?= base_url('adminBebidas') ?>" class="nav-link px-2 link-dark link-underline-opacity-25 link-underline-opacity-100-hover">Admin</a></li>
+          <li class="nav-item"><a href="<?= base_url('crud') ?>" class="nav-link px-2 link-dark link-underline-opacity-25 link-underline-opacity-100-hover">Admin</a></li>
         <?php endif; ?>
       </ul>
 

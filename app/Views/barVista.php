@@ -20,7 +20,7 @@ if (null !== $user) {
 </head>
 
 <body>
-  <?php if ($is_logged): ?>
+  <?php if ($is_logged) : ?>
     <h2>Bienvenido,
       <?php echo $user['nombre']; ?>!
     </h2>
@@ -34,13 +34,13 @@ if (null !== $user) {
   </div>
 
   <div class="container py-4">
-    <?php if (isset($bebidaEncontrada)): ?>
+    <?php if (isset($bebidaEncontrada)) : ?>
       <section class="mt-4">
         <div class="card">
           <div class="card-body">
             <h2 class="card-title">Información de la bebida:</h2>
             <ul class="list-group list-group-flush">
-              <?php foreach ($bebidaEncontrada as $bebida): ?>
+              <?php foreach ($bebidaEncontrada as $bebida) : ?>
                 <li class="list-group-item"><strong>Nombre:</strong>
                   <?php echo $bebidaEncontrada['nombre']; ?>
                 </li>
@@ -54,8 +54,7 @@ if (null !== $user) {
                   <?php echo $bebidaEncontrada['descripcion']; ?>
                 </li>
                 <li class="list-group-item">
-                  <img src="<?= base_url() ?>/uploads/<?= $bebidaEncontrada['imagen_ruta']; ?>" class="img-thumbnail"
-                    alt="">
+                  <img src="<?= base_url() ?>/uploads/<?= $bebidaEncontrada['imagen_ruta']; ?>" class="img-thumbnail" alt="">
 
                 </li>
               <?php endforeach; ?>
@@ -64,13 +63,13 @@ if (null !== $user) {
           </div>
         </div>
       </section>
-      <?php var_dump($bebidas);?>
-    <?php elseif (isset($bebidas) && is_array($bebidas)): ?>
+      <?php var_dump($bebidas); ?>
+    <?php elseif (isset($bebidas) && is_array($bebidas)) : ?>
       <section class="mt-4">
         <div class="container">
           <h2 class="titulo">Bebidas Disponibles</h2>
           <div class="row row-cols-1 row-cols-md-3">
-            <?php foreach ($bebidas as $bebida): ?>
+            <?php foreach ($bebidas as $bebida) : ?>
               <div class="col mb-4">
                 <div class="card h-100">
                   <img src="<?= base_url() ?>/uploads/<?= $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida">
@@ -80,12 +79,12 @@ if (null !== $user) {
                     </h3>
                     <p class="card-text"><strong>Tipo:</strong>
 
-                      <?php 
-                      if($bebida['id_tipo']==1){
-                           echo "Alcoholica";
-                      }else{
+                      <?php
+                      if ($bebida['id_tipo'] == 1) {
+                        echo "Alcoholica";
+                      } else {
                         echo "No Alcoholica";
-                      } ; ?>
+                      }; ?>
                     </p>
                     <p class="card-text"><strong>Precio:</strong>
                       <?php echo $bebida['precio']; ?>
@@ -93,15 +92,14 @@ if (null !== $user) {
                     <p class="card-text"><strong>Descripción:</strong>
                       <?php echo $bebida['descripcion']; ?>
                     </p>
-                    <?php if ($is_logged): ?>
-                      <form action="<?= base_url('barControlador/agregarAlCarrito/' . $bebida['id_bebida']); ?>"
-                        method="post">
-                        <div class="mb-3">
-                          <label for="cantidad" class="form-label">Cantidad</label>
-                          <input type="number" class="form-control" id="cantidad" name="cantidad" value="1">
-                        </div>
-                        <button class="btn btn-primary mt-auto" type="submit">Agregar al Carrito</button>
+                    <?php if ($is_logged) : ?>
+                      <form action="<?=base_url('barControlador/comprarVista') ?>" method="post">
+                                    
+                        <input type="hidden" name="id_bebida" value="<?=$bebida['id_bebida'] ?>">                                    
+                        <input type="number" name="cantidad" value="1">
+                        <input type="submit" value="Agregar al Carrito">
                       </form>
+
                     <?php endif; ?>
                   </div>
                 </div>
@@ -112,10 +110,10 @@ if (null !== $user) {
 
 
 
-    </div>
-    </section>
-  <?php endif; ?>
   </div>
+  </section>
+<?php endif; ?>
+</div>
 
 </body>
 

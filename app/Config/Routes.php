@@ -93,7 +93,8 @@ $routes->get('procesarCompra', 'MetodoPagoControlador::procesarCompra');
 $routes->get('CompraController/mostrarFormulario', 'CompraController::mostrarFormulario');
 $routes->post('CompraController/procesarFormulario', 'CompraController::procesarFormulario');
 
-$routes->get('barControlador/comprarVista', 'BarControlador::comprarVista');
+$routes->get('barControlador/comprarVista', 'BarControlador::agregarAlCarrito');
+$routes->post('barControlador/comprarVista', 'BarControlador::agregarAlCarrito');
 $routes->POST('barControlador/comprarVista/(:num)', 'BarControlador::comprar/$1');
 
 $routes->get('salir', 'loginControlador::salir');
@@ -110,6 +111,9 @@ $routes->get('usuarioCuenta', 'barControlador::usuarioCuenta');
 $routes->post('agregar', 'AdminBebidasControlador::agregarA');
 $routes->get('admin_bebidas/agregar', 'AdminBebidasControlador::tipos');
 $routes->post('actualizar','AdminBebidasControlador::actualizar');
+$routes->get('nuevo', 'AddControlador::NuevoAdmin');
+$routes->post('nuevo', 'AddControlador::NuevoAdmin');
+
 
 
 

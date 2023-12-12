@@ -14,11 +14,7 @@
             <h1>Bar - Agregar Bebida</h1>
         </div>
     </header> -->
-    <style>
-        body {
-            background: linear-gradient(to right, #fcf9d8, #edebc9);
-        }
-    </style>
+   
 
 
     <div class="container">
@@ -34,7 +30,6 @@
                         <option value="1">Alcoholica</option>
                         <option value="2">No Alcoholica</option>
                 </select>
-                <div id="selected-option-display"> - </div>
                 <label for="precio">Precio:</label>
                 <input type="number" name="precio" required>
                 <label for="descripcion">Descripción:</label>
@@ -49,13 +44,7 @@
 
         </section>
     </div>
-    <script>
-        document.querySelector('select').addEventListener('change', (event) => {
-  const selectedOptionContent = event.target.querySelector('option:checked').textContent;
-  
-  document.querySelector('#selected-option-display').innerHTML = selectedOptionContent;
-});
-    </script>
+ 
 </body>
 
 </html>

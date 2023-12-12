@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\BebidaModelo;
 use App\Models\tipoModelo;
+
 use CodeIgniter\Controller;
 
 class AdminBebidasControlador extends Controller {
@@ -139,17 +140,6 @@ class AdminBebidasControlador extends Controller {
             return redirect()->to(base_url('adminBebidas'));
         }
     }
-    // public function actualizar($id)
-    // {
-    //     // Aquí se procesa la actualización de la bebida con el ID $id
-    //     $bebidaModelo = new BebidaModelo();
-
-    //     if ($this->request->getMethod() === 'post') {
-    //         $bebidaModelo->update($id, $_POST); // Asumiendo que los datos del formulario se envían por POST
-    //         return redirect()->to(base_url('adminBebidas'));
-    //     }
-
-    //     $data['bebida'] = $bebidaModelo->find($id);
-    //     return view('admin_bebidas/editar', $data);
-    // }
+    
+   
 }
