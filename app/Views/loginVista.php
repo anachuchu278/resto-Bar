@@ -30,18 +30,18 @@
                                     <label for="email" class="form-label" required="">Correo Electronico</label>
                                     <input type="email" name="email" required class="form-control" id="email"
                                         aria-describedby="input de email">
-                                    <div id="emailHelp" class="form-text text-white">Ingrese su Correo Electronico</div>
+                                    <div id="emailHelp" class="form-text text-dark">Ingrese su Correo Electronico</div>
                                 </div>
 
                                 <div class="mb-4">
                                     <label for="contrasena" class="form-label" required="">Contraseña</label>
                                     <input type="password" name="contrasena" required class="form-control "
                                         id="exampleInputPassword1">
-                                    <div class="text-white">ingrese su contraseña</div>
+                                    <div class="form-text text-dark">ingrese su contraseña</div>
                                 </div>
                                 <div class="">
 
-                                    <button href="<?= base_url("ingreso") ?>">ingresar</button>
+                                    <button href="<?= base_url("ingreso") ?>" class="btn btn-primary">ingresar</button>
                                 </div>
 
                                 <div class="my_3">
