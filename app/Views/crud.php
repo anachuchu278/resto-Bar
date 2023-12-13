@@ -23,7 +23,7 @@
                 <li class="list-group-item">
                   <button><a href="<?php echo base_url('adminBebidas/agregar') ?>">Agregar</a></button>
                   <button><a href="<?php echo base_url('adminBebidas') ?>">Admin</a></button>
-                  <button><a href="<?php echo base_url('nuevo') ?>">Nuevo Admin</a></button>
+                  <button><a href="<?php echo base_url('index') ?>">Nuevo Admin</a></button>
                 </li>
               </label>
             </div>

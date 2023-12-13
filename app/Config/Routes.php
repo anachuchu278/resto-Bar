@@ -43,6 +43,7 @@ $routes->post('/register','registerControlador::registrarse');
 
 $routes->get('crud', 'Crud::ingreso'); 
 $routes->post('crud', 'Crud::ingreso'); 
+ 
 
 
 /*
@@ -111,7 +112,7 @@ $routes->get('usuarioCuenta', 'barControlador::usuarioCuenta');
 $routes->post('agregar', 'AdminBebidasControlador::agregarA');
 $routes->get('admin_bebidas/agregar', 'AdminBebidasControlador::tipos');
 $routes->post('actualizar','AdminBebidasControlador::actualizar');
-$routes->get('nuevo', 'AddControlador::NuevoAdmin');
+$routes->get('index', 'AddControlador::index');
 $routes->post('nuevo', 'AddControlador::NuevoAdmin');
 
 

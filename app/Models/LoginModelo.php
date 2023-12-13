@@ -23,11 +23,11 @@ class LoginModelo extends Model
     protected $validationMessages = [];
     protected $skipValidation = false;
     
-    public function insert($result=null, bool $returnID =true) {
+    /*public function insert($result=null, bool $returnID =true) {
         if (isset($result['contrasena'])){
             $result['contrasena'] = password_hash($result['contrasena'],PASSWORD_DEFAULT);
         }
         return parent::insert($result,$returnID);
-    }
+    }*/
 }
 
