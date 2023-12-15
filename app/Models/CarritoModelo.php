@@ -8,5 +8,5 @@ class CarritoModelo extends Model
 {
     protected $table = 'carrito_compras';
     protected $primaryKey = 'id_carrito';
-    protected $allowedFields = ['id_bebida', 'cantidad'];
+    protected $allowedFields = ['id_bebida', 'cantidad','id_usuario'];
 }

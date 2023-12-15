@@ -26,7 +26,7 @@
                         </tr>
                         <tr>
                             <th>ID</th>
-                            <td><?php echo $user['id']; ?></td>
+                            <td><?php echo $user['id_usuario']; ?></td>
                         </tr>
                         <tr>
                             <th>Rol</th>

@@ -112,5 +112,5 @@ $routes->post('agregar', 'AdminBebidasControlador::agregarA');
 $routes->get('admin_bebidas/agregar', 'AdminBebidasControlador::tipos');
 
 
-
+$routes->get('ver-carrito', 'BarControlador::verCarrito');
 
