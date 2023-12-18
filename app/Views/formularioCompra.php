@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Compra</title>
 </head>
+
 <body>
 
     <h1>Formulario de Compra</h1>
@@ -13,8 +15,10 @@
 
     <label for="ciudad">Ciudad:</label>
     <select name="ciudad" id="ciudad">
-        <?php foreach ($ciudades as $ciudad) : ?>
-            <option value="<?= $ciudad['id_ciudad']; ?>"><?= $ciudad['ciudad']; ?></option>
+        <?php foreach($ciudades as $ciudad): ?>
+            <option value="<?= $ciudad['id_ciudad']; ?>">
+                <?= $ciudad['ciudad']; ?>
+            </option>
         <?php endforeach; ?>
     </select>
 
@@ -22,8 +26,10 @@
 
     <label for="calle">Calle:</label>
     <select name="calle" id="calle">
-        <?php foreach ($calles as $calle) : ?>
-            <option value="<?= $calle['id_calle']; ?>"><?= $calle['calle']; ?></option>
+        <?php foreach($calles as $calle): ?>
+            <option value="<?= $calle['id_calle']; ?>">
+                <?= $calle['calle']; ?>
+            </option>
         <?php endforeach; ?>
     </select>
 
@@ -31,8 +37,10 @@
 
     <label for="metodo_pago">Método de Pago:</label>
     <select name="metodo_pago" id="metodo_pago">
-        <?php foreach ($metodosPago as $metodoPago) : ?>
-            <option value="<?= $metodoPago['metodo_id']; ?>"><?= $metodoPago['nombre']; ?></option>
+        <?php foreach($metodosPago as $metodoPago): ?>
+            <option value="<?= $metodoPago['metodo_id']; ?>">
+                <?= $metodoPago['nombre']; ?>
+            </option>
         <?php endforeach; ?>
     </select>
 
@@ -48,4 +56,5 @@
     <?= form_close(); ?>
 
 </body>
+
 </html>

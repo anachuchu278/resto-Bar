@@ -1,20 +1,20 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+   
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    flex-direction: column;
 }
 
 .card {
     width: 18rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .card-body {
@@ -30,7 +30,8 @@ body {
     list-style: none;
     margin-bottom: 10px;
 } 
- button {
+
+button {
     display: inline-block;
     padding: 8px 16px;
     margin: 5px;
@@ -50,5 +51,5 @@ button a {
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #9ca894b2;
 }

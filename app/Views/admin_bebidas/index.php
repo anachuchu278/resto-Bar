@@ -20,10 +20,11 @@
                         <th>Precio</th>
                         <th>Acciones</th>
                     </tr>
+                    
                     <?php foreach ($bebidas as $bebida) : ?>
                         <tr>
                             <td scope='col'><?php echo $bebida['nombre']; ?></td>
-                            <td><?php echo $bebida['tipo_id']; ?></td>
+                            <td><?php echo $bebida['id_tipo']; ?></td>
                             <td><?php echo $bebida['precio']; ?></td>
                             <td>
                                 <a href="<?php echo base_url('adminBebidas/editar/' . $bebida['id_bebida']); ?>" class="btn btn-secondary">Editar</a>

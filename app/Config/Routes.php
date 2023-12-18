@@ -43,6 +43,7 @@ $routes->post('/register','registerControlador::registrarse');
 
 $routes->get('crud', 'Crud::ingreso'); 
 $routes->post('crud', 'Crud::ingreso'); 
+ 
 
 
 /*
@@ -87,15 +88,15 @@ $routes->post('carrito/eliminar', 'CarritoControlador::eliminarDelCarrito');
 $routes->post('carrito/comprar', 'CarritoControlador::realizarCompra'); 
 
 
-$routes->get('barControlador/comprar', 'BarControlador::comprar');
+
 $routes->get('procesarCompra', 'MetodoPagoControlador::procesarCompra');
 
 $routes->get('CompraController/mostrarFormulario', 'CompraController::mostrarFormulario');
 $routes->post('CompraController/procesarFormulario', 'CompraController::procesarFormulario');
 
-$routes->get('barControlador/comprarVista', 'BarControlador::agregarAlCarrito');
-$routes->post('barControlador/comprarVista', 'BarControlador::agregarAlCarrito');
-$routes->POST('barControlador/comprarVista/(:num)', 'BarControlador::comprar/$1');
+$routes->get('comprarVista', 'BarControlador::agregarAlCarrito');
+$routes->post('comprarVista', 'BarControlador::agregarAlCarrito');
+
 
 $routes->get('salir', 'loginControlador::salir');
 $routes->get('adminBebidas/agregar', 'AdminBebidasControlador::agregarVista');
@@ -110,7 +111,12 @@ $routes->get('usuarioCuenta', 'barControlador::usuarioCuenta');
 
 $routes->post('agregar', 'AdminBebidasControlador::agregarA');
 $routes->get('admin_bebidas/agregar', 'AdminBebidasControlador::tipos');
+$routes->post('actualizar','AdminBebidasControlador::actualizar');
+$routes->get('index', 'AddControlador::index');
+$routes->post('nuevo', 'AddControlador::NuevoAdmin');
 
 
-$routes->get('ver-carrito', 'BarControlador::verCarrito');
+
+
+$routes->get('ver-carrito', 'CarritoControlador::verCarrito');
 

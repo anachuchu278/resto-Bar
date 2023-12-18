@@ -11,34 +11,47 @@
 
     <div class="container">
         <section>
-            <h2>Bienvenido,<?php echo $user['nombre']; ?></h2>
-            <h3>Datos del Usuario</h3>
+            <h2 class="section-title">Bienvenido,
+                <?php echo $user['nombre']; ?>
+            </h2>
+            <h3 class="section-subtitle">Datos del Usuario</h3>
             <div class="card">
                 <div class="card-body">
-                    <table>
+                    <table class="user-table">
                         <tr>
                             <th>Nombre</th>
-                            <td><?php echo $user['nombre']; ?></td>
+                            <td>
+                                <?php echo $user['nombre']; ?>
+                            </td>
                         </tr>
                         <tr>
-                            <th>Correo Electronico</th>
-                            <td><?php echo $user['email']; ?></td>
+                            <th>Correo Electrónico</th>
+                            <td>
+                                <?php echo $user['email']; ?>
+                            </td>
                         </tr>
                         <tr>
                             <th>ID</th>
+<<<<<<< HEAD
                             <td><?php echo $user['id_usuario']; ?></td>
+=======
+                            <td>
+                                <?php echo $user['id_usuario']; ?>
+                            </td>
+>>>>>>> 76c299638cfc246f4bd0ae9ec8192593e48048e6
                         </tr>
                         <tr>
                             <th>Rol</th>
-                            <td><?php echo $user['rol']; ?></td>
+                            <td>
+                                <?php echo $user['rol']; ?>
+                            </td>
                         </tr>
                     </table>
                 </div>
             </div>
-
-
         </section>
     </div>
+
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use App\Controllers\AdminBebidasControlador;
@@ -15,4 +16,11 @@ class tipoModelo extends Model
         return $this->findAll();
     }
 
+    public function filtrarPorTipo($tipo_id)
+    {
+        return $this->db->table('bebidas') // Asegúrate de tener la tabla correcta (puedes cambiar 'bebidas' al nombre correcto)
+            ->where('id_tipo', $tipo_id)
+            ->get()
+            ->getResultArray();
+    }
 }

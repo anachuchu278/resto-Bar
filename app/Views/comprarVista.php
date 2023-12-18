@@ -85,7 +85,6 @@ documento para mejorar el rendimiento -->
 dle.minjs"></script>
 <script src="https://www.paypal.com/sdk/js?client-id=AZQBCaHQ4lHq6OI-mMRoxPv8nH
 ioysdo_lnwAWuXxHgD31c5-3Nvw-fs0_WTL_-ghOvt8WeoipePRltE"></script>
-
 <!-- Contenedor para el botón de PayPal -->
 <div id="paypal-button-container"></div>
 <!-- Script para inicializar el botón de PayPal -->

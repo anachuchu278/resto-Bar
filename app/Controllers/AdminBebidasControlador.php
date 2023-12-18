@@ -4,14 +4,13 @@ namespace App\Controllers;
 
 use App\Models\BebidaModelo;
 use App\Models\tipoModelo;
+
 use CodeIgniter\Controller;
 
-class AdminBebidasControlador extends Controller
-{
-    public function index()
-    {
+class AdminBebidasControlador extends Controller {
+    public function index() {
         $user = session('user');
-        if (!$user || $user['rol'] < 1) {
+        if(!$user || $user['rol'] < 1) {
             return redirect()->to('/login');
         } else {
             $bebidaModelo = new BebidaModelo();
@@ -19,16 +18,8 @@ class AdminBebidasControlador extends Controller
 
             echo view('comunes/header');
             return view('admin_bebidas/index', $data);
-
         }
-
-
-
-
-
-
     }
-
 
 
     //public function guardar_imagen()
@@ -64,32 +55,37 @@ class AdminBebidasControlador extends Controller
     
 
 
+    public function agregarA() {
+        $bebidaModelo = new BebidaModelo();
 
+       // $tipoModelo = new tipoModelo();
+      // $datos['bebida'] = $tipoModelo->where('id_tipo', $id_tipo)->first();
 
+        if($imagen = $this->request->getFile('imagen_ruta')) {
+            $nuevoNombre = $imagen->getRandomName();
+            $imagen->move('../public/uploads/', $nuevoNombre);
+            $datos = [
+                'nombre' => $this->request->getVar('nombre'),
+                'id_tipo' => $this->request->getVar('id_tipo'),
+                'precio' => $this->request->getVar('precio'),
+                'descripcion' => $this->request->getVar('descripcion'),
+                'imagen_ruta' => $nuevoNombre
 
-    public function agregarVista()
-    {
-        echo view('comunes/header');
-        return view('admin_bebidas/agregar');
+            ];
+           
+            $bebidaModelo->insert($datos);
 
-
+        }
+        return redirect()->to('/');
     }
-     public function tipos()
-    {
-        $tipoModelo = new tipoModelo();
-        $tipo = $this->request->getPost('id_tipo');
-        $data['tipo'] = $tipoModelo->tipo();
 
-        return view('admin_bebidas/agregar', $data);
-    }
-    public function agregarA()
-    {
+    public function editar($id) {
         $user = session('user');
-        if (!$user || $user['rol'] < 1) {
+        if(!$user || $user['rol'] < 1) {
             return redirect()->to('/login');
         } else {
+
             $bebidaModelo = new BebidaModelo();
-       
 
 
             // $imagen = $this->request->getFile('imagen');
@@ -116,84 +112,74 @@ class AdminBebidasControlador extends Controller
             $data = [
                 'nombre' => $this->request->getPost('nombre'),
                 'precio' => $this->request->getPost('precio'),
-              
+                //'stock' => $this->request->getPost('stock'),
                 'descripcion' => $this->request->getPost('descripcion'),
                 'id_tipo' => $this->request->getPost('tipo_id'),
                 'ingredientes' => $this->request->getPost('ingredientes'),
-            
+                //'id_estado' => $this->request->getPost('estado'),
+                //'id_imagen' => $idNuevaImagen, 
             ];
-            
+            //var_dump($data);
 
             $bebidaModelo->insert($data);
             return redirect()->to('adminBebidas');
         }
 
+
+
+
     }
-   
-    public function editar($id)
-    {
-
-
+    public function actualizar() {
 
         $bebidaModelo = new BebidaModelo();
-        
         $data['bebida'] = $bebidaModelo->obtenerDatos($id);
 
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+       
+        $id = $this->request->getVar('id_bebida');
+        $bebidaModelo->update($id, $datos);
+        $validacion = $this->validate([
+            'imagen_ruta' => [
+                'uploaded[imagen_ruta]',
+                'mime_in[imagen_ruta,image/jpg,image/jpeg,image/png]',
+                'max_size[imagen_ruta,1200]',
+            ]
+        ]);
+        if($validacion) {
+            $datosBebida = $bebidaModelo->where('id_bebida', $id)->first();
+            $ruta = ('../public/uploads/'.$datosBebida['imagen_ruta']);
+            unlink($ruta);
+            if($imagen = $this->request->getFile('imagen_ruta')) {
+                $nuevoNombre = $imagen->getRandomName();
+                $imagen->move('../public/uploads/', $nuevoNombre);
+                $datos = [
+                    'imagen_ruta' => $nuevoNombre
+                ];
+                $bebidaModelo->update($id, $datos);
 
-            $datosActualizados = [
-                'nombre' => $_POST['nombre'],
-                'tipo_id' => $_POST['tipo_id'],
-                'precio' => $_POST['precio'],
-                'descripcion' => $_POST['descripcion'],
-                'imagen_ruta' => $_POST['imagen_ruta'],
-            ];
-
-
-            $actualizacionExitosa = $bebidaModelo->actualizarDatos($id, $datosActualizados);
-
-            if ($actualizacionExitosa) {
-                echo "Bebida actualizada con éxito";
-            } else {
-                echo "Error al actualizar la bebida";
             }
         }
 
-
-        return view('admin_bebidas/editar', $data);
+        return redirect()->to('/');
 
 
     }
 
-    public function eliminar($id_bebida)
-    {
+    public function eliminar($id_bebida) {
         // Aquí se procesa la eliminación de la bebida con el ID $id
 
         $bebidaModelo = new BebidaModelo();
         $bebidaModelo->delete($id_bebida);
         return redirect()->to(base_url('adminBebidas'));
     }
-    public function guardar()
-    {
+    public function guardar() {
         // Aquí se procesa el formulario de agregar una nueva bebida
-        if ($this->request->getMethod() === 'post') {
+        if($this->request->getMethod() === 'post') {
             $bebidaModelo = new BebidaModelo();
             $bebidaModelo->insert($_POST); // Asumiendo que los datos del formulario se envían por POST
             return redirect()->to(base_url('adminBebidas'));
         }
     }
-    public function actualizar($id)
-    {
-        // Aquí se procesa la actualización de la bebida con el ID $id
-        $bebidaModelo = new BebidaModelo();
-
-        if ($this->request->getMethod() === 'post') {
-            $bebidaModelo->update($id, $_POST); // Asumiendo que los datos del formulario se envían por POST
-            return redirect()->to(base_url('adminBebidas'));
-        }
-
-        $data['bebida'] = $bebidaModelo->find($id);
-        return view('admin_bebidas/editar', $data);
-    }
+    
+   
 }
