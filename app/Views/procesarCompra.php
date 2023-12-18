@@ -71,10 +71,6 @@
                     </thead>
                     <tbody>
 
-<<<<<<< HEAD
-        <?php else : ?>
-            <p>Vuelve al inicio para seguir comprando</p>
-=======
                         <tr>
                             <td>
                                 <?= $producto['nombre']; ?>
@@ -99,7 +95,6 @@
 
         <?php else: ?>
             <p>No hay productos en el carrito.</p>
->>>>>>> 76c299638cfc246f4bd0ae9ec8192593e48048e6
             <form action="<?php echo base_url(''); ?>" method="post">
                 <a href="<?php echo base_url(''); ?>">
                     <input type="button" class="btn" value="Seguir Comprando">
