@@ -23,7 +23,7 @@
                     
                     <?php foreach ($bebidas as $bebida) : ?>
                         <tr>
-                            <td scope='col'><?php echo $bebida['nombre']; ?></td>
+                            <td><?php echo $bebida['nombre_bebida']; ?></td>
                             <td><?php echo $bebida['id_tipo']; ?></td>
                             <td><?php echo $bebida['precio']; ?></td>
                             <td>

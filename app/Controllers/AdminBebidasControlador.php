@@ -21,38 +21,10 @@ class AdminBebidasControlador extends Controller {
         }
     }
 
-
-    //public function guardar_imagen()
-    //{
-        // Obtén la instancia de la request
-        // $request = service('request');
-
-        // // Verifica si se ha enviado un archivo
-        // if ($file = $request->getFile('imagen-ruta')) {
-        //     // Genera un nombre único para el archivo
-        //     $newName = $file->getRandomName();
-
-        //     // Mueve el archivo a la carpeta public/uploads
-        //     $file->move('./public/assets/', $newName);
-
-        //     // Guarda la ruta del archivo en la base de datos
-        //     $rutaArchivo = 'assets/' . $newName;
-        //     $this->guardarRutaEnBaseDeDatos($rutaArchivo);
-
-
-            // Redirecciona o realiza otras acciones según tus necesidades
-            //echo view('');
-        //} 
-
-        //     // Redirecciona o realiza otras acciones según tus necesidades
-        //     return redirect()->to(base_url('admin_bebidas/index'));
-        // } else {
-        //     // Maneja el caso en que no se envió ningún archivo
-        //     return "Error al cargar la imagen: " ;
-
-        // }
-
-    
+    public function agregarVista(){
+        echo view('comunes/header');
+        return view('admin_bebidas/agregar');
+    }
 
 
     public function agregarA() {
@@ -65,7 +37,7 @@ class AdminBebidasControlador extends Controller {
             $nuevoNombre = $imagen->getRandomName();
             $imagen->move('../public/uploads/', $nuevoNombre);
             $datos = [
-                'nombre' => $this->request->getVar('nombre'),
+                'nombre_bebida' => $this->request->getVar('nombre_bebida'),
                 'id_tipo' => $this->request->getVar('id_tipo'),
                 'precio' => $this->request->getVar('precio'),
                 'descripcion' => $this->request->getVar('descripcion'),
@@ -79,64 +51,31 @@ class AdminBebidasControlador extends Controller {
         return redirect()->to('/');
     }
 
+ 
+
+
+
+
     public function editar($id) {
-        $user = session('user');
-        if(!$user || $user['rol'] < 1) {
-            return redirect()->to('/login');
-        } else {
+        $bebidaModelo = new BebidaModelo();
+        $datos['bebida']=$bebidaModelo->where('id_bebida',$id)->first();
 
-            $bebidaModelo = new BebidaModelo();
-
-
-            // $imagen = $this->request->getFile('imagen');
-
-            // // verifica imagen válida
-            // if ($imagen->isValid() && !$imagen->hasMoved()) {
-
-            //     // genera nombre único para la imagen
-            //     $nuevoNombreImagen = $imagen->getRandomName();
-
-            //     // mueve la imagen a la carpeta 
-            //     $imagen->move('img', $nuevoNombreImagen);
-
-            //     // ruta completa de la imagen para almacenar en la db
-            //     $rutaImagen = base_url('img/' . $nuevoNombreImagen);
-
-            //     // insertar imágen
-            //     $idNuevaImagen = $bebidaModelo->insert([
-            //         "imagen" => $rutaImagen
-            //     ]);
-
-
-            // datos para insertar en la db
-            $data = [
-                'nombre' => $this->request->getPost('nombre'),
-                'precio' => $this->request->getPost('precio'),
-                //'stock' => $this->request->getPost('stock'),
-                'descripcion' => $this->request->getPost('descripcion'),
-                'id_tipo' => $this->request->getPost('tipo_id'),
-                'ingredientes' => $this->request->getPost('ingredientes'),
-                //'id_estado' => $this->request->getPost('estado'),
-                //'id_imagen' => $idNuevaImagen, 
-            ];
-            //var_dump($data);
-
-            $bebidaModelo->insert($data);
-            return redirect()->to('adminBebidas');
-        }
-
-
-
-
+        echo view('comunes/header');
+        return view('admin_bebidas/editar', $datos);
     }
     public function actualizar() {
 
         $bebidaModelo = new BebidaModelo();
-        $data['bebida'] = $bebidaModelo->obtenerDatos($id);
-
-
-       
+        $datos = [
+            'nombre_bebida'=> $this->request->getVar('nombre_bebida'),
+            'id_tipo'=> $this->request->getVar('id_tipo'),
+            'precio'=> $this->request->getVar('precio'),
+            'descripcion'=> $this->request->getVar('descripcion'),
+        ];
         $id = $this->request->getVar('id_bebida');
+        
+        $datos['bebida']=$bebidaModelo->where('id_bebida',$id)->first();
+        
         $bebidaModelo->update($id, $datos);
         $validacion = $this->validate([
             'imagen_ruta' => [

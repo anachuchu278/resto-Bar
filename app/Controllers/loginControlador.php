@@ -21,14 +21,14 @@ class loginControlador extends BaseController
         $LoginModelo = new LoginModelo();
 
         $email = $this->request->getPost('email');
-        $password = $this->request->getPost('contrasena');
+        $password = $this->request->getPost('password');
         $rol = $this->request->getPost('rol');
 
         $result = $LoginModelo->where('email', $email)->first();
         
         //echo password_hash($password, PASSWORD_BCRYPT);
-        if ($result !== null && $result['id'] > 0) {
-            if (password_verify($password, $result['contrasena'])) {
+        if ($result !== null && $result['id_usuario'] > 0) {
+            if (password_verify($password, $result['password'])) {
                 // Contraseña correcta, establece la sesión del usuario
                 $this->session->set("user", $result);
                 $user = session();

@@ -40,7 +40,7 @@
                             <form method='post' action="<?php base_url('registro') ?>">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Nombre</label>
-                                    <input name="nombre" type="text" required class="form-control" id="name">
+                                    <input name="nombre_usuario" type="text" required class="form-control" id="name">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Correo Electrónico</label>
@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Contraseña</label>
-                                    <input name="contrasena" type="password" required class="form-control"
+                                    <input name="password" type="password" required class="form-control"
                                         id="exampleInputPassword1">
                                 </div>
                                 <button type="submit" class="rounded col-bg"

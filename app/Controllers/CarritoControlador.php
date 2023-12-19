@@ -14,7 +14,7 @@ class CarritoControlador extends BaseController
         $session = session();
         $user = $session->get('user');
     
-        if (!$user || $user['id'] < 1) {
+        if (!$user || $user['id_usuario'] < 1) {
             return redirect()->to('/login');
         }
     

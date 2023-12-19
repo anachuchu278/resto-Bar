@@ -20,12 +20,12 @@ class registerControlador extends Controller
         $RegisterModelo = new RegisterModelo();
         
 
-        $name = $this->request->getPost('nombre');
+        $name = $this->request->getPost('nombre_usuario');
         $email = $this->request->getPost('email');
         
-        $password = password_hash($this->request->getPost('contrasena'), PASSWORD_DEFAULT);
+        $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
 
-        $data = ['nombre' => $name, 'email' => $email, 'contrasena' => $password];
+        $data = ['nombre_usuario' => $name, 'email' => $email, 'password' => $password];
         
        
         $r = $RegisterModelo->insert($data);

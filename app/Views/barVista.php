@@ -2,7 +2,7 @@
 $is_logged = 0;
 $user = session('user');
 if (null !== $user) {
-  $is_logged = (session('user')['id'] > 0);
+  $is_logged = (session('user')['id_usuario'] > 0);
 }
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ if (null !== $user) {
 <body>
   <?php if ($is_logged) : ?>
     <h2>Bienvenido,
-      <?php echo $user['nombre']; ?>!
+      <?php echo $user['nombre_usuario']; ?>!
     </h2>
   <?php endif; ?>
 
@@ -49,7 +49,7 @@ if (null !== $user) {
                   <?php echo $bebidaEncontrada['descripcion']; ?>
                 </li>
                 <li class="list-group-item">
-                  <img src="<?= base_url() ?>/assets/images/<?= $bebidaEncontrada['id_imagen']; ?>" class="img-thumbnail" alt="">
+                  <img src="<?= base_url() ?>/assets/images/<?= $bebidaEncontrada['imagen_ruta']; ?>" class="img-thumbnail" alt="">
 
                 </li>
               <?php endforeach; ?>
@@ -67,15 +67,15 @@ if (null !== $user) {
             <?php foreach ($bebidas as $bebida) : ?>
               <div class="col mb-4">
                 <div class="card h-100">
-                  <img src="<?= base_url() ?>/assets/images/<?= $bebida['id_imagen']; ?>" alt="Imagen de la bebida">
+                  <img src="<?= base_url() ?>/uploads/<?= $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida">
                   <div class="card-body d-flex flex-column">
                     <h3 class="card-title">
-                      <?php echo $bebida['nombre']; ?>
+                      <?php echo $bebida['nombre_bebida']; ?>
                     </h3>
                     <p class="card-text"><strong>Tipo:</strong>
 
                       <?php
-                      if ($bebida['tipo_id'] == 1) {
+                      if ($bebida['id_tipo'] == 1) {
                         echo "Alcoholica";
                       } else {
                         echo "No Alcoholica";

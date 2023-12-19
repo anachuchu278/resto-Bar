@@ -22,7 +22,7 @@
                 <p class="panel">Panel <a href=<?= site_url('adminBebidas'); ?> id="style-2" data-replace="Entrar"><span>Admin</span></a></p>
                 </div>
                     <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" class="form-control">
+                    <input type="text" name="nombre_usuario" class="form-control">
                 </div>
 
                 <div class="form-group">
@@ -33,7 +33,7 @@
 
                 <div class="form-group">
                     <label for="contraseña">Contraseña</label>
-                    <input type="password" name="contrasena" class="form-control">
+                    <input type="password" name="password" class="form-control">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Agregar Cuenta</button>
