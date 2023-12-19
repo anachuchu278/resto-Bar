@@ -11,14 +11,14 @@ class AddControlador extends Controller{
     }
     public function NuevoAdmin(){
             $LoginModelo = new LoginModelo();
-            $name = $this->request->getPost('nombre');
+            $name = $this->request->getPost('nombre_usuario');
             $email = $this->request->getPost('email');
             
             $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
             $rol = 1;
             
             $userData = [
-                'nombre' => $name,
+                'nombre_usuario' => $name,
                 'email' => $email, 
                 'password' => $password,
                 'rol' => $rol

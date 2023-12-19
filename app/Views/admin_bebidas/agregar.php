@@ -19,6 +19,7 @@
 
     <div class="container">
 
+<<<<<<< HEAD
                 <section>
                     <h2>Formulario de Agregar Bebida</h2>
                   
@@ -47,6 +48,32 @@
                     </form>
                    
                 </section>
+=======
+        <section>
+            <h2>Formulario de Agregar Bebida</h2>
+
+            <form action="<?php echo site_url('agregar'); ?>" method="post" enctype="multipart/form-data">
+                <label for="nombre_bebida">Nombre:</label>
+                <input type="text" name="nombre_bebida" required>
+                <label for="tipo">Tipo:</label>
+                <select name="id_tipo" id='id_tipo'>
+                        <option value="1">Alcoholica</option>
+                        <option value="2">No Alcoholica</option>
+                </select>
+                <label for="precio">Precio:</label>
+                <input type="number" name="precio" required>
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" required></textarea>
+                <label for="imagen_ruta">imagen</label>
+                <input type="file" name="imagen_ruta" required>
+
+
+                <input type="submit" value="Agregar" class>
+
+            </form>
+
+        </section>
+>>>>>>> d58325b099157435f23b987f04553c27e5c952c6
     </div>
  
 </body>

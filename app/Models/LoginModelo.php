@@ -14,7 +14,7 @@ class LoginModelo extends Model
     protected $returnType = 'array';
     //protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['nombre', 'email', 'contrasena', 'created_at' , 'rol'];
+    protected $allowedFields = ['nombre_usuario', 'email', 'password', 'created_at' , 'rol'];
 
     protected $useTimeStamps = false;
     protected $createdFields = 'created_at';

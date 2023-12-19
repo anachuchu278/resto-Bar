@@ -26,8 +26,8 @@
 
                     <form action="<?php echo site_url('actualizar'); ?>" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="id_bebida" value="<?= $bebida['id_bebida']?>">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" value="<?= $bebida['nombre']?>"required>
+                        <label for="nombre_bebida">Nombre:</label>
+                        <input type="text" name="nombre_bebida" value="<?= $bebida['nombre_bebida']?>"required>
                         <label for="tipo">Tipo:</label>
                         <select name="id_tipo" id="id_tipo" >
                             <option value="<?= $bebida['id_tipo']?>">Alcoholica</option>

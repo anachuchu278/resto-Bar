@@ -10,7 +10,7 @@ class BebidaModelo extends Model
 
     protected $table = 'bebidas';
     protected $primaryKey = 'id_bebida';
-    protected $allowedFields = ['nombre', 'id_tipo', 'precio','descripcion', 'id_imagen'];
+    protected $allowedFields = ['nombre_bebida', 'id_tipo', 'precio','descripcion', 'imagen_ruta'];
 
     public function buscarBebidaPorId($id)
     {
@@ -33,8 +33,8 @@ class BebidaModelo extends Model
     public function obtenerNombre($id_bebida)
     {
         $bebida = $this->find($id_bebida);
-        if ($bebida && array_key_exists('nombre', $bebida)) {
-            return $bebida['nombre'];
+        if ($bebida && array_key_exists('nombre_bebida', $bebida)) {
+            return $bebida['nombre_bebida'];
         } else {
             return null;
         }

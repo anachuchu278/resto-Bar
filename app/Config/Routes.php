@@ -119,4 +119,5 @@ $routes->post('nuevo', 'AddControlador::NuevoAdmin');
 
 
 $routes->get('ver-carrito', 'CarritoControlador::verCarrito');
+$routes->get('barControlador/eliminar', 'barControlador::eliminarDelCarrito');
 

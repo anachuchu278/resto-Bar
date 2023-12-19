@@ -35,7 +35,7 @@
 
                                 <div class="mb-4">
                                     <label for="contrasena" class="form-label" required="">Contraseña</label>
-                                    <input type="password" name="contrasena" required class="form-control "
+                                    <input type="password" name="password" required class="form-control "
                                         id="exampleInputPassword1">
                                     <div class="form-text text-dark">ingrese su contraseña</div>
                                 </div>
