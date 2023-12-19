@@ -30,4 +30,27 @@ public function obtenerProductosDelCarrito($id_usuario)
         ->get()
         ->getResultArray();
 }
+
+public function eliminarProductoDelCarrito($idUsuario, $idBebida)
+{
+    $carrito = $this->obtenerProductosDelCarrito($idUsuario);
+
+    // Verifica si el producto está en el carrito
+    if (isset($carrito[$idBebida])) {
+        // Elimina completamente el producto del carrito
+        unset($carrito[$idBebida]);
+
+        // Guarda la actualización del carrito
+        $this->guardarCarritoEnSesion($idUsuario, $carrito);
+        return true;
+    }
+
+    return false; // Producto no encontrado en el carrito
+}
+
+protected function guardarCarritoEnSesion($idUsuario, $carrito)
+{
+    // Guarda el carrito actualizado en la sesión
+    session()->set("carrito_$idUsuario", $carrito);
+}
 }

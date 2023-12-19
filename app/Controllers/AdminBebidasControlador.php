@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\BebidaModelo;
-use App\Models\tipoModelo;
+
 
 use CodeIgniter\Controller;
 
@@ -61,7 +61,7 @@ class AdminBebidasControlador extends Controller {
        // $tipoModelo = new tipoModelo();
       // $datos['bebida'] = $tipoModelo->where('id_tipo', $id_tipo)->first();
 
-        if($imagen = $this->request->getFile('imagen_ruta')) {
+        if($imagen = $this->request->getFile('id_imagen')) {
             $nuevoNombre = $imagen->getRandomName();
             $imagen->move('../public/uploads/', $nuevoNombre);
             $datos = [
@@ -69,7 +69,7 @@ class AdminBebidasControlador extends Controller {
                 'id_tipo' => $this->request->getVar('id_tipo'),
                 'precio' => $this->request->getVar('precio'),
                 'descripcion' => $this->request->getVar('descripcion'),
-                'imagen_ruta' => $nuevoNombre
+                'id_imagen' => $nuevoNombre
 
             ];
            

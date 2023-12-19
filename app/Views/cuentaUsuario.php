@@ -32,13 +32,7 @@
                         </tr>
                         <tr>
                             <th>ID</th>
-<<<<<<< HEAD
                             <td><?php echo $user['id_usuario']; ?></td>
-=======
-                            <td>
-                                <?php echo $user['id_usuario']; ?>
-                            </td>
->>>>>>> 76c299638cfc246f4bd0ae9ec8192593e48048e6
                         </tr>
                         <tr>
                             <th>Rol</th>

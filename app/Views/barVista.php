@@ -11,7 +11,7 @@ if (null !== $user) {
 <head>
   <title>ByTender</title>
   <link rel="stylesheet" href="<?php echo base_url('css/barVista.css'); ?>">
-  
+  <link rel="shortcut icon" href="public/assets/images/coca-lata.png" type="image/x-icon">
 </head>
 
 <body>
@@ -49,7 +49,7 @@ if (null !== $user) {
                   <?php echo $bebidaEncontrada['descripcion']; ?>
                 </li>
                 <li class="list-group-item">
-                  <img src="<?= base_url() ?>/assets/images/<?= $bebidaEncontrada['id_imagen']; ?>" class="img-thumbnail" alt="">
+                  <img src="<?= base_url() ?>/uploads/<?= $bebidaEncontrada['imagen_ruta']; ?>" class="img-thumbnail" alt="">
 
                 </li>
               <?php endforeach; ?>
@@ -88,7 +88,7 @@ if (null !== $user) {
                       <?php echo $bebida['descripcion']; ?>
                     </p>
                     <?php if ($is_logged) : ?>
-                      <form action="<?=base_url('comprarVista') ?>" method="post">
+                      <form action="<?=base_url('barControlador/comprarVista') ?>" method="post">
                                     
                         <input type="hidden" name="id_bebida" value="<?=$bebida['id_bebida'] ?>">                                    
                         <input type="number" name="cantidad" value="1">

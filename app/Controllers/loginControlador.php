@@ -26,7 +26,6 @@ class loginControlador extends BaseController
 
         $result = $LoginModelo->where('email', $email)->first();
         
-        //echo password_hash($password, PASSWORD_BCRYPT);
         if ($result !== null && $result['id'] > 0) {
             if (password_verify($password, $result['contrasena'])) {
                 // Contraseña correcta, establece la sesión del usuario

@@ -61,8 +61,7 @@ in.css" rel="stylesheet">
               </td>
               <td>
                 <!-- Agregamos un enlace para eliminar el producto -->
-                <a href="<?php echo base_url('barControlador/eliminar/'); ?>" class="btn btn-danger">Eliminar</a>
-              </td>
+               
             </tr>
           <?php endforeach; ?>
         </tbody>
@@ -91,9 +90,9 @@ ioysdo_lnwAWuXxHgD31c5-3Nvw-fs0_WTL_-ghOvt8WeoipePRltE"></script>
 <script>
   paypal.Buttons({
     style: {
-      shape: 'rect',
+      shape: 'pill',
       color: 'silver',
-      layout: 'vertical',
+      layout: 'horizontal',
       label: 'pay',
     },
     createOrder: function (data, actions) {

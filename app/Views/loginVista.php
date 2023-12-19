@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="">
 
-                                    <button href="<?= base_url("ingreso") ?>" class="btn btn-primary">ingresar</button>
+                                    <button href="<?= base_url('ingreso') ?>" class="btn btn-primary">ingresar</button>
                                 </div>
 
                                 <div class="my_3">

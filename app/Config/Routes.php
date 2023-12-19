@@ -87,15 +87,15 @@ $routes->post('carrito/agregar', 'CarritoControlador::agregarAlCarrito');
 $routes->post('carrito/eliminar', 'CarritoControlador::eliminarDelCarrito');
 $routes->post('carrito/comprar', 'CarritoControlador::realizarCompra'); 
 
-
-
+$routes->get('carritoControlador/eliminarDelCarrito/(:num)', 'CarritoControlador::eliminarDelCarrito/$1');
+$routes->get('carritoControlador/eliminarDelCarrito/', 'CarritoControlador::eliminarDelCarrito/');
 $routes->get('procesarCompra', 'MetodoPagoControlador::procesarCompra');
 
 $routes->get('CompraController/mostrarFormulario', 'CompraController::mostrarFormulario');
 $routes->post('CompraController/procesarFormulario', 'CompraController::procesarFormulario');
 
-$routes->get('comprarVista', 'BarControlador::agregarAlCarrito');
-$routes->post('comprarVista', 'BarControlador::agregarAlCarrito');
+$routes->get('barControlador/comprarVista', 'BarControlador::agregarAlCarrito');
+$routes->post('barControlador/comprarVista', 'BarControlador::agregarAlCarrito');
 
 
 $routes->get('salir', 'loginControlador::salir');

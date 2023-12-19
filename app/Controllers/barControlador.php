@@ -70,18 +70,18 @@ class BarControlador extends Controller
          // Obtener el tipo seleccionado
          $tipo_id = $this->request->getPost('tipo_id');
          // Llamar al modelo para obtener las bebidas filtradas por tipo
-     // Asegúrate de tener un modelo para las bebidas (puedes cambiar 'barModelo' al nombre correcto)
-        
+         $tipoModelo = new tipoModelo(); // Asegúrate de tener un modelo para las bebidas (puedes cambiar 'barModelo' al nombre correcto)
+         $data['bebidas'] = $tipoModelo->filtrarPorTipo($tipo_id);
 
       } else {
          // Si no se ha enviado el formulario, simplemente obtén todas las bebidas
 
-        
-       
+         $tipoModelo = new tipoModelo();
+         $data['bebidas'] = $tipoModelo->findAll();
       }
       // Obtener los tipos para el menú desplegable
-  
-     
+      $tipoModelo = new tipoModelo();
+      $data['filtrar'] = $tipoModelo->tipo();
       $tipo = $this->request->getPost('tipo_id');
       $barModelo = new barModelo();
       $result = $barModelo->filtrarBebidasPorTipo($tipo);
@@ -97,42 +97,48 @@ class BarControlador extends Controller
       return $producto;
    }
    public function agregarAlCarrito()
-   {
-       $CarritoModelo = new CarritoModelo;
-       $id_bebida = $this->request->getPost('id_bebida');
-       $cantidad = $this->request->getPost('cantidad');
-   
-       // Obtener el precio unitario de la bebida desde el modelo BebidaModelo
-       $bebidaModelo = new BebidaModelo();
-       $precio = $bebidaModelo->obtenerPrecioUnitario($id_bebida);
-      $nombre = $bebidaModelo-> obtenerNombre($id_bebida);
-       // Calcular el precio total
-       $total = $precio * $cantidad;
-   
-       // Obtener productos del carrito actual
-       $productos = session()->get('carrito') ?? [];
-   
-       // Agregar el producto al carrito
-       $productos[$id_bebida] = [
-           'id_bebida' => $id_bebida,
-           'cantidad' => $cantidad,
-           'precio_unitario' => $precio,
-           'total' => $total,
-           'nombre' => $nombre,
-       ];
-   
-       // Guardar los productos en la sesión
-       session()->set('carrito', $productos);
-   
-   
-       echo view('comunes/header');
-       return view('comprarVista', [
-          'productos' => $productos,
-          'total' => $total,
-          'nombre' => $nombre,
-       ]);
+{
+    $bebidaModelo = new BebidaModelo;
+    $id_bebida = $this->request->getPost('id_bebida');
+    $cantidad = $this->request->getPost('cantidad');
+
+    // Obtener el precio unitario y nombre de la bebida desde el modelo BebidaModelo
+    $precio = $bebidaModelo->obtenerPrecioUnitario($id_bebida);
+    $nombre = $bebidaModelo->obtenerNombre($id_bebida);
+
+    // Obtener productos del carrito actual
+    $productos = session()->get('carrito') ?? [];
+
+    // Verificar si el producto ya está en el carrito
+    if (isset($productos[$id_bebida])) {
+        // Actualizar la cantidad y el total del producto existente
+        $productos[$id_bebida]['cantidad'] += $cantidad;
+        $productos[$id_bebida]['total'] += ($precio * $cantidad);
+    } else {
+        // Agregar el producto al carrito
+        $productos[$id_bebida] = [
+            'id_bebida' => $id_bebida,
+            'cantidad' => $cantidad,
+            'precio_unitario' => $precio,
+            'total' => $precio * $cantidad,
+            'nombre' => $nombre,
+        ];
     }
-   
+
+    // Calcular el total general del carrito
+    $totalCarrito = array_sum(array_column($productos, 'total'));
+
+    // Guardar los productos y el total en la sesión
+    session()->set('carrito', $productos);
+
+    // Redirigir a la vista de comprarVista con los parámetros necesarios
+    echo view('comunes/header');
+    return view('comprarVista', [
+        'productos' => $productos,
+        'total' => $totalCarrito,
+        'nombre' => $nombre,
+    ]);
+}
    public function eliminarDelCarrito($id_bebida)
    {
       // Aquí se procesa la eliminación de la bebida con el ID $id
