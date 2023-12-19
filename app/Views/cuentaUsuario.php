@@ -12,7 +12,7 @@
     <div class="container">
         <section>
             <h2 class="section-title">Bienvenido,
-                <?php echo $user['nombre']; ?>
+                <?php echo $user['nombre_usuario']; ?>
             </h2>
             <h3 class="section-subtitle">Datos del Usuario</h3>
             <div class="card">
@@ -21,7 +21,7 @@
                         <tr>
                             <th>Nombre</th>
                             <td>
-                                <?php echo $user['nombre']; ?>
+                                <?php echo $user['nombre_usuario']; ?>
                             </td>
                         </tr>
                         <tr>
@@ -32,13 +32,9 @@
                         </tr>
                         <tr>
                             <th>ID</th>
-<<<<<<< HEAD
-                            <td><?php echo $user['id_usuario']; ?></td>
-=======
                             <td>
                                 <?php echo $user['id_usuario']; ?>
                             </td>
->>>>>>> 76c299638cfc246f4bd0ae9ec8192593e48048e6
                         </tr>
                         <tr>
                             <th>Rol</th>
