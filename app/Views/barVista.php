@@ -60,7 +60,7 @@ if (null !== $user) {
             <?php foreach ($bebidas as $bebida) : ?>
               <div class="col mb-4">
                 <div class="card h-100">
-                <img src="<?= base_url() ?>../assets/images/<?= $bebida['id_imagen']; ?>" alt="Imagen de la bebida">
+                <img src="<?= base_url() ?>/uploads/<?= $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida">
                   <div class="card-body d-flex flex-column">
                     <h3 class="card-title">
                       <?php echo $bebida['nombre_bebida']; ?>

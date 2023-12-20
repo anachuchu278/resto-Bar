@@ -32,16 +32,15 @@ class AdminBebidasControlador extends Controller {
 
  
 
-        if($imagen = $this->request->getFile('id_imagen')) {
+        if($imagen = $this->request->getFile('imagen_ruta')) {
             $nuevoNombre = $imagen->getRandomName();
-            $imagen->move('../assets/images/', $nuevoNombre);
+            $imagen->move('../public/uploads', $nuevoNombre);
             $datos = [
                 'nombre_bebida' => $this->request->getVar('nombre_bebida'),
                 'id_tipo' => $this->request->getVar('id_tipo'),
                 'precio' => $this->request->getVar('precio'),
                 'descripcion' => $this->request->getVar('descripcion'),
-                'id_imagen' => $nuevoNombre,
-
+                'imagen_ruta' => $nuevoNombre,
             ];
            
             $bebidaModelo->insert($datos);
@@ -85,7 +84,7 @@ class AdminBebidasControlador extends Controller {
         ]);
         if($validacion) {
             $datosBebida = $bebidaModelo->where('id_bebida', $id)->first();
-            $ruta = ('../public/uploads/'.$datosBebida['imagen_ruta']);
+            $ruta = ('../public/uploads'.$datosBebida['imagen_ruta']);
             unlink($ruta);
             if($imagen = $this->request->getFile('imagen_ruta')) {
                 $nuevoNombre = $imagen->getRandomName();
@@ -104,17 +103,17 @@ class AdminBebidasControlador extends Controller {
     }
 
     public function eliminar($id_bebida) {
-        // Aquí se procesa la eliminación de la bebida con el ID $id
+       
 
         $bebidaModelo = new BebidaModelo();
         $bebidaModelo->delete($id_bebida);
         return redirect()->to(base_url('adminBebidas'));
     }
     public function guardar() {
-        // Aquí se procesa el formulario de agregar una nueva bebida
+        
         if($this->request->getMethod() === 'post') {
             $bebidaModelo = new BebidaModelo();
-            $bebidaModelo->insert($_POST); // Asumiendo que los datos del formulario se envían por POST
+            $bebidaModelo->insert($_POST); 
             return redirect()->to(base_url('adminBebidas'));
         }
     }

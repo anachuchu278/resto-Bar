@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\CarritoModelo;
+use App\Models\MetodoPagoModelo;
 
 class MetodoPagoControlador extends Controller {
     public function registrarPago($nombre)
@@ -57,20 +58,20 @@ public function procesarCompra()
     $total = $this->calcularTotalCompra($carrito); // Esta función debe calcular el total basándose en el contenido del carrito
 
     // Lógica para registrar el método de pago en la base de datos
-    $metodoPagoModelo = new \App\Models\MetodoPagoModelo();
+    $metodoPagoModelo = new MetodoPagoModelo();
     $metodoPagoModelo->registrarPago([
         'nombre' => 'PayPal',
         // Agrega otros campos necesarios en tu tabla
     ]);
 
     
-    // Lógica para registrar los productos comprados en la tabla carrito_compras
+   
     foreach ($carrito as $producto) {
-        $carritoModelo = new \App\Models\CarritoModelo();
+        $carritoModelo = new CarritoModelo();
         $carritoModelo->insert([
             'id_bebida' => $producto['id_bebida'],
             'cantidad' => $producto['cantidad'],
-            'id_usuario' => $user['id_usuario'], // Asume que el ID del usuario está en la variable de sesión
+            'id_usuario' => $user['id_usuario'],
            
         ]);
     }

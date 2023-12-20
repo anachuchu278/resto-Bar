@@ -9,11 +9,7 @@
 </head>
 
 <body>
-    <!-- <header>
-        <div class="container">
-            <h1>Bar - Agregar Bebida</h1>
-        </div>
-    </header> -->
+   
    
 
 
@@ -34,8 +30,8 @@
                 <input type="number" name="precio" required>
                 <label for="descripcion">Descripción:</label>
                 <textarea name="descripcion" required></textarea>
-                <label for="id_imagen">imagen</label>
-                <input type="file" name="id_imagen" required>
+                <label for="imagen_ruta">imagen</label>
+                <input type="file" name="imagen_ruta" required>
 
 
                 <input type="submit" value="Agregar" class>
