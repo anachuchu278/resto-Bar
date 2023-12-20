@@ -10,7 +10,7 @@ class BebidaModelo extends Model
 
     protected $table = 'bebidas';
     protected $primaryKey = 'id_bebida';
-    protected $allowedFields = ['nombre_bebida', 'id_tipo', 'precio','descripcion', 'imagen_ruta'];
+    protected $allowedFields = ['nombre_bebida', 'id_tipo', 'precio','descripcion', 'id_imagen'];
 
     public function buscarBebidaPorId($id)
     {

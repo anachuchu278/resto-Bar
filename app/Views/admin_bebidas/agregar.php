@@ -19,43 +19,13 @@
 
     <div class="container">
 
-<<<<<<< HEAD
-                <section>
-                    <h2>Formulario de Agregar Bebida</h2>
-                  
-                    <form action="<?php echo base_url('agregar'); ?>" method="post" enctype="multipart/form-data">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" required>
-                        <label for="tipo">Tipo:</label>
-                        <select name="tipo" id="">
-                     
-                            <option value='tipo_id'>
-                           
-                        </option>
-                    
-                        </select>
-                        <label for="precio">Precio:</label>
-                        <input type="number" name="precio" required>
-                        <label for="descripcion">Descripción:</label>
-                        <textarea name="descripcion" required></textarea>
-                        <label for="ingredientes">Ingredientes</label>
-                        <textarea name="ingredientes" required></textarea>
-                        <!-- <input type="file" name="imagen" required> -->
-                        
-                        
-                        <input type="submit" value="Agregar" class>
-                        
-                    </form>
-                   
-                </section>
-=======
         <section>
             <h2>Formulario de Agregar Bebida</h2>
 
             <form action="<?php echo site_url('agregar'); ?>" method="post" enctype="multipart/form-data">
                 <label for="nombre_bebida">Nombre:</label>
                 <input type="text" name="nombre_bebida" required>
-                <label for="tipo">Tipo:</label>
+                <label for="id_tipo">Tipo:</label>
                 <select name="id_tipo" id='id_tipo'>
                         <option value="1">Alcoholica</option>
                         <option value="2">No Alcoholica</option>
@@ -64,8 +34,8 @@
                 <input type="number" name="precio" required>
                 <label for="descripcion">Descripción:</label>
                 <textarea name="descripcion" required></textarea>
-                <label for="imagen_ruta">imagen</label>
-                <input type="file" name="imagen_ruta" required>
+                <label for="id_imagen">imagen</label>
+                <input type="file" name="id_imagen" required>
 
 
                 <input type="submit" value="Agregar" class>
@@ -73,7 +43,6 @@
             </form>
 
         </section>
->>>>>>> d58325b099157435f23b987f04553c27e5c952c6
     </div>
  
 </body>

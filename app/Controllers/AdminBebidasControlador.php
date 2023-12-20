@@ -30,18 +30,17 @@ class AdminBebidasControlador extends Controller {
     public function agregarA() {
         $bebidaModelo = new BebidaModelo();
 
-       // $tipoModelo = new tipoModelo();
-      // $datos['bebida'] = $tipoModelo->where('id_tipo', $id_tipo)->first();
+ 
 
         if($imagen = $this->request->getFile('id_imagen')) {
             $nuevoNombre = $imagen->getRandomName();
-            $imagen->move('../public/uploads/', $nuevoNombre);
+            $imagen->move('../assets/images/', $nuevoNombre);
             $datos = [
                 'nombre_bebida' => $this->request->getVar('nombre_bebida'),
                 'id_tipo' => $this->request->getVar('id_tipo'),
                 'precio' => $this->request->getVar('precio'),
                 'descripcion' => $this->request->getVar('descripcion'),
-                'id_imagen' => $nuevoNombre
+                'id_imagen' => $nuevoNombre,
 
             ];
            

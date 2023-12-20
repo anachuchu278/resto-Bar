@@ -8,7 +8,7 @@ class CarritoModelo extends Model
 {
     protected $table = 'carrito_compras';
     protected $primaryKey = 'id_carrito';
-    protected $allowedFields = ['id_bebida', 'cantidad','id'];
+    protected $allowedFields = ['id_bebida', 'cantidad','id_usuario'];
 
     public function calcularTotalCarrito($productos)
 {

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
     <title>Procesar Compra</title>
     <!-- Agrega el enlace a Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,47 +53,8 @@
 <body>
 
     <div class="container mt-5">
-        <h1>Tu compra ah sido exitosaa!!</h1>
+        <h1>Tu compra ah sido exitosa!!</h1>
 
-        <!-- Verificar si hay productos en el carrito -->
-        <?php if(!empty($productos)): ?>
-
-            <h3>Resumen de la compra</h3>
-            <?php foreach($productos as $producto): ?>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Producto</th>
-                            <th scope="col">Cantidad</th>
-                            <th scope="col">Precio Unitario</th>
-                            <th scope="col">Precio Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td>
-                                <?= $producto['nombre']; ?>
-                            </td>
-                            <td>
-                                <?= $producto['cantidad']; ?>
-                            </td>
-                            <td>
-                                <?= $producto['precio']; ?>
-                            </td>
-                            <td>
-                                <?= $producto['precio'] * $producto['cantidad']; ?>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            <?php endforeach; ?>
-            <p>Total:
-                <?= $total; ?>
-            </p>
-
-        <?php else: ?>
             <p>No hay productos en el carrito.</p>
             <form action="<?php echo base_url(''); ?>" method="post">
                 <a href="<?php echo base_url(''); ?>">
@@ -101,25 +62,11 @@
                 </a>
             </form>
 
-        <?php endif; ?>
+      
 
         <script>
             alert("La compra ha sido procesada");
         </script>
-
-        <!-- Contenedor para el botón de PayPal -->
-        <div id="paypal-button-container"></div>
-        <script>
-            paypal.Buttons({
-                style: {
-                    layout: 'vertical',
-                    color: 'blue',
-                    shape: 'rect',
-                    label: 'paypal'
-                }
-            }).render('#paypal-button-container');
-        </script>
-    </div>
 
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

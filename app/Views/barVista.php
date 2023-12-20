@@ -11,7 +11,7 @@ if (null !== $user) {
 <head>
   <title>ByTender</title>
   <link rel="stylesheet" href="<?php echo base_url('css/barVista.css'); ?>">
-  <link rel="shortcut icon" href="public/assets/images/coca-lata.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -20,13 +20,6 @@ if (null !== $user) {
       <?php echo $user['nombre_usuario']; ?>!
     </h2>
   <?php endif; ?>
-
-  <div class="dropdown">
-    <form action="<?= base_url('barControlador/filtrarPorTipo') ?>" method="post">
-
-      <!-- <button class='boton' type="submit">Filtrar</button> -->
-    </form>
-  </div>
 
   <div class="container py-4">
     <?php if (isset($bebidaEncontrada)) : ?>
@@ -67,7 +60,7 @@ if (null !== $user) {
             <?php foreach ($bebidas as $bebida) : ?>
               <div class="col mb-4">
                 <div class="card h-100">
-                  <img src="<?= base_url() ?>/uploads/<?= $bebida['imagen_ruta']; ?>" alt="Imagen de la bebida">
+                <img src="<?= base_url() ?>../assets/images/<?= $bebida['id_imagen']; ?>" alt="Imagen de la bebida">
                   <div class="card-body d-flex flex-column">
                     <h3 class="card-title">
                       <?php echo $bebida['nombre_bebida']; ?>

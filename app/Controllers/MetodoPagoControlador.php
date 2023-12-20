@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-
+use App\Models\CarritoModelo;
 
 class MetodoPagoControlador extends Controller {
     public function registrarPago($nombre)
@@ -51,27 +51,32 @@ public function procesarCompra()
     }
 
     // Lógica para obtener el contenido del carrito (puedes ajustar esto según tu implementación)
-    $carrito = $this-> obtenerContenidoCarrito(); // Esta función debe recuperar el contenido del carrito
+    $carrito = $this->obtenerContenidoCarrito(); // Esta función debe recuperar el contenido del carrito
 
     // Calcular el total de la compra
-    $total = $this-> calcularTotalCompra($carrito); // Esta función debe calcular el total basándose en el contenido del carrito
+    $total = $this->calcularTotalCompra($carrito); // Esta función debe calcular el total basándose en el contenido del carrito
 
-    // Lógica para registrar el pago en la base de datos
+    // Lógica para registrar el método de pago en la base de datos
     $metodoPagoModelo = new \App\Models\MetodoPagoModelo();
-   
     $metodoPagoModelo->registrarPago([
         'nombre' => 'PayPal',
-  
         // Agrega otros campos necesarios en tu tabla
     ]);
 
-    // Lógica para vaciar el carrito o marcar los productos como comprados
-     // Esta función debe vaciar el carrito después de procesar la compra
-
+    
+    // Lógica para registrar los productos comprados en la tabla carrito_compras
+    foreach ($carrito as $producto) {
+        $carritoModelo = new \App\Models\CarritoModelo();
+        $carritoModelo->insert([
+            'id_bebida' => $producto['id_bebida'],
+            'cantidad' => $producto['cantidad'],
+            'id_usuario' => $user['id_usuario'], // Asume que el ID del usuario está en la variable de sesión
+           
+        ]);
+    }
     // Cargar la vista de confirmación o la que corresponda
     return view('procesarCompra', [
         'nombre' => 'PayPal',
-        
     ]);
 }
 }
